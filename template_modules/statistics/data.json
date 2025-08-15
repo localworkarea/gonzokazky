@@ -1,0 +1,32 @@
+{
+  "statistics": {
+    "sessions": [
+      {
+        "date": "15.08.2025",
+        "start": 1755253046739,
+        "end": 1755263259365,
+        "type": "build"
+      },
+      {
+        "date": "15.08.2025",
+        "start": 1755263443504,
+        "end": 1755263458314,
+        "type": "build"
+      },
+      {
+        "date": "15.08.2025",
+        "start": 1755263565270,
+        "end": 1755272772347,
+        "type": "build"
+      }
+    ],
+    "files": [
+      "settings.scss",
+      "main.html",
+      "index.html",
+      "test.html",
+      "home.scss",
+      "app.js"
+    ]
+  }
+}
