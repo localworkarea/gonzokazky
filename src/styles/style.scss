@@ -191,7 +191,7 @@ body {
   right: 0;
   z-index: 2;
   width: 100%;
-	@include adaptiveValue("height", 314, 200,0,1920,320);
+	@include adaptiveValue("height",400, 300,0,1920,320);
   pointer-events: none;
   svg {
     position: relative;
@@ -209,8 +209,16 @@ body {
 		width: 200%;
 		height: 100%;
 		border-radius: 100%;
-		background-color: #090203;
-		filter: blur(50px);
+		// background-color: #090203;
+		// filter: blur(50px);
+		  background:
+      radial-gradient(ellipse 85% 50% at 50% 50%,
+        rgba(9,2,3,1) 0 30%,
+        rgba(9,2,3,0.3) 65%,
+        rgba(9,2,3,0.00) 80%
+      );
+    // mask: 
+		// radial-gradient(ellipse 86% 51% at 50% 50%, #000 34%, transparent 80%);
 		@media (min-width:toEm($mobile)){
 			 width: 135%; 
 		}
@@ -235,24 +243,6 @@ body {
 		transform: translate(0,-50%);
 		top: 0;
 	}
-}
-
-.box {
-	position: fixed;
-	top: 50%;
-	width: 100%;
-	@include adaptiveValue("height", 314, 200,0,1920,320);
-	z-index: 15;
-}
-.box-item {
-	position: relative;
-	left: 50%;
-	transform: translate(-50%);
-	width: 135%;
-	height: 100%;
-	border-radius: 100%;
-	background-color: #090203;
-	filter: blur(60px);
 }
 
 

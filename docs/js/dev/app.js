@@ -170,6 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const img = document.createElement("img");
       img.src = "assets/img/icons/star.svg";
       img.classList.add("btn-star");
+      img.setAttribute("aria-hidden", "true");
+      img.setAttribute("alt", "star");
       img.style.width = `${star.size * scaleX}px`;
       img.style.height = `${star.size * scaleY}px`;
       img.style.left = `${star.x * scaleX}px`;

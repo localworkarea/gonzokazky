@@ -205,8 +205,7 @@ body::-webkit-scrollbar {
   width: 200%;
   height: 100%;
   border-radius: 100%;
-  background-color: #090203;
-  filter: blur(3.125rem);
+  background: radial-gradient(ellipse 85% 50% at 50% 50%, rgb(9, 2, 3) 0 30%, rgba(9, 2, 3, 0.3) 65%, rgba(9, 2, 3, 0) 80%);
 }
 .shadow--top {
   opacity: 0;
@@ -222,24 +221,6 @@ body::-webkit-scrollbar {
   position: absolute;
   transform: translate(0, -50%);
   top: 0;
-}
-
-.box {
-  position: fixed;
-  top: 50%;
-  width: 100%;
-  z-index: 15;
-}
-
-.box-item {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  width: 135%;
-  height: 100%;
-  border-radius: 100%;
-  background-color: #090203;
-  filter: blur(3.75rem);
 }
 
 .banner {
@@ -333,7 +314,6 @@ body::-webkit-scrollbar {
 }
 
 .hero {
-  z-index: 3;
   padding-block: 3.125rem;
   display: flex;
   align-items: center;
@@ -356,11 +336,25 @@ body::-webkit-scrollbar {
 }
 .hero__wolf img {
   object-fit: contain;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+[data-fls-loaded] .hero__wolf img {
+  opacity: 1;
+  transform: translate(0, 0%);
+  transition: all 0.65s ease 0.2s;
 }
 
 .packs-hero {
   position: relative;
   z-index: 3;
+}
+.packs-hero__picture img {
+  scale: 0;
+}
+[data-fls-loaded] .packs-hero__picture img {
+  scale: 1;
+  transition: scale 0.65s ease;
 }
 
 .cta-hero::before {
@@ -501,10 +495,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 20em) {
   .shadow {
-    height: 12.5rem;
-  }
-  .box {
-    height: 12.5rem;
+    height: 18.75rem;
   }
   .btn--a {
     min-height: 4.375rem;
@@ -531,10 +522,7 @@ body::-webkit-scrollbar {
 
 @media (min-width: 20em) and (max-width: 120em) {
   .shadow {
-    height: clamp( 12.5rem , 11.075rem  +  7.125vw , 19.625rem );
-  }
-  .box {
-    height: clamp( 12.5rem , 11.075rem  +  7.125vw , 19.625rem );
+    height: clamp( 18.75rem , 17.5rem  +  6.25vw , 25rem );
   }
 }
 
@@ -633,10 +621,7 @@ body::-webkit-scrollbar {
     max-width: 78.125rem;
   }
   .shadow {
-    height: 19.625rem;
-  }
-  .box {
-    height: 19.625rem;
+    height: 25rem;
   }
 }
 
