@@ -1,8 +1,8 @@
 import { addTouchAttr, addLoadedAttr, isMobile, FLS } from "@js/common/functions.js"
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
