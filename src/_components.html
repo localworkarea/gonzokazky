@@ -12,14 +12,25 @@
 	</include>
 	<style>
 		.components{
+			background-color: rgb(54, 54, 54);
 			padding: 50px;
 			display: flex;
 			flex-direction: column;
 			gap: 30px;
+			min-height: 100vh;
+		}
+		.components__item>* {
+			margin-bottom: 30px;
 		}
 	</style>
 	<body>
 		<div class="components">
+			<div class="components__item">
+				<include src="@components/custom/btn/btn.html"></include>
+			</div>
+			<div class="components__item">
+
+			</div>
 			<div class="components__item">
 
 			</div>

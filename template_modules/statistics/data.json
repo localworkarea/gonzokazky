@@ -24,6 +24,17 @@
         "start": 1755336766182,
         "end": 1755336797023,
         "type": "build"
+      },
+      {
+        "date": "16.08.2025",
+        "start": 1755337070375,
+        "end": 1755339478098
+      },
+      {
+        "date": "16.08.2025",
+        "start": 1755339484269,
+        "end": 1755358957281,
+        "type": "build"
       }
     ],
     "files": [
@@ -32,7 +43,14 @@
       "index.html",
       "test.html",
       "home.scss",
-      "app.js"
+      "app.js",
+      "home.html",
+      "btn.html",
+      "_components.html",
+      "btn.scss",
+      "btn.js",
+      "star.svg",
+      "style.scss"
     ]
   }
 }

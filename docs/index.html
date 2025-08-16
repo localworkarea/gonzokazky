@@ -3,15 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js" defer></script>
+		<script src="https://cdn.js?v=1755358957206delivr.net/npm/gsap@3.13.0/dist/gsap.min.js?v=1755358957206" defer></script>
+		<script src="https://cdn.js?v=1755358957206delivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js?v=1755358957206" defer></script>
+		<script src="https://cdn.js?v=1755358957206delivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js?v=1755358957206" defer></script>
 		<link rel="preload" href="./assets/fonts/SofiaSans-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="./assets/fonts/Manrope-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>GONZO Kazky | Home</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1755336796960"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755336796960">
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1755358957206"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755358957206">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -25,34 +26,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="shadow shadow--top">
-				<svg width="2147" height="442" viewbox="0 0 2147 442" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<g filter="url(#filter0_f_2004_625)">
-						<ellipse cx="1073.5" cy="221" rx="973.5" ry="121" fill="#090203"></ellipse>
-					</g>
-					<defs>
-						<filter id="filter0_f_2004_625" x="0" y="0" width="2147" height="442" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-							<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-							<feGaussianBlur stddeviation="50" result="effect1_foregroundBlur_2004_625"></feGaussianBlur>
-						</filter>
-					</defs>
-				</svg>
-			</div>
-			<div class="shadow shadow--bottom">
-				<svg width="2147" height="442" viewbox="0 0 2147 442" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<g filter="url(#filter0_f_2004_625)">
-						<ellipse cx="1073.5" cy="221" rx="973.5" ry="121" fill="#090203"></ellipse>
-					</g>
-					<defs>
-						<filter id="filter0_f_2004_625" x="0" y="0" width="2147" height="442" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
-							<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-							<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-							<feGaussianBlur stddeviation="50" result="effect1_foregroundBlur_2004_625"></feGaussianBlur>
-						</filter>
-					</defs>
-				</svg>
-			</div>
+			<div class="shadow shadow--top"></div>
 			<main id="smooth-wrapper" class="page page--home">
 				<div id="smooth-content">
 					<section class="hero">
@@ -64,21 +38,49 @@
 							</picture>
 						</div>
 						<div class="hero__container">
-							<div class="hero__banner banner">
-								<div class="banner__text text-banner">
+							<div class="hero__packs packs-hero">
+								<div class="packs-hero__picture">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/main/packs-hero-600.webp 1x,./assets/img/main/packs-hero-600-2x.webp 2x,./assets/img/main/packs-hero-600-3x.webp 3x" type="image/webp">
+										<img class="ibg" width="516" height="313" alt="Три пачки Gonzo" src="./assets/img/main/packs-hero.webp" srcset="./assets/img/main/packs-hero.webp 1x,./assets/img/main/packs-hero-2x.webp 2x,./assets/img/main/packs-hero-3x.webp 3x">
+									</picture>
+								</div>
+							</div>
+							<div class="hero__cta cta-hero">
+								<div class="cta-hero__txt">
 									<p>
-										Від казкової смачності Gonzo шаленіли всі королівства!
-										<br>
-										І навіть твоє!
+										Проведи експертну оцінку смачності наших снеків та вигравай чарівний бокс із подарунками!
 									</p>
 								</div>
-								<picture>
-									<source srcset="./assets/img/main/banner-hero-pc.webp" media="(min-width: 30.061em)" type="image/webp">
-									<source srcset="./assets/img/main/banner-hero-mb.webp" media="(max-width: 30.061em)" type="image/webp">
-									<img class="banner__img" data-fls-image-ignore="" src="./assets/img/main/banner-hero-pc.png" width="1440" height="800" alt="image">
-								</picture>
+								<a href="test.html" data-fls-btn="" class="cta-hero__btn btn btn--a">
+									<span>Пройти тест</span>
+								</a>
+							</div>
+							<div class="hero__right">
+								<div class="hero__banner banner">
+									<div class="banner__text text-banner">
+										<p>
+											Від казкової смачності Gonzo шаленіли всі королівства!
+											<br>
+											І навіть твоє!
+										</p>
+									</div>
+									<div class="banner__picture">
+										<picture>
+											<source srcset="./assets/img/main/banner-hero-pc.svg" media="(min-width: 30.061em)" type="image/svg+xml">
+											<source srcset="./assets/img/main/banner-hero-mb.svg" media="(max-width: 30.061em)" type="image/svg+xml">
+											<img class="banner__img" data-fls-image-ignore="" src="./assets/img/main/banner-hero-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
+										</picture>
+									</div>
+								</div>
+								<div class="hero__wolf">
+									<picture>
+										<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp" srcset="./assets/img/main/wolf.webp 1x,./assets/img/main/wolf-2x.webp 2x,./assets/img/main/wolf-3x.webp 3x">
+									</picture>
+								</div>
 							</div>
 						</div>
+						<div class="shadow shadow--bottom"></div>
 					</section>
 					<section class="section-2">
 						<div class="section-2__picture">
@@ -89,18 +91,28 @@
 							</picture>
 						</div>
 						<div class="section-2__container"></div>
+						<div class="shadow shadow--topnext"></div>
+						<div class="shadow shadow--bottom"></div>
 					</section>
 					<section class="section-3">
 						<div class="section-3__container"></div>
+						<div class="shadow shadow--topnext"></div>
+						<div class="shadow shadow--bottom"></div>
 					</section>
 					<section class="section-4">
 						<div class="section-4__container"></div>
+						<div class="shadow shadow--topnext"></div>
+						<div class="shadow shadow--bottom"></div>
 					</section>
 					<section class="section-5">
 						<div class="section-5__container"></div>
+						<div class="shadow shadow--topnext"></div>
+						<div class="shadow shadow--bottom"></div>
 					</section>
 					<section class="section-6">
 						<div class="section-6__container"></div>
+						<div class="shadow shadow--topnext"></div>
+						<div class="shadow shadow--bottom"></div>
 					</section>
 				</div>
 			</main>

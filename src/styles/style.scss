@@ -76,6 +76,7 @@ body {
 	// Брейк-поїнтами
 	[class*="__container"] {
 		margin: 0 auto;
+		width: 100%;
 		@if ($maxWidthContainer>0) {
 			max-width: #{$maxWidthContainer}px;
 		} @else {
@@ -103,3 +104,184 @@ body {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Загальні стилі для усього сайту
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+section {
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+  [class*="__container"]{
+    position: relative;
+    z-index: 3;
+  }
+	&:not(:first-child) {
+		z-index: 3;
+	}
+}
+
+body {
+  background-color: $mainColor;
+  color: $white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+.ibg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-banner {
+  font-family: "SofiaSans",sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 
+  2px 2px 0 #231f20;
+  position: relative;
+  &::before {
+    content:'';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color:  rgba(255, 255, 0, 0.4);
+    filter: blur(50px);
+  }
+}
+.page {
+	// position: relative;
+	// z-index: 1;
+}
+.logo-main {
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+	pointer-events: none;
+  // .logo-main__wrapper
+	&__wrapper {
+    width: 100%;
+  margin-inline: auto;
+  padding-inline: 20px;
+  @include adaptiveValue("max-width", 1250, 1240,0,1920,1440);
+  }
+  // .logo-main__picture
+  &__picture {
+    position: relative;
+    top: 60px;
+    left: 0;
+    max-width: 406px;
+    pointer-events: all;
+    @media (max-width: toEm(1024.98)){
+      margin-inline: auto;
+      max-width: 190px;
+    }
+
+    img {
+      @extend %ibg;
+    }
+	}
+}
+
+.shadow {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+	@include adaptiveValue("height", 314, 200,0,1920,320);
+  pointer-events: none;
+  svg {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    height: auto;
+  }
+	// .shadow__item
+	&::before {
+		content:'';
+		display: block;
+		position: relative;
+		left: 50%;
+		transform: translate(-50%,0);
+		width: 200%;
+		height: 100%;
+		border-radius: 100%;
+		background-color: #090203;
+		filter: blur(50px);
+		@media (min-width:toEm($mobile)){
+			 width: 135%; 
+		}
+	}
+
+  // .shadow--top 
+  &--top {
+    opacity: 0;
+    top: 0;
+    transform: translate(0,-50%);
+  }
+  // .shadow--botom 
+  &--bottom {
+		
+		position: absolute;
+		
+    transform: translate(0,50%);
+    bottom: 0;
+  }
+	&--topnext {
+		position: absolute;
+		transform: translate(0,-50%);
+		top: 0;
+	}
+}
+
+.box {
+	position: fixed;
+	top: 50%;
+	width: 100%;
+	@include adaptiveValue("height", 314, 200,0,1920,320);
+	z-index: 15;
+}
+.box-item {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	width: 135%;
+	height: 100%;
+	border-radius: 100%;
+	background-color: #090203;
+	filter: blur(60px);
+}
+
+
+.banner {
+  position: relative;
+  padding: 35px 0px;
+  @media (min-width:$mobileSmall){
+    padding: 35px 27px;
+  }
+		// .banner__text
+		&__text {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-inline: auto;
+		}
+		// .banner__picture
+		&__picture {
+			position: absolute;
+			pointer-events: none;
+			z-index: 0;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			transform: translate(-50%,-50%);
+		}
+    // .banner__img
+    &__img {
+      // opacity: 0.8;
+    }
+}
+
