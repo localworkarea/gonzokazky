@@ -27,6 +27,19 @@
     fetch(link.href, fetchOpts);
   }
 })();
+const isMobile = { Android: function() {
+  return navigator.userAgent.match(/Android/i);
+}, BlackBerry: function() {
+  return navigator.userAgent.match(/BlackBerry/i);
+}, iOS: function() {
+  return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+}, Opera: function() {
+  return navigator.userAgent.match(/Opera Mini/i);
+}, Windows: function() {
+  return navigator.userAgent.match(/IEMobile/i);
+}, any: function() {
+  return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+} };
 function addLoadedAttr() {
   if (!document.documentElement.hasAttribute("data-fls-preloader-loading")) {
     window.addEventListener("load", function() {
@@ -65,6 +78,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+    const sections = Array.from(document.querySelectorAll("section")).filter((sec) => {
+      const root = sec.querySelector(".body-sections");
+      if (!root) return false;
+      const banner = root.querySelector(".body-sections__banner");
+      const txt = root.querySelector(".cta-sections__txt");
+      const btnWr = root.querySelector(".cta-sections__btn-wr");
+      return banner && txt && btnWr;
+    });
+    sections.forEach((sec) => {
+      const root = sec.querySelector(".body-sections");
+      const banner = root.querySelector(".body-sections__banner");
+      const txt = root.querySelector(".cta-sections__txt");
+      const btnWr = root.querySelector(".cta-sections__btn-wr");
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 0.1,
+          ease: "none"
+        },
+        scrollTrigger: {
+          trigger: sec,
+          start: "top 60%",
+          end: "top top",
+          scrub: 1
+        }
+      });
+      tl.to(banner, { opacity: 1 }).to(txt, { opacity: 1 }).to(btnWr, { opacity: 1 });
+    });
     if (mm) mm.revert();
     mm = gsap.matchMedia();
     mm.add(
@@ -144,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       const REST_VH = 0.1;
       const END_VH = 0.3;
-      const END_ZONE = 0.25;
+      const END_ZONE = 0.2;
       const SMOOTH = 0.06;
       const MAX_LAG = 30;
       const LAG_FACTOR = 0.08;
@@ -228,15 +268,24 @@ document.addEventListener("DOMContentLoaded", () => {
   createAnimation();
   setupWolf();
   window.addEventListener("resize", () => {
-    const currentWidth = window.innerWidth;
-    if (currentWidth !== lastWidth) {
-      lastWidth = currentWidth;
+    if (isMobile.any()) {
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+        setTimeout(() => {
+          createAnimation();
+          setupWolf();
+          ScrollTrigger.refresh();
+          smoother?.refresh();
+        }, 50);
+      }
+    } else {
       setTimeout(() => {
         createAnimation();
         setupWolf();
+        ScrollTrigger.refresh();
+        smoother?.refresh();
       }, 50);
-      ScrollTrigger.refresh();
-      smoother?.refresh();
     }
   });
 });

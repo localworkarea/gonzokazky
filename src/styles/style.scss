@@ -133,22 +133,7 @@ body {
   object-fit: cover;
 }
 
-.text-banner {
-  font-family: "SofiaSans",sans-serif;
-  font-weight: 800;
-  line-height: 1.2;
-  text-shadow: 
-  2px 2px 0 #231f20;
-  position: relative;
-  &::before {
-    content:'';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color:  rgba(255, 255, 0, 0.4);
-    filter: blur(50px);
-  }
-}
+
 .page {
 	// position: relative;
 	// z-index: 1;
@@ -242,6 +227,23 @@ body {
 	}
 }
 
+.text-banner {
+  font-family: "SofiaSans",sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 
+  2px 2px 0 #231f20;
+  position: relative;
+  &::before {
+		content:'';
+    position: absolute;
+    inset: -45% -12%;  
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
+  }
+
+}
 
 .banner {
   position: relative;

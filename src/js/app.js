@@ -6,6 +6,7 @@ import { addTouchAttr, addLoadedAttr, isMobile, FLS } from "@js/common/functions
 
 addLoadedAttr();
 
+
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -43,6 +44,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+
+    const sections = Array.from(document.querySelectorAll('section')).filter((sec) => {
+      const root = sec.querySelector('.body-sections');
+      if (!root) return false;
+      const banner = root.querySelector('.body-sections__banner');
+      const txt    = root.querySelector('.cta-sections__txt');
+      const btnWr  = root.querySelector('.cta-sections__btn-wr');
+      return banner && txt && btnWr;
+    });
+
+    sections.forEach((sec) => {
+      const root  = sec.querySelector('.body-sections');
+      const banner = root.querySelector('.body-sections__banner');
+      const txt    = root.querySelector('.cta-sections__txt');
+      const btnWr  = root.querySelector('.cta-sections__btn-wr');
+
+
+      // Таймлайн для секции: последовательное появление
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 0.1, 
+          ease: 'none'
+        },
+        scrollTrigger: {
+          trigger: sec,
+          start: 'top 60%',
+          end: 'top top',
+          scrub: 1, 
+        }
+      });
+
+      tl.to(banner, {opacity: 1,})
+        .to(txt,    {opacity: 1,})
+        .to(btnWr,  {opacity: 1,});
+    });
 
     // Чистим предыдущие matchMedia-анимации корректно
     if (mm) mm.revert();
@@ -162,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       const REST_VH    = 0.1;  // базовая точка покоя (чуть ниже центра)
       const END_VH     = 0.3;  // финальная точка покоя у конца трека (ниже)
-      const END_ZONE   = 0.25;  // доля трека перед концом, где начинаем «опускать» (25%)
+      const END_ZONE   = 0.2;  // доля трека перед концом, где начинаем «опускать» (25%)
       const SMOOTH     = 0.06;  // сглаживание лерпом (0.06…0.18)
       const MAX_LAG    = 30;    // макс. подпрыг, px
       const LAG_FACTOR = 0.08;  // чувствительность к скорости
@@ -266,17 +302,24 @@ document.addEventListener("DOMContentLoaded", () => {
   setupWolf();
 
   window.addEventListener("resize", () => {
-    const currentWidth = window.innerWidth;
-    if (currentWidth !== lastWidth) {
-      lastWidth = currentWidth;
-
-      // легкий debounce
-      setTimeout(() => {
-        createAnimation();   
-        setupWolf();        
-      }, 50);
-      ScrollTrigger.refresh();
-      smoother?.refresh();
+    if (isMobile.any()) {
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+        setTimeout(() => {
+          createAnimation();   
+          setupWolf();        
+          ScrollTrigger.refresh();
+          smoother?.refresh();
+        }, 50);
+      }
+    } else {
+        setTimeout(() => {
+          createAnimation();   
+          setupWolf();        
+          ScrollTrigger.refresh();
+          smoother?.refresh();
+        }, 50);
     }
   });
 });
