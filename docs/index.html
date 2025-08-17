@@ -11,8 +11,8 @@
 		<link rel="preload" href="./assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>GONZO Kazky | Home</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1755361870160"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755361870160">
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1755433440861"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755433440861">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -21,19 +21,39 @@
 					<div class="logo-main__picture">
 						<picture>
 							<source media="(max-width: 600px)" srcset="./assets/img/main/logo-600.webp 1x,./assets/img/main/logo-600-2x.webp 2x,./assets/img/main/logo-600-3x.webp 3x" type="image/webp">
+							<source media="(max-width: 320px)" srcset="./assets/img/main/logo-320.webp 1x,./assets/img/main/logo-320-2x.webp 2x,./assets/img/main/logo-320-3x.webp 3x" type="image/webp">
 							<img width="406" height="152" alt="logo Gonzo" src="./assets/img/main/logo.webp" srcset="./assets/img/main/logo.webp 1x,./assets/img/main/logo-2x.webp 2x,./assets/img/main/logo-3x.webp 3x">
 						</picture>
 					</div>
 				</div>
 			</div>
 			<div class="shadow shadow--top"></div>
+			<!-- <div class="shadow shadow--bottom"></div> -->
 			<main id="smooth-wrapper" class="page page--home">
 				<div id="smooth-content">
+					<div class="wolf">
+						<div class="wolf__container">
+							<div class="wolf__body">
+								<div class="wolf__cord"></div>
+								<div class="wolf__item wolf__item--over">
+									<picture>
+										<img width="206" height="488" alt="Image" src="./assets/img/main/wolf-over.webp" srcset="./assets/img/main/wolf-over.webp 1x,./assets/img/main/wolf-over-2x.webp 2x,./assets/img/main/wolf-over-3x.webp 3x">
+									</picture>
+								</div>
+								<div class="wolf__item wolf__item--under">
+									<picture>
+										<img width="206" height="488" alt="Image" src="./assets/img/main/wolf-under.webp" srcset="./assets/img/main/wolf-under.webp 1x,./assets/img/main/wolf-under-2x.webp 2x,./assets/img/main/wolf-under-3x.webp 3x">
+									</picture>
+								</div>
+							</div>
+						</div>
+					</div>
 					<section class="hero">
 						<div data-speed="0.5" class="hero__picture">
 							<picture>
 								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-1200.webp 1x,./assets/img/main/hero-1200-2x.webp 2x,./assets/img/main/hero-1200-3x.webp 3x" type="image/webp">
 								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-600.webp 1x,./assets/img/main/hero-600-2x.webp 2x,./assets/img/main/hero-600-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/hero-320.webp 1x,./assets/img/main/hero-320-2x.webp 2x,./assets/img/main/hero-320-3x.webp 3x" type="image/webp">
 								<img class="ibg" width="1440" height="800" alt="на фоні холмів по центру на високій горі розташований старовинний замок" src="./assets/img/main/hero.webp" srcset="./assets/img/main/hero.webp 1x,./assets/img/main/hero-2x.webp 2x,./assets/img/main/hero-3x.webp 3x">
 							</picture>
 						</div>
@@ -42,7 +62,8 @@
 								<div data-speed="clamp(0.8)" class="packs-hero__picture">
 									<picture>
 										<source media="(max-width: 600px)" srcset="./assets/img/main/packs-hero-600.webp 1x,./assets/img/main/packs-hero-600-2x.webp 2x,./assets/img/main/packs-hero-600-3x.webp 3x" type="image/webp">
-										<img class="ibg" width="516" height="313" alt="Три пачки Gonzo" decoding="async" fetchpriority="high" src="./assets/img/main/packs-hero.webp" srcset="./assets/img/main/packs-hero.webp 1x,./assets/img/main/packs-hero-2x.webp 2x,./assets/img/main/packs-hero-3x.webp 3x">
+										<source media="(max-width: 320px)" srcset="./assets/img/main/packs-hero-320.webp 1x,./assets/img/main/packs-hero-320-2x.webp 2x,./assets/img/main/packs-hero-320-3x.webp 3x" type="image/webp">
+										<img class="ibg" width="516" height="313" decoding="async" fetchpriority="high" alt="Три пачки Gonzo" src="./assets/img/main/packs-hero.webp" srcset="./assets/img/main/packs-hero.webp 1x,./assets/img/main/packs-hero-2x.webp 2x,./assets/img/main/packs-hero-3x.webp 3x">
 									</picture>
 								</div>
 							</div>
@@ -52,7 +73,7 @@
 										Проведи експертну оцінку смачності наших снеків та вигравай чарівний бокс із подарунками!
 									</p>
 								</div>
-								<a href="test.html" data-fls-btn="" class="cta-hero__btn btn btn--a">
+								<a href="test.html" data-fls-btn="" class="cta-hero__btn btn btn--a" aria-label="на сторінку теста">
 									<span>Пройти тест</span>
 								</a>
 							</div>
@@ -80,39 +101,82 @@
 								</div>
 							</div>
 						</div>
-						<div class="shadow shadow--bottom"></div>
+						<!-- <div class="shadow shadow--bottom"></div> -->
 					</section>
 					<section class="section-2">
 						<div class="section-2__picture">
 							<picture>
 								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-2-1200.webp 1x,./assets/img/main/section-2-1200-2x.webp 2x,./assets/img/main/section-2-1200-3x.webp 3x" type="image/webp">
 								<source media="(max-width: 600px)" srcset="./assets/img/main/section-2-600.webp 1x,./assets/img/main/section-2-600-2x.webp 2x,./assets/img/main/section-2-600-3x.webp 3x" type="image/webp">
-								<img loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-2.webp" srcset="./assets/img/main/section-2.webp 1x,./assets/img/main/section-2-2x.webp 2x,./assets/img/main/section-2-3x.webp 3x">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-2-320.webp 1x,./assets/img/main/section-2-320-2x.webp 2x,./assets/img/main/section-2-320-3x.webp 3x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-2.webp" srcset="./assets/img/main/section-2.webp 1x,./assets/img/main/section-2-2x.webp 2x,./assets/img/main/section-2-3x.webp 3x">
 							</picture>
 						</div>
 						<div class="section-2__container"></div>
-						<div class="shadow shadow--topnext"></div>
-						<div class="shadow shadow--bottom"></div>
+						<!--
+<div class="shadow shadow--topnext"></div>
+<div class="shadow shadow--bottom"></div>
+-->
 					</section>
 					<section class="section-3">
+						<div class="section-3__picture">
+							<picture>
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-3-1200.webp 1x,./assets/img/main/section-3-1200-2x.webp 2x,./assets/img/main/section-3-1200-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-3-600.webp 1x,./assets/img/main/section-3-600-2x.webp 2x,./assets/img/main/section-3-600-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-3-320.webp 1x,./assets/img/main/section-3-320-2x.webp 2x,./assets/img/main/section-3-320-3x.webp 3x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-3.webp" srcset="./assets/img/main/section-3.webp 1x,./assets/img/main/section-3-2x.webp 2x,./assets/img/main/section-3-3x.webp 3x">
+							</picture>
+						</div>
 						<div class="section-3__container"></div>
-						<div class="shadow shadow--topnext"></div>
-						<div class="shadow shadow--bottom"></div>
+						<!--
+<div class="shadow shadow--topnext"></div>
+<div class="shadow shadow--bottom"></div>
+-->
 					</section>
 					<section class="section-4">
+						<div class="section-4__picture">
+							<picture>
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-4-1200.webp 1x,./assets/img/main/section-4-1200-2x.webp 2x,./assets/img/main/section-4-1200-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-4-600.webp 1x,./assets/img/main/section-4-600-2x.webp 2x,./assets/img/main/section-4-600-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-4-320.webp 1x,./assets/img/main/section-4-320-2x.webp 2x,./assets/img/main/section-4-320-3x.webp 3x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-4.webp" srcset="./assets/img/main/section-4.webp 1x,./assets/img/main/section-4-2x.webp 2x,./assets/img/main/section-4-3x.webp 3x">
+							</picture>
+						</div>
 						<div class="section-4__container"></div>
-						<div class="shadow shadow--topnext"></div>
-						<div class="shadow shadow--bottom"></div>
+						<!--
+<div class="shadow shadow--topnext"></div>
+<div class="shadow shadow--bottom"></div>
+-->
 					</section>
 					<section class="section-5">
+						<div class="section-5__picture">
+							<picture>
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-5-1200.webp 1x,./assets/img/main/section-5-1200-2x.webp 2x,./assets/img/main/section-5-1200-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-5-600.webp 1x,./assets/img/main/section-5-600-2x.webp 2x,./assets/img/main/section-5-600-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-5-320.webp 1x,./assets/img/main/section-5-320-2x.webp 2x,./assets/img/main/section-5-320-3x.webp 3x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-5.webp" srcset="./assets/img/main/section-5.webp 1x,./assets/img/main/section-5-2x.webp 2x,./assets/img/main/section-5-3x.webp 3x">
+							</picture>
+						</div>
 						<div class="section-5__container"></div>
-						<div class="shadow shadow--topnext"></div>
-						<div class="shadow shadow--bottom"></div>
+						<!--
+<div class="shadow shadow--topnext"></div>
+<div class="shadow shadow--bottom"></div>
+-->
 					</section>
 					<section class="section-6">
+						<div class="section-6__picture">
+							<picture>
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-6-1200.webp 1x,./assets/img/main/section-6-1200-2x.webp 2x,./assets/img/main/section-6-1200-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-6-600.webp 1x,./assets/img/main/section-6-600-2x.webp 2x,./assets/img/main/section-6-600-3x.webp 3x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-6-320.webp 1x,./assets/img/main/section-6-320-2x.webp 2x,./assets/img/main/section-6-320-3x.webp 3x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-6.webp" srcset="./assets/img/main/section-6.webp 1x,./assets/img/main/section-6-2x.webp 2x,./assets/img/main/section-6-3x.webp 3x">
+							</picture>
+						</div>
 						<div class="section-6__container"></div>
-						<div class="shadow shadow--topnext"></div>
-						<div class="shadow shadow--bottom"></div>
+						<!--
+<div class="shadow shadow--topnext"></div>
+<div class="shadow shadow--bottom"></div>
+-->
 					</section>
 				</div>
 			</main>

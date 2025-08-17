@@ -108,13 +108,14 @@ section {
   min-height: 100svh;
   overflow: hidden;
   position: relative;
+	  padding-block: 50px;
+  display: flex;
+  align-items: center;
   [class*="__container"]{
     position: relative;
     z-index: 3;
+		width: 100%;
   }
-	&:not(:first-child) {
-		z-index: 3;
-	}
 }
 
 body {
@@ -208,17 +209,13 @@ body {
 		transform: translate(-50%,0);
 		width: 200%;
 		height: 100%;
-		border-radius: 100%;
-		// background-color: #090203;
-		// filter: blur(50px);
+		// border-radius: 100%;
 		  background:
       radial-gradient(ellipse 85% 50% at 50% 50%,
         rgba(9,2,3,1) 0 30%,
         rgba(9,2,3,0.3) 65%,
         rgba(9,2,3,0.00) 80%
       );
-    // mask: 
-		// radial-gradient(ellipse 86% 51% at 50% 50%, #000 34%, transparent 80%);
 		@media (min-width:toEm($mobile)){
 			 width: 135%; 
 		}

@@ -65,18 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-    const sectionTwoPricture = document.querySelector(".section-2__picture");
-    if (sectionTwoPricture) {
-      gsap.to(sectionTwoPricture, {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".section-2",
-          start: "top bottom",
-          end: "top 40%",
-          scrub: 1
-        }
-      });
-    }
     if (mm) mm.revert();
     mm = gsap.matchMedia();
     mm.add(
@@ -130,13 +118,122 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   }
+  function setupWolf() {
+    const wolf = document.querySelector(".wolf");
+    const wolfItems = document.querySelectorAll(".wolf__item");
+    const sec2 = document.querySelector(".section-2");
+    const sections = Array.from(document.querySelectorAll("section"));
+    if (!wolf || !sec2 || sections.length < 3 || wolfItems.length === 0) return;
+    const sec2Index = sections.indexOf(sec2);
+    const lastIndex = sections.length - 1;
+    const untilIndex = Math.max(sec2Index, lastIndex - 1);
+    const sumHeight = sections.slice(sec2Index, untilIndex + 1).reduce((acc, el) => acc + el.getBoundingClientRect().height, 0);
+    const sec2Top = sec2.offsetTop;
+    gsap.set(wolf, {
+      top: sec2Top,
+      height: sumHeight
+    });
+    const maxY = () => Math.max(0, wolf.offsetHeight - window.innerHeight);
+    if (maxY() === 0) {
+      gsap.set(wolfItems, { y: 0 });
+      ScrollTrigger.getAll().filter((t) => t.vars?.id === "wolfItemsScroll").forEach((t) => t.kill());
+      return;
+    }
+    ScrollTrigger.getAll().filter((t) => t.vars?.id === "wolfItemsScroll").forEach((t) => t.kill());
+    gsap.set(wolfItems, { y: 0 });
+    {
+      const REST_VH = 0.1;
+      const END_VH = 0.3;
+      const END_ZONE = 0.25;
+      const SMOOTH = 0.06;
+      const MAX_LAG = 30;
+      const LAG_FACTOR = 0.08;
+      const endEase = gsap.parseEase("power2.out");
+      const maxY2 = () => Math.max(0, wolf.offsetHeight - window.innerHeight);
+      const restOffsetAt = (progress) => {
+        const t = gsap.utils.clamp(0, 1, (progress - (1 - END_ZONE)) / END_ZONE);
+        const vh = gsap.utils.interpolate(REST_VH, END_VH, endEase(t));
+        return window.innerHeight * vh;
+      };
+      ScrollTrigger.getAll().filter((t) => t.vars?.id === "wolfItemsScroll").forEach((t) => t.kill());
+      if (wolf._wolfTick) {
+        gsap.ticker.remove(wolf._wolfTick);
+        wolf._wolfTick = null;
+      }
+      gsap.set(wolfItems, { y: 0 });
+      const setY = gsap.quickSetter(wolfItems, "y", "px");
+      const clampLag = gsap.utils.clamp(-MAX_LAG, MAX_LAG);
+      let currentBase = 0;
+      let targetLag = 0;
+      let currentY = 0;
+      let targetY = 0;
+      const tick = () => {
+        currentY += (targetY - currentY) * SMOOTH;
+        setY(currentY);
+      };
+      wolf._wolfTick = tick;
+      gsap.ticker.add(tick);
+      ScrollTrigger.create({
+        id: "wolfItemsScroll",
+        trigger: wolf,
+        start: "top 20%",
+        end: () => `+=${maxY2()}`,
+        scrub: 1,
+        scroller: smoother.scrollContainer,
+        invalidateOnRefresh: true,
+        // markers: true,
+        onRefresh(self) {
+          currentBase = 0;
+          targetLag = 0;
+          currentY = restOffsetAt(0);
+          targetY = currentY;
+          setY(currentY);
+        },
+        onUpdate(self) {
+          const progress = self.progress;
+          currentBase = progress * maxY2();
+          const rest = restOffsetAt(progress);
+          const v = self.getVelocity();
+          targetLag = clampLag(-v * LAG_FACTOR);
+          targetY = currentBase + rest + targetLag;
+        },
+        onKill() {
+          if (wolf._wolfTick) {
+            gsap.ticker.remove(wolf._wolfTick);
+            wolf._wolfTick = null;
+          }
+        }
+      });
+      ScrollTrigger.create({
+        id: "wolfItemsFade",
+        trigger: wolf,
+        start: () => `bottom-=${200} bottom`,
+        // когда до конца wolf остаётся 100px
+        end: "bottom bottom",
+        // конец трека
+        scrub: 1,
+        scroller: smoother.scrollContainer,
+        invalidateOnRefresh: true,
+        // markers: true,
+        onUpdate(self) {
+          const fade = 1 - self.progress;
+          gsap.to(wolfItems, { opacity: fade, overwrite: "auto", duration: 0.1 });
+        },
+        onRefresh(self) {
+          gsap.set(wolfItems, { opacity: 1 });
+        }
+      });
+    }
+  }
   createAnimation();
+  setupWolf();
   window.addEventListener("resize", () => {
     const currentWidth = window.innerWidth;
     if (currentWidth !== lastWidth) {
       lastWidth = currentWidth;
       setTimeout(() => {
         createAnimation();
+        setupWolf();
       }, 50);
       ScrollTrigger.refresh();
       smoother?.refresh();
