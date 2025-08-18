@@ -28,8 +28,11 @@
 		</div>
 
 		<section class="hero">
-			<div data-speed="0.5" class="hero__picture">
-				<img class="ibg" src="@img/main/hero.jpg" width="1440" height="800" alt="на фоні холмів по центру на високій горі розташований старовинний замок">
+			<div data-speed="0.2" class="hero__picture hero__picture--1">
+				<img class="ibg" src="@img/main/hero-mounts.jpg" width="1440" height="800" alt="головний фон багато зелених холмів та синє небо з поодинокими хмарами">
+			</div>
+			<div data-speed="0.4" class="hero__picture hero__picture--2">
+				<img class="ibg" src="@img/main/hero-castle.png" width="1440" height="800" alt="на фоні холмів по центру на високій горі розташований старовинний замок">
 			</div>
 			<div data-speed="1.5" class="hero__container">
 				<div class="hero__packs packs-hero">
@@ -71,6 +74,17 @@
 				<img data-speed="0.5" loading="lazy" class="ibg" src="@img/main/section-2.jpg" width="1440" height="800" alt="Image">
 			</div>
 			<div class="section-2__container">
+				<div class="section-2__shacks">
+					<picture>
+						<source srcset="@img/snacks/smacks-2-pc.png" media="(min-width: 51.311em)" type="image/webp">
+						<source srcset="@img/snacks/smacks-2-mb.png" media="(max-width: 51.311em)" type="image/webp">
+						<img class="ibg" data-fls-image-ignore src="@img/snacks/smacks-2-pc.png" width="1440" height="800"  alt="золотисті снеки що розлітаються по екрану">
+					</picture>
+				</div>
+				<div class="section-2__pictures">
+					<img class="section-2__women" loading="lazy" src="@img/people/women.png" width="252" height="333" alt="казкова жінка в червоному плащі">
+					<img class="section-2__men" loading="lazy" src="@img/people/men.png" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо">
+				</div>
 				<div data-speed="1.2" class="section-2__body body-sections">
 					<div class="body-sections__banner banner">
 						<div class="banner__text text-banner">
@@ -105,8 +119,12 @@
 			<div class="section-3__picture">
 				<img data-speed="0.5" loading="lazy" class="ibg" src="@img/main/section-3.jpg" width="1440" height="800" alt="Image">
 			</div>
+			<div data-speed="0.65" class="section-3__stars stars-section"></div>
 			<div class="section-3__container">
-				<div data-speed="1.2" class="section-3__body body-sections">
+				<div class="section-3__women">
+					<img class="ibg" src="@img/people/three-women.png" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo">
+				</div>
+				<div data-speed="1.1" class="section-3__body body-sections">
 					<div class="body-sections__banner banner">
 						<div class="banner__text text-banner">
 							<p>Казкова смачність Gonzo
@@ -139,7 +157,22 @@
 				<img data-speed="0.5" loading="lazy" class="ibg" src="@img/main/section-4.jpg" width="1440" height="800" alt="Image">
 			</div>
 			<div class="section-4__container">
-				<div data-speed="1.2" class="section-4__body body-sections">
+				<div class="section-4__images">
+					<img data-speed="clamp(0.9)" class="section-4__fairy" src="@img/people/fairy.png" loading="lazy" width="192" height="458" alt="фея стоїть біля котла та готує чипси Гонзо" class="section-4__fairy">
+					<div class="section-4__cauldron cauldron">
+						<img class="cauldron__under" loading="lazy" src="@img/cauldron/cauldron.png" width="490" height="613" alt="котел в якому обсмажуються чипси Гонзо">
+						
+						<img class="cauldron__snacks" loading="lazy" src="@img/cauldron/snack-group.png" width="554" height="488" alt="обсмажені чипси Гонзо анімовано випригують із котла">
+
+						<img class="cauldron__snack cauldron__snack--1" loading="lazy" src="@img/cauldron/snack-1.png" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла">
+						<img class="cauldron__snack cauldron__snack--2" loading="lazy" src="@img/cauldron/snack-2.png" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла">
+						<img class="cauldron__snack cauldron__snack--3" loading="lazy" src="@img/cauldron/snack-3.png" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла">
+						<img class="cauldron__snack cauldron__snack--4" loading="lazy" src="@img/cauldron/snack-4.png" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла">
+						
+						<img class="cauldron__over" loading="lazy" aria-hidden="true" src="@img/cauldron/cauldron-over.png" width="490" height="613" alt="котел">
+					</div>
+				</div>
+				<div data-speed="1.1" class="section-4__body body-sections">
 					<div class="body-sections__banner banner">
 						<div class="banner__text text-banner">
 							<p>Казкова смачність Gonzo

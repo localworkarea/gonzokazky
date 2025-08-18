@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   let mm; 
+  let mm2; 
   let lastWidth = window.innerWidth;
 
   ScrollTrigger.refresh();
@@ -32,18 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
   function createAnimation() {
   //  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    const shadowTop = document.querySelector(".shadow--top");
-    if (shadowTop) {
-      gsap.to(shadowTop, {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "10% top",
-          end: "bottom top",
-          scrub: 1,
-        }
-      });
-    }
+    const shacksImg = document.querySelector(".section-2__shacks img");
+    const sec2 = document.querySelector(".section-2");
+    ScrollTrigger.create({
+      trigger: sec2,
+      start: "top 20%",
+      scroller: smoother?.scrollContainer,
+      onEnter()     { shacksImg.classList.add("_active"); },
+      // onLeaveBack() { shacksImg.classList.remove("_active"); },
+    });
+  
+    const cauldron = document.querySelector(".section-4__images");
+    const sec4 = document.querySelector(".section-4");
+    ScrollTrigger.create({
+      trigger: sec4,
+      start: "top 10%",
+      scroller: smoother?.scrollContainer,
+      onEnter()     { cauldron.classList.add("_active"); },
+      onLeaveBack() { cauldron.classList.remove("_active"); },
+    });
+
 
     const sections = Array.from(document.querySelectorAll('section')).filter((sec) => {
       const root = sec.querySelector('.body-sections');
@@ -54,31 +63,32 @@ document.addEventListener("DOMContentLoaded", () => {
       return banner && txt && btnWr;
     });
 
-    sections.forEach((sec) => {
-      const root  = sec.querySelector('.body-sections');
-      const banner = root.querySelector('.body-sections__banner');
-      const txt    = root.querySelector('.cta-sections__txt');
-      const btnWr  = root.querySelector('.cta-sections__btn-wr');
 
-
-      // Таймлайн для секции: последовательное появление
-      const tl = gsap.timeline({
-        defaults: {
-          duration: 0.1, 
-          ease: 'none'
-        },
-        scrollTrigger: {
-          trigger: sec,
-          start: 'top 60%',
-          end: 'top top',
-          scrub: 1, 
-        }
+    function buildSectionsTimelines({ start, end }) {
+      sections.forEach((sec, i) => {
+        const root   = sec.querySelector('.body-sections');
+        const banner = root.querySelector('.body-sections__banner');
+        const txt    = root.querySelector('.cta-sections__txt');
+        const btnWr  = root.querySelector('.cta-sections__btn-wr');
+      
+        const tl = gsap.timeline({
+          defaults: { duration: 1, stagger: 0.01, ease: 'none' },
+          scrollTrigger: {
+            id: `secReveal_${i}`,             // уникальный id на всякий случай
+            trigger: root,
+            start,
+            end,
+            scrub: 1,
+            scroller: smoother.scrollContainer, // важнo, ты используешь ScrollSmoother
+            // markers: true,
+          }
+        });
+      
+        tl.to(banner, { opacity: 1 })
+          .to(txt,    { opacity: 1 }, "-=0.1")
+          .to(btnWr,  { opacity: 1 }, "-=0.1");
       });
-
-      tl.to(banner, {opacity: 1,})
-        .to(txt,    {opacity: 1,})
-        .to(btnWr,  {opacity: 1,});
-    });
+    }
 
     // Чистим предыдущие matchMedia-анимации корректно
     if (mm) mm.revert();
@@ -86,17 +96,32 @@ document.addEventListener("DOMContentLoaded", () => {
     mm.add(
       {
         pc: "(min-width: 64.061em)", // 1024.98
-        mob: "(max-width: 64.061em)",
-        // mob: "(max-width: 51.311em)",
+        mob: "(max-width: 64.06em)",
+        tbMin: "(min-width: 51.311em)", // 820.98
+        tbMax: "(max-width: 51.31em)", // 820.98
       },
       (context) => {
-        const { pc, mob } = context.conditions;
+        const { pc, mob, tbMax, tbMin } = context.conditions;
         
         const logoMain = document.querySelector(".logo-main__picture");
+
+        const shadowTop = document.querySelector(".shadow--top");
+        if (shadowTop) {
+          gsap.to(shadowTop, {
+            opacity: 1,
+            scrollTrigger: {
+              trigger: ".hero",
+              start: "10% top",
+              end: "bottom top",
+              scrub: 1,
+              scroller: smoother.scrollContainer,
+            }
+          });
+        }
         
         // == for PC ======================
         if (pc) {
-          
+
           if (logoMain) {
             
             gsap.fromTo(logoMain,
@@ -126,20 +151,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // == for MOBILE ======================
         if (mob) {
-           gsap.to(logoMain, {
-              width: "133px",
-              scrollTrigger: {
-                trigger: ".hero",
-                start: "10% top",
-                end: "bottom 70%",
-                scrub: 1,
-              }
-            });
+            if (logoMain) {
+              gsap.to(logoMain, {
+                 width: "133px",
+                 scrollTrigger: {
+                   trigger: ".hero",
+                   start: "10% top",
+                   end: "bottom 70%",
+                   scrub: 1,
+                 }
+               });
+            }
         }
 
-        // Можно вернуть функцию очистки, если нужно что-то вручную снять
+        if (tbMin) {
+          buildSectionsTimelines({
+            start: "top 80%",
+            end:   "center center",
+          });
+        }
+        if (tbMax) {
+          buildSectionsTimelines({
+            start: "top 80%",
+            end:   "bottom bottom",
+          });
+        }
+
+        // функция очистки, если нужно что-то вручную снять
         return () => {
-          // cleanup if needed
+          // ....
         };
       }
     );
@@ -191,17 +231,18 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach(t => t.kill());
 
     // стартовые значения
-    gsap.set(wolfItems, { y: 0 });
+    // gsap.set(wolfItems, { y: 0 });
+    gsap.set(wolfItems, { y: 0, opacity: 0 });
 
     // === единая анимация для всех .wolf__item со «стояночной» позицией и лагом ===
 
     {
-      const REST_VH    = 0.1;  // базовая точка покоя (чуть ниже центра)
+      const REST_VH    = 0.15;  // базовая точка покоя 
       const END_VH     = 0.3;  // финальная точка покоя у конца трека (ниже)
       const END_ZONE   = 0.2;  // доля трека перед концом, где начинаем «опускать» (25%)
       const SMOOTH     = 0.06;  // сглаживание лерпом (0.06…0.18)
       const MAX_LAG    = 30;    // макс. подпрыг, px
-      const LAG_FACTOR = 0.08;  // чувствительность к скорости
+      const LAG_FACTOR = 0.05;  // чувствительность к скорости
       const endEase    = gsap.parseEase("power2.out"); // плавный спуск к END_VH
     
       const maxY = () => Math.max(0, wolf.offsetHeight - window.innerHeight);
@@ -222,7 +263,8 @@ document.addEventListener("DOMContentLoaded", () => {
         wolf._wolfTick = null;
       }
     
-      gsap.set(wolfItems, { y: 0 });
+      gsap.set(wolfItems, { y: 0, opacity: 0 });
+
       const setY = gsap.quickSetter(wolfItems, "y", "px");
       const clampLag = gsap.utils.clamp(-MAX_LAG, MAX_LAG);
     
@@ -248,12 +290,14 @@ document.addEventListener("DOMContentLoaded", () => {
         scroller: smoother.scrollContainer,
         invalidateOnRefresh: true,
         // markers: true,
+
         onRefresh(self) {
           currentBase = 0;
           targetLag   = 0;
-          currentY    = restOffsetAt(0);  // стартовая «точка покоя» в начале трека
+          currentY    = restOffsetAt(0); 
           targetY     = currentY;
           setY(currentY);
+
         },
         onUpdate(self) {
           const progress = self.progress;              // 0..1 по треку волка
@@ -272,6 +316,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       });
+
+
       // плавное исчезновение волка в конце (последние 100px трека)
       ScrollTrigger.create({
         id: "wolfItemsFade",
@@ -284,15 +330,65 @@ document.addEventListener("DOMContentLoaded", () => {
         // markers: true,
         onUpdate(self) {
           const fade = 1 - self.progress;
-          gsap.to(wolfItems, { opacity: fade, overwrite: "auto", duration: 0.1 });
+          gsap.to(wolfItems, { opacity: fade, overwrite: "auto", duration: 0.6 });
         },
-        onRefresh(self) {
-          gsap.set(wolfItems, { opacity: 1 });
-        }
       });
 
-    }
+      if (mm2) mm2.revert();
+      mm2 = gsap.matchMedia();
 
+      mm2.add(
+        {
+          pc: "(min-width: 51.312em)",   // ~821px и шире
+          mob: "(max-width: 51.311em)",  // до ~821px включительно
+        },
+        (context) => {
+          const { pc, mob } = context.conditions;
+        
+          // общий хелпер старта, чтобы не дублировать строки
+          const common = {
+            trigger: wolf,
+            end: () => `+=${maxY()}`,
+            scrub: 1,
+            scroller: smoother.scrollContainer,
+            invalidateOnRefresh: true,
+          };
+        
+          if (pc) {
+            ScrollTrigger.create({
+              id: "wolfItemsReveal_pc",
+              ...common,
+              start: "top 20%",
+              onEnter()     { gsap.to(wolfItems, { opacity: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" }); },
+              onLeaveBack() { gsap.to(wolfItems, { opacity: 0, duration: 0.6, ease: "power2.out", overwrite: "auto" }); },
+              onRefresh(self) {
+                const inRange = self.start <= self.scroll() && self.scroll() <= self.end;
+                gsap.set(wolfItems, { opacity: inRange ? 1 : 0 });
+              },
+            });
+          }
+        
+          if (mob) {
+            ScrollTrigger.create({
+              id: "wolfItemsReveal_mob",
+              ...common,
+              start: "top 0%",
+              onEnter()     { gsap.to(wolfItems, { opacity: 1, duration: 0.6, ease: "power2.out", overwrite: "auto" }); },
+              onLeaveBack() { gsap.to(wolfItems, { opacity: 0, duration: 0.6, ease: "power2.out", overwrite: "auto" }); },
+              onRefresh(self) {
+                const inRange = self.start <= self.scroll() && self.scroll() <= self.end;
+                gsap.set(wolfItems, { opacity: inRange ? 1 : 0 });
+              },
+            });
+          }
+        
+          // автоочистка всего, созданного в этом контексте
+          return () => {};
+        }
+      );
+
+
+    }
 
 
   }
@@ -300,6 +396,104 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createAnimation();
   setupWolf();
+
+
+
+
+  const starsBody = document.querySelector('.stars-section');
+  if (starsBody) {
+    const starsPosition = [
+      { x: 1170.5, y: 456.5 },
+      { x: 934.5, y: 553.5 },
+      { x: 860.5, y: 597.5 },
+      { x: 89.5, y: 535.5 },
+      { x: 44.5, y: 448.5 },
+      { x: 74.5, y: 400.5 },
+      { x: 23.5, y: 347.5 },
+      { x: 114.5, y: 279.5 },
+      { x: 5.5, y: 247.5 },
+      { x: 167.5, y: 94.5 },
+      { x: 92.5, y: 56.5 },
+      { x: 92.5, y: 133.5 },
+      { x: 235.5, y: 47.5 },
+      { x: 202.5, y: 126.5 },
+      { x: 188.5, y: 105.5 },
+      { x: 400.5, y: 91.5 },
+      { x: 346.5, y: 18.5 },
+      { x: 6.5, y: 412.5 },
+      { x: 20.5, y: 677.5 },
+      { x: 1288.5, y: 598.5 },
+      { x: 1177.5, y: 555.5 },
+      { x: 1043.5, y: 517.5 },
+      { x: 1224.5, y: 534.5 },
+      { x: 1139.5, y: 405.5 },
+      { x: 1190.5, y: 389.5 },
+      { x: 1303.5, y: 244.5 },
+      { x: 1221.5, y: 162.5 },
+      { x: 937.5, y: 405.5 },
+      { x: 863.5, y: 376.5 },
+      { x: 913.5, y: 160.5 },
+      { x: 412.5, y: 163.5 },
+      { x: 393.5, y: 218.5 },
+      { x: 845.5, y: 291.5 },
+      { x: 430.5, y: 279.5 },
+      { x: 885.5, y: 219.5 },
+      { x: 1242.5, y: 459.5 },
+      { x: 1142.5, y: 672.5 },
+      { x: 641.5, y: 657.5 },
+      { x: 491.5, y: 669.5 },
+      { x: 153.5, y: 417.5 },
+      { x: 21.5, y: 608.5 },
+      { x: 330.5, y: 34.5 },
+      { x: 282.5, y: 79.5 },
+      { x: 449.5, y: 27.5 },
+      { x: 667.5, y: 39.5 },
+      { x: 597.5, y: 30.5 },
+      { x: 873.5, y: 75.5 },
+      { x: 1083.5, y: 16.5 },
+      { x: 135.5, y: 20.5 },
+      { x: 22.5, y: 9.5 },
+      { x: 888.5, y: 478.5 },
+      { x: 921.5, y: 42.5 },
+      { x: 827.5, y: 5.5 },
+      { x: 899.5, y: 630.5 },
+      { x: 819.5, y: 669.5 },
+      { x: 170.5, y: 227.5 },
+      { x: 478.5, y: 552.5 },
+      { x: 980.5, y: 621.5 },
+      { x: 1321.5, y: 696.5 },
+      { x: 1054.5, y: 561.5 },
+      { x: 865.5, y: 502.5 },
+      { x: 1255.5, y: 389.5 },
+      { x: 1174.5, y: 161.5 },
+      { x: 1212.5, y: 139.5 },
+      { x: 1113.5, y: 72.5 },
+      { x: 998.5, y: 72.5 },
+      { x: 1193.5, y: 58.5 },
+      { x: 1239.5, y: 97.5 },
+      { x: 1285.5, y: 6.5 },
+      { x: 766.5, y: 60.5 },
+      { x: 686.5, y: 60.5 },
+      { x: 531.5, y: 57.5 },
+      { x: 441.5, y: 623.5 },
+      { x: 368.5, y: 644.5 },
+      { x: 170.5, y: 548.5 },
+      { x: 153.5, y: 478.5 },
+      { x: 1171.5, y: 593.5 }
+    ];
+
+     starsPosition.forEach((star, i) => {
+      const el = document.createElement('span');
+
+      el.style.top = `${star.y}px`;
+      el.style.left = `${star.x}px`;
+
+      el.style.animationDelay = `${Math.random() * 1.5}s`;
+      el.style.animationDuration = `${1 + Math.random() * 0.3}s`;
+
+      starsBody.appendChild(el);
+    });
+  }
 
   window.addEventListener("resize", () => {
     if (isMobile.any()) {

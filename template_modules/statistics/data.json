@@ -58,6 +58,12 @@
         "start": 1755439868105,
         "end": 1755442044404,
         "type": "build"
+      },
+      {
+        "date": "18.08.2025",
+        "start": 1755499872094,
+        "end": 1755533593209,
+        "type": "build"
       }
     ],
     "files": [
@@ -81,7 +87,9 @@
       "section-4.jpg",
       "section-5.jpg",
       "section-6.jpg",
-      "hero.jpg"
+      "hero.jpg",
+      "hero-castle.png",
+      "cauldron.png"
     ]
   }
 }

@@ -14,6 +14,13 @@
   &__picture {
     @extend %bgAbsolute;
 
+    &--1 {
+      z-index: 0;
+    }
+    &--2 {
+      z-index: 1;
+    }
+
     img {
       object-position: top;
 
@@ -278,6 +285,7 @@
 
 .wolf {
   position: absolute;
+  overflow: hidden;
   // inset: 0;
   top: 100vh;
   left: 0;
@@ -321,17 +329,23 @@
       background-image: url("@img/main/cord.png");
       background-repeat: repeat-y;
       background-position: top;
-
-      mask-image: linear-gradient(to bottom,
-        rgba(0,0,0,0) 0,
-        rgba(0,0,0,1) 200px,
-        rgba(0,0,0,1) calc(100% - 500px),
-        rgba(0,0,0,0) 100%);
       mask-repeat: no-repeat;
       mask-size: 100% 100%;
-
       width: 9.5px;
-      @media (min-width:$mobileSmall){
+      
+      mask-image: linear-gradient(to bottom,
+              rgba(0,0,0,0) 0,
+              rgba(0,0,0,0.1) 300px,
+              rgba(0,0,0,1) 400px,
+              rgba(0,0,0,1) calc(100% - 500px),
+              rgba(0,0,0,0) 100%);
+      @media (min-width:toEm($mobileSmall)){
+        
+      mask-image: linear-gradient(to bottom,
+                rgba(0,0,0,0) 0,
+                rgba(0,0,0,1) 200px,
+                rgba(0,0,0,1) calc(100% - 500px),
+                rgba(0,0,0,0) 100%);
         width: 11px;
       }
 		}
@@ -341,6 +355,8 @@
       position: absolute;
       top: 0;
       right: 0;
+
+      pointer-events: none;
 		}
 
 		// .wolf__item--over
@@ -358,7 +374,9 @@
 .body-sections {
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  @media (min-width:toEm(820.98)){
+    padding-top: 100px;
+  }
   @media (min-width:toEm(700.98)){
     align-items: center;
   }
@@ -431,8 +449,82 @@
 }
 
 
+%sectionPdd {
+  @media (max-width:toEm($mobileSmall)){
+     padding-block: 50px 150px; 
+  }
+}
 
 .section-2 {
+  @extend %sectionPdd;
+	// .section-2__shacks
+	&__shacks {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 125%;
+    @media (min-width:$mobileSmall){
+      top: 50%;
+      left: 50%;
+      width: 120%;
+    }
+    img {
+      transition: transform .65s ease;
+      transform: scale(0);
+      &._active {
+        transform: scale(1);
+      }
+    }
+	}
+	// .section-2__pictures
+	&__pictures {
+    @media (min-width:toEm(1200.98)){
+      left: 10%;
+    }
+    @media (max-width: toEm(1200.98)) and (min-width:toEm($tablet)){
+      left: 0;
+    }
+    @media (min-width:toEm($tablet)){
+      bottom: -3%;
+    }
+    @media (max-width:toEm($tablet)) and (min-width: toEm(820.98)) {
+      bottom: -10%;
+      left: -7%;
+    }
+    @media (min-width:toEm(820.98)){
+      position: absolute;
+    }
+    @media (max-width: toEm(820.98)){
+      position: relative;
+        top: 0;
+        max-width: max-content;
+        margin-inline: auto;
+        z-index: 0;
+        margin-top: 80px;
+    }
+	}
+
+	// .section-2__women
+	&__women {
+    @media (max-width:toEm($mobileSmall)){
+       width: 85%; 
+    }
+	}
+
+	// .section-2__men
+	&__men {
+    position: absolute;
+    top: -4%;
+    right: -17%;
+    z-index: 1;
+
+    @media (max-width:toEm($mobileSmall)){
+      width: 54%; 
+      top: -8%;
+      right: 1%;
+    }
+	}
 
   // .section-2__picture
   &__picture {
@@ -457,34 +549,259 @@
 
 
 .section-3 {
+   @extend %sectionPdd;
   // .section-3__picture
   &__picture {
     @extend %bgAbsolute;
     img {
     }
   }
+
+  // .section-3__stars
+  &__stars {
+  }
+  
   // .section-3__container
   &__container {}
+
+	// .section-3__women
+	&__women {
+    
+    @media (min-width:toEm(1440.98)){
+      left: 8%;
+    }
+    @media (max-width: toEm(1440.98)) and (min-width: toEm(1200.98)) {
+      left: 4%;
+    }
+    @media (max-width: toEm(1200.98)) and (min-width: toEm(992.98)) {
+      left: -6%;
+    }
+    @media (max-width: toEm(992.98)) and (min-width: toEm(820.98)) {
+      left: -12%;
+    }
+    @media (min-width:toEm(820.98)){
+      position: absolute;
+      z-index: 2;
+      bottom: -4%;
+    }
+    @media (max-width: toEm(820.98)){
+      margin-inline: auto;
+    }
+    @media (min-width:toEm($mobileSmall)){
+      max-width: 360px;
+    }
+	}
+
   // .section-3__body
   &__body {
+      @media (max-width:toEm($mobileSmall)){
+       margin-top: -40px; 
+    }
   }
 }
 
+
+.stars-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 4;
+  pointer-events: none;
+  width: 1440px;
+  height: 800px;
+  span {
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fffbf3;
+    box-shadow: 0 0 4px #fffbf3, 0 0 4px #fffbf3;
+     animation: starBlink infinite alternate ease-in-out;
+  }
+}
+
+
 .section-4 {
+   @media (max-width:toEm($mobileSmall)){
+     padding-block: 100px 150px; 
+  }
  // .section-4__picture
   &__picture {
     @extend %bgAbsolute;
     img {
+      @media (max-width:toEm($mobileSmall)){
+         object-position: 28%; 
+      }
     }
   }
   // .section-4__container
   &__container {}
+  
+  // .section-4__images
+  &__images {
+    pointer-events: none;
+    // border: 1px solid #fff;
+    max-width: 490px;
+    
+    @media (min-width:toEm(1440.98)){
+      left: 3%;
+    }
+    @media (max-width: toEm(1440.98)) and (min-width: toEm(1300.98)) {
+      left: -2%;
+    }
+    @media (max-width: toEm(1300.98)) and (min-width: toEm(1024.98)) {
+      left: -7%;
+    }
+    @media (max-width: toEm(1024.98)) and (min-width: toEm(820.98)) {
+      left: -10%;
+    }
+    @media (min-width:toEm(820.98)){
+      position: absolute;
+      z-index: 2;
+      bottom: -14%;  
+    }
+    @media (max-width: toEm(820.98)){
+      margin-inline: auto;
+      position: relative;
+    }
+    @media (max-width:toEm($mobileSmall)){
+      max-width: 100%;
+      left: 8%;
+      scale: 1.1;
+    }
+
+
+
+
+  }
+  
+  // .section-4__fairy
+  &__fairy {
+    position: absolute;
+    bottom: 13%;
+    left: 2%;
+    @media (max-width:toEm($mobileSmall)){
+       max-width: 40%; 
+    }
+  }
+  
+  // .section-4__cauldron
+  &__cauldron {
+  }
   // .section-4__body
   &__body {
+    position: relative;
+    @media (max-width: toEm(1300.98)) and (min-width: toEm(1024.98)) {
+      left: 4%;
+    }
+    @media (max-width: toEm(1024.98)) and (min-width: toEm(820.98)) {
+      left: 7%;
+    }
+    @media (max-width:toEm($mobileSmall)){
+       margin-top: -40px; 
+    }
+    .banner__text {
+      @media (min-width:toEm($mobileSmall)){
+        max-width: 70%;
+      }
+    }
   }
 }
 
+.cauldron {
+  position: relative;
+		// .cauldron__under
+		&__under {
+		}
+		// .cauldron__over
+		&__over {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+		}
+		// .cauldron__snacks
+		&__snacks {
+      position: absolute;
+      left: -4%;
+      bottom: 49%;
+      transform: scale(0);
+      transition: transform .4s ease;
+      transform-origin: 55% 100%;
+      ._active & {
+        transform: scale(1.15);
+      }
+		}
+		// .cauldron__snack
+		&__snack {
+      position: absolute;
+      transition: all .3s ease;
+		}
+		// .cauldron__snack--1
+		&__snack--1 {
+      left: 21%;
+      bottom: 40%;
+      @media (max-width:toEm($mobileSmall)){
+        max-width: 41%;
+        left: 24%;
+        bottom: 46%;
+      }
+      ._active & {
+        left: 2%;
+        bottom: 76%;
+        @media (max-width:toEm($mobileSmall)){
+          left: 8%;
+          bottom: 76%;
+        }
+      }
+		}
+		// .cauldron__snack--2
+		&__snack--2 {
+      left: 27%;
+      bottom: 36%;
+      @media (max-width:toEm($mobileSmall)){
+        max-width: 41%;
+        left: 31%;
+        bottom: 40%;
+      }
+      ._active & {
+        left: 31%;
+        bottom: 45%;
+        @media (max-width:toEm($mobileSmall)){
+          left: 35%;
+          bottom: 50%;
+        }
+      }
+    }
+		// .cauldron__snack--3
+		&__snack--3 {
+      // opacity: 0;
+      left: 26%;
+      bottom: 39%;
+      max-width: 35%;
+      ._active & {
+        left: 22%;
+        bottom: 43%;
+      }
+		}
+		// .cauldron__snack--4
+		&__snack--4 {
+      // opacity: 0;
+      left: 33%;
+      bottom: 38%;
+      max-width: 38%;
+      ._active & {
+        left: 37%;
+        bottom: 42%;
+        transform: rotate(20deg);
+      }
+		}
+}
+
+
 .section-5 {
+   @extend %sectionPdd;
  // .section-5__picture
   &__picture {
     @extend %bgAbsolute;

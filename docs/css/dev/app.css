@@ -302,7 +302,7 @@ body::-webkit-scrollbar {
 
 @keyframes starBlink {
   from {
-    opacity: 0.3;
+    opacity: 0.1;
   }
   to {
     opacity: 1;
@@ -315,6 +315,12 @@ body::-webkit-scrollbar {
   pointer-events: none;
 }
 
+.hero__picture--1 {
+  z-index: 0;
+}
+.hero__picture--2 {
+  z-index: 1;
+}
 .hero__picture img {
   object-position: top;
 }
@@ -390,6 +396,7 @@ body::-webkit-scrollbar {
 
 .wolf {
   position: absolute;
+  overflow: hidden;
   top: 100vh;
   left: 0;
   right: 0;
@@ -419,15 +426,16 @@ body::-webkit-scrollbar {
   background-image: url("../assets/img/main/cord.webp");
   background-repeat: repeat-y;
   background-position: top;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgb(0, 0, 0) 12.5rem, rgb(0, 0, 0) calc(100% - 31.25rem), rgba(0, 0, 0, 0) 100%);
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   width: 0.59375rem;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 18.75rem, rgb(0, 0, 0) 25rem, rgb(0, 0, 0) calc(100% - 31.25rem), rgba(0, 0, 0, 0) 100%);
 }
 .wolf__item {
   position: absolute;
   top: 0;
   right: 0;
+  pointer-events: none;
 }
 .wolf__item--over {
   z-index: 3;
@@ -439,7 +447,6 @@ body::-webkit-scrollbar {
 .body-sections {
   display: flex;
   flex-direction: column;
-  padding-top: 6.25rem;
 }
 .body-sections__banner {
   opacity: 0;
@@ -470,6 +477,129 @@ body::-webkit-scrollbar {
 .cta-sections__btn {
   min-width: 18.125rem;
 }
+
+.section-2__shacks {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125%;
+}
+.section-2__shacks img {
+  transition: transform 0.65s ease;
+  transform: scale(0);
+}
+.section-2__shacks img._active {
+  transform: scale(1);
+}
+.section-2__men {
+  position: absolute;
+  top: -4%;
+  right: -17%;
+  z-index: 1;
+}
+
+.stars-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
+  width: 90rem;
+  height: 50rem;
+}
+.stars-section span {
+  position: absolute;
+  display: block;
+  width: 0.1875rem;
+  height: 0.1875rem;
+  border-radius: 50%;
+  background-color: #fffbf3;
+  box-shadow: 0 0 0.25rem #fffbf3, 0 0 0.25rem #fffbf3;
+  animation: starBlink infinite alternate ease-in-out;
+}
+.section-4__images {
+  pointer-events: none;
+  max-width: 30.625rem;
+}
+.section-4__fairy {
+  position: absolute;
+  bottom: 13%;
+  left: 2%;
+}
+.section-4__body {
+  position: relative;
+}
+
+.cauldron {
+  position: relative;
+}
+.cauldron__over {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.cauldron__snacks {
+  position: absolute;
+  left: -4%;
+  bottom: 49%;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+  transform-origin: 55% 100%;
+}
+._active .cauldron__snacks {
+  transform: scale(1.15);
+}
+.cauldron__snack {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.cauldron__snack--1 {
+  left: 21%;
+  bottom: 40%;
+}
+._active .cauldron__snack--1 {
+  left: 2%;
+  bottom: 76%;
+}
+.cauldron__snack--2 {
+  left: 27%;
+  bottom: 36%;
+}
+._active .cauldron__snack--2 {
+  left: 31%;
+  bottom: 45%;
+}
+.cauldron__snack--3 {
+  left: 26%;
+  bottom: 39%;
+  max-width: 35%;
+}
+._active .cauldron__snack--3 {
+  left: 22%;
+  bottom: 43%;
+}
+.cauldron__snack--4 {
+  left: 33%;
+  bottom: 38%;
+  max-width: 38%;
+}
+._active .cauldron__snack--4 {
+  left: 37%;
+  bottom: 42%;
+  transform: rotate(20deg);
+}
+@media (max-width: 90.06125em) and (min-width: 81.31125em) {
+  .section-4__images {
+    left: -2%;
+  }
+}
+@media (max-width: 90.06125em) and (min-width: 75.06125em) {
+  .section-3__women {
+    left: 4%;
+  }
+}
 @media (max-width: 90.06125em) and (min-width: 51.31125em) {
   .hero__wolf {
     height: 56vh;
@@ -485,6 +615,22 @@ body::-webkit-scrollbar {
     right: 6.25rem;
   }
 }
+@media (max-width: 81.31125em) and (min-width: 64.06125em) {
+  .section-4__images {
+    left: -7%;
+  }
+  .section-4__body {
+    left: 4%;
+  }
+}
+@media (max-width: 75.06125em) and (min-width: 62.06125em) {
+  .section-2__pictures {
+    left: 0;
+  }
+  .section-3__women {
+    left: -6%;
+  }
+}
 @media (max-width: 64.06125em) and (min-width: 51.31125em) {
   .packs-hero__picture {
     position: absolute;
@@ -492,11 +638,26 @@ body::-webkit-scrollbar {
     transform: translate(0, -50%);
     width: 28.125rem;
   }
+  .section-4__images {
+    left: -10%;
+  }
+  .section-4__body {
+    left: 7%;
+  }
 }
 @media (max-width: 64.06125em) {
   .logo-main__picture {
     margin-inline: auto;
     max-width: 11.875rem;
+  }
+}
+@media (max-width: 62.06125em) and (min-width: 51.31125em) {
+  .section-2__pictures {
+    bottom: -10%;
+    left: -7%;
+  }
+  .section-3__women {
+    left: -12%;
   }
 }
 @media (max-width: 62.06125em) {
@@ -542,6 +703,21 @@ body::-webkit-scrollbar {
   .cta-hero__txt {
     margin-inline: auto;
   }
+  .section-2__pictures {
+    position: relative;
+    top: 0;
+    max-width: max-content;
+    margin-inline: auto;
+    z-index: 0;
+    margin-top: 5rem;
+  }
+  .section-3__women {
+    margin-inline: auto;
+  }
+  .section-4__images {
+    margin-inline: auto;
+    position: relative;
+  }
 }
 @media (max-width: 43.81125em) {
   .body-sections__banner .banner__text {
@@ -573,6 +749,55 @@ body::-webkit-scrollbar {
     max-width: 100%;
     margin-bottom: 1.25rem;
   }
+  .section-5, .section-3, .section-2 {
+    padding-block: 3.125rem 9.375rem;
+  }
+  .section-2__women {
+    width: 85%;
+  }
+  .section-2__men {
+    width: 54%;
+    top: -8%;
+    right: 1%;
+  }
+  .section-3__body {
+    margin-top: -2.5rem;
+  }
+  .section-4 {
+    padding-block: 6.25rem 9.375rem;
+  }
+  .section-4__picture img {
+    object-position: 28%;
+  }
+  .section-4__images {
+    max-width: 100%;
+    left: 8%;
+    scale: 1.1;
+  }
+  .section-4__fairy {
+    max-width: 40%;
+  }
+  .section-4__body {
+    margin-top: -2.5rem;
+  }
+  .cauldron__snack--1 {
+    max-width: 41%;
+    left: 24%;
+    bottom: 46%;
+  }
+  ._active .cauldron__snack--1 {
+    left: 8%;
+    bottom: 76%;
+  }
+  .cauldron__snack--2 {
+    max-width: 41%;
+    left: 31%;
+    bottom: 40%;
+  }
+  ._active .cauldron__snack--2 {
+    left: 35%;
+    bottom: 50%;
+  }
 }
 @media (max-width: 20em) {
   .shadow {
@@ -601,11 +826,13 @@ body::-webkit-scrollbar {
   .banner {
     padding: 2.1875rem 1.6875rem;
   }
-  .wolf__cord {
-    width: 0.6875rem;
-  }
   .body-sections__banner .banner__text {
     max-width: 28.125rem;
+  }
+  .section-2__shacks {
+    top: 50%;
+    left: 50%;
+    width: 120%;
   }
 }
 @media (min-width: 20em) and (max-width: 90em) {
@@ -654,8 +881,18 @@ body::-webkit-scrollbar {
   .wolf__body {
     width: 12.875rem;
   }
+  .wolf__cord {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgb(0, 0, 0) 12.5rem, rgb(0, 0, 0) calc(100% - 31.25rem), rgba(0, 0, 0, 0) 100%);
+    width: 0.6875rem;
+  }
   .cta-sections__txt {
     max-width: 26.5625rem;
+  }
+  .section-3__women {
+    max-width: 22.5rem;
+  }
+  .section-4__body .banner__text {
+    max-width: 70%;
   }
 }
 @media (min-width: 43.81125em) {
@@ -695,11 +932,30 @@ body::-webkit-scrollbar {
     right: -28%;
     margin-left: auto;
   }
+  .body-sections {
+    padding-top: 6.25rem;
+  }
+  .section-2__pictures {
+    position: absolute;
+  }
+  .section-3__women {
+    position: absolute;
+    z-index: 2;
+    bottom: -4%;
+  }
+  .section-4__images {
+    position: absolute;
+    z-index: 2;
+    bottom: -14%;
+  }
 }
 @media (min-width: 62.06125em) {
   .hero__right {
     padding-top: 10vh;
     padding-right: 3.125rem;
+  }
+  .section-2__pictures {
+    bottom: -3%;
   }
 }
 @media (min-width: 64.06125em) {
@@ -712,6 +968,11 @@ body::-webkit-scrollbar {
     max-width: 32.25rem;
     margin-left: auto;
     right: -2%;
+  }
+}
+@media (min-width: 75.06125em) {
+  .section-2__pictures {
+    left: 10%;
   }
 }
 @media (min-width: 85.43625em) {
@@ -748,6 +1009,12 @@ body::-webkit-scrollbar {
   .hero__wolf {
     min-height: 28.0625rem;
     height: 60vh;
+  }
+  .section-3__women {
+    left: 8%;
+  }
+  .section-4__images {
+    left: 3%;
   }
 }
 @media (min-width: 120em) {
