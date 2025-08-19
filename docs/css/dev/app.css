@@ -154,11 +154,6 @@ body::-webkit-scrollbar {
   left: 0;
   right: 0;
   pointer-events: none;
-  opacity: 0;
-}
-[data-fls-loaded] .logo-main {
-  opacity: 1;
-  transition: opacity 0.15s ease;
 }
 .logo-main__wrapper {
   width: 100%;

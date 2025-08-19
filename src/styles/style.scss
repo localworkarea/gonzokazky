@@ -144,11 +144,11 @@ body {
   right: 0;
 	pointer-events: none;
 	
-	opacity: 0;
-  [data-fls-loaded] & {
-    opacity: 1;
-    transition: opacity .15s ease;
-  }
+	// opacity: 0;
+  // [data-fls-loaded] & {
+  //   opacity: 1;
+  //   transition: opacity .15s ease;
+  // }
   // .logo-main__wrapper
 	&__wrapper {
     width: 100%;
