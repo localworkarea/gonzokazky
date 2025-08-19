@@ -43,7 +43,7 @@ export default {
 	styles: {
 		tailwindcss: false,
 		pxtorem: true,
-		critical: true,
+		critical: false,
 		codesplit: true,
 		devfiles: true,
 	},
