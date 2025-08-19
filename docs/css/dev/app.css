@@ -98,11 +98,6 @@ body {
   touch-action: none;
   overscroll-behavior: none;
 }
-[data-fls-loaded] body {
-  opacity: 1;
-  transition: opacity 0.15s;
-}
-
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -159,6 +154,11 @@ body::-webkit-scrollbar {
   left: 0;
   right: 0;
   pointer-events: none;
+  opacity: 0;
+}
+[data-fls-loaded] .logo-main {
+  opacity: 1;
+  transition: opacity 0.15s ease;
 }
 .logo-main__wrapper {
   width: 100%;

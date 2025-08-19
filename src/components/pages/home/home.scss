@@ -90,6 +90,11 @@
 
   // .hero__container
   &__container {
+    opacity: 0;
+    [data-fls-loaded] & {
+      opacity: 1;
+      transition: opacity .15s ease;
+    }
     @media (min-width:toEm(820.98)) {
       display: grid;
       grid-template-columns: 1fr auto 1fr;

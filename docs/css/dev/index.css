@@ -91,6 +91,13 @@
 .hero__picture img {
   object-position: top;
 }
+.hero__container {
+  opacity: 0;
+}
+[data-fls-loaded] .hero__container {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
 .hero__right {
   position: relative;
   z-index: 1;
