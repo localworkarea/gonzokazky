@@ -44,7 +44,7 @@ export default {
 		tailwindcss: false,
 		pxtorem: true,
 		critical: false,
-		codesplit: true,
+		codesplit: false,
 		devfiles: true,
 	},
 	fonts: {
@@ -57,7 +57,7 @@ export default {
 			enable: true,
 			edithtml: true,
 			sizes: [1200, 600, 320],
-			dpi: [2,3],
+			dpi: [2],
 			attrignore: 'data-fls-image-ignore',
 			modernformat: {
 				enable: true,
@@ -80,7 +80,7 @@ export default {
 			// Збирає в один JS та один CSS файли
 			// незалежно від налаштування
 			// styles -> codesplit,
-			enable: true,
+			enable: false,
 		},
 		react: false,
 		vue: false

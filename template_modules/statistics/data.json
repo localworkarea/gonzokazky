@@ -64,6 +64,22 @@
         "start": 1755499872094,
         "end": 1755533593209,
         "type": "build"
+      },
+      {
+        "date": "19.08.2025",
+        "start": 1755591533027,
+        "end": 1755598440314
+      },
+      {
+        "date": "19.08.2025",
+        "start": 1755598453451,
+        "end": 1755598583370
+      },
+      {
+        "date": "19.08.2025",
+        "start": 1755598588378,
+        "end": 1755619132460,
+        "type": "build"
       }
     ],
     "files": [
@@ -89,7 +105,16 @@
       "section-6.jpg",
       "hero.jpg",
       "hero-castle.png",
-      "cauldron.png"
+      "cauldron.png",
+      "banner-footer-pc.svg",
+      "banner-footer-mb.svg",
+      "videobutton.html",
+      "videobutton.js",
+      "videobutton.scss",
+      "poster.jpg",
+      "home.js",
+      "test.js",
+      "test.scss"
     ]
   }
 }

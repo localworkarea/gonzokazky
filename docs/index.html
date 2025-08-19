@@ -11,8 +11,9 @@
 		<link rel="preload" href="./assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>GONZO Kazky | Home</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1755533593051"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755533593051">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1755619132257"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/style.min.css?v=1755619132257">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -20,9 +21,9 @@
 				<div class="logo-main__wrapper">
 					<div class="logo-main__picture">
 						<picture>
-							<source media="(max-width: 600px)" srcset="./assets/img/main/logo-600.webp 1x,./assets/img/main/logo-600-2x.webp 2x,./assets/img/main/logo-600-3x.webp 3x" type="image/webp">
-							<source media="(max-width: 320px)" srcset="./assets/img/main/logo-320.webp 1x,./assets/img/main/logo-320-2x.webp 2x,./assets/img/main/logo-320-3x.webp 3x" type="image/webp">
-							<img width="406" height="152" alt="logo Gonzo" src="./assets/img/main/logo.webp" srcset="./assets/img/main/logo.webp 1x,./assets/img/main/logo-2x.webp 2x,./assets/img/main/logo-3x.webp 3x">
+							<source media="(max-width: 600px)" srcset="./assets/img/main/logo-600.webp 1x,./assets/img/main/logo-600-2x.webp 2x" type="image/webp">
+							<source media="(max-width: 320px)" srcset="./assets/img/main/logo-320.webp 1x,./assets/img/main/logo-320-2x.webp 2x" type="image/webp">
+							<img width="406" height="152" alt="logo Gonzo" src="./assets/img/main/logo.webp" srcset="./assets/img/main/logo.webp 1x,./assets/img/main/logo-2x.webp 2x">
 						</picture>
 					</div>
 				</div>
@@ -37,12 +38,12 @@
 								<div class="wolf__cord"></div>
 								<div class="wolf__item wolf__item--over">
 									<picture>
-										<img width="206" height="488" alt="Image" src="./assets/img/main/wolf-over.webp" srcset="./assets/img/main/wolf-over.webp 1x,./assets/img/main/wolf-over-2x.webp 2x,./assets/img/main/wolf-over-3x.webp 3x">
+										<img width="206" height="488" alt="Image" src="./assets/img/main/wolf-over.webp" srcset="./assets/img/main/wolf-over.webp 1x,./assets/img/main/wolf-over-2x.webp 2x">
 									</picture>
 								</div>
 								<div class="wolf__item wolf__item--under">
 									<picture>
-										<img width="206" height="488" alt="Image" src="./assets/img/main/wolf-under.webp" srcset="./assets/img/main/wolf-under.webp 1x,./assets/img/main/wolf-under-2x.webp 2x,./assets/img/main/wolf-under-3x.webp 3x">
+										<img width="206" height="488" alt="Image" src="./assets/img/main/wolf-under.webp" srcset="./assets/img/main/wolf-under.webp 1x,./assets/img/main/wolf-under-2x.webp 2x">
 									</picture>
 								</div>
 							</div>
@@ -51,27 +52,27 @@
 					<section class="hero">
 						<div data-speed="0.2" class="hero__picture hero__picture--1">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-mounts-1200.webp 1x,./assets/img/main/hero-mounts-1200-2x.webp 2x,./assets/img/main/hero-mounts-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-mounts-600.webp 1x,./assets/img/main/hero-mounts-600-2x.webp 2x,./assets/img/main/hero-mounts-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/hero-mounts-320.webp 1x,./assets/img/main/hero-mounts-320-2x.webp 2x,./assets/img/main/hero-mounts-320-3x.webp 3x" type="image/webp">
-								<img class="ibg" width="1440" height="800" alt="головний фон багато зелених холмів та синє небо з поодинокими хмарами" src="./assets/img/main/hero-mounts.webp" srcset="./assets/img/main/hero-mounts.webp 1x,./assets/img/main/hero-mounts-2x.webp 2x,./assets/img/main/hero-mounts-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-mounts-1200.webp 1x,./assets/img/main/hero-mounts-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-mounts-600.webp 1x,./assets/img/main/hero-mounts-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/hero-mounts-320.webp 1x,./assets/img/main/hero-mounts-320-2x.webp 2x" type="image/webp">
+								<img class="ibg" width="1440" height="800" alt="головний фон багато зелених холмів та синє небо з поодинокими хмарами" src="./assets/img/main/hero-mounts.webp" srcset="./assets/img/main/hero-mounts.webp 1x,./assets/img/main/hero-mounts-2x.webp 2x">
 							</picture>
 						</div>
 						<div data-speed="0.4" class="hero__picture hero__picture--2">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-castle-1200.webp 1x,./assets/img/main/hero-castle-1200-2x.webp 2x,./assets/img/main/hero-castle-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-castle-600.webp 1x,./assets/img/main/hero-castle-600-2x.webp 2x,./assets/img/main/hero-castle-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/hero-castle-320.webp 1x,./assets/img/main/hero-castle-320-2x.webp 2x,./assets/img/main/hero-castle-320-3x.webp 3x" type="image/webp">
-								<img class="ibg" width="1440" height="800" alt="на фоні холмів по центру на високій горі розташований старовинний замок" src="./assets/img/main/hero-castle.webp" srcset="./assets/img/main/hero-castle.webp 1x,./assets/img/main/hero-castle-2x.webp 2x,./assets/img/main/hero-castle-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-castle-1200.webp 1x,./assets/img/main/hero-castle-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-castle-600.webp 1x,./assets/img/main/hero-castle-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/hero-castle-320.webp 1x,./assets/img/main/hero-castle-320-2x.webp 2x" type="image/webp">
+								<img class="ibg" width="1440" height="800" alt="на фоні холмів по центру на високій горі розташований старовинний замок" src="./assets/img/main/hero-castle.webp" srcset="./assets/img/main/hero-castle.webp 1x,./assets/img/main/hero-castle-2x.webp 2x">
 							</picture>
 						</div>
 						<div data-speed="1.5" class="hero__container">
 							<div class="hero__packs packs-hero">
 								<div data-speed="clamp(0.8)" class="packs-hero__picture">
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/main/packs-hero-600.webp 1x,./assets/img/main/packs-hero-600-2x.webp 2x,./assets/img/main/packs-hero-600-3x.webp 3x" type="image/webp">
-										<source media="(max-width: 320px)" srcset="./assets/img/main/packs-hero-320.webp 1x,./assets/img/main/packs-hero-320-2x.webp 2x,./assets/img/main/packs-hero-320-3x.webp 3x" type="image/webp">
-										<img class="ibg" width="516" height="313" decoding="async" fetchpriority="high" alt="Три пачки Gonzo" src="./assets/img/main/packs-hero.webp" srcset="./assets/img/main/packs-hero.webp 1x,./assets/img/main/packs-hero-2x.webp 2x,./assets/img/main/packs-hero-3x.webp 3x">
+										<source media="(max-width: 600px)" srcset="./assets/img/main/packs-hero-600.webp 1x,./assets/img/main/packs-hero-600-2x.webp 2x" type="image/webp">
+										<source media="(max-width: 320px)" srcset="./assets/img/main/packs-hero-320.webp 1x,./assets/img/main/packs-hero-320-2x.webp 2x" type="image/webp">
+										<img class="ibg" width="516" height="313" decoding="async" fetchpriority="high" alt="Три пачки Gonzo" src="./assets/img/main/packs-hero.webp" srcset="./assets/img/main/packs-hero.webp 1x,./assets/img/main/packs-hero-2x.webp 2x">
 									</picture>
 								</div>
 							</div>
@@ -88,11 +89,11 @@
 							<div class="hero__right">
 								<div class="hero__banner banner">
 									<div class="banner__text text-banner">
-										<p>
+										<h1>
 											Від казкової смачності Gonzo шаленіли всі королівства!
 											<br>
 											І навіть твоє!
-										</p>
+										</h1>
 									</div>
 									<div class="banner__picture">
 										<picture>
@@ -104,7 +105,7 @@
 								</div>
 								<div data-speed="clamp(0.5)" class="hero__wolf">
 									<picture>
-										<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp" srcset="./assets/img/main/wolf.webp 1x,./assets/img/main/wolf-2x.webp 2x,./assets/img/main/wolf-3x.webp 3x">
+										<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp" srcset="./assets/img/main/wolf.webp 1x,./assets/img/main/wolf-2x.webp 2x">
 									</picture>
 								</div>
 							</div>
@@ -114,33 +115,33 @@
 					<section class="section-2">
 						<div class="section-2__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-2-1200.webp 1x,./assets/img/main/section-2-1200-2x.webp 2x,./assets/img/main/section-2-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-2-600.webp 1x,./assets/img/main/section-2-600-2x.webp 2x,./assets/img/main/section-2-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-2-320.webp 1x,./assets/img/main/section-2-320-2x.webp 2x,./assets/img/main/section-2-320-3x.webp 3x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-2.webp" srcset="./assets/img/main/section-2.webp 1x,./assets/img/main/section-2-2x.webp 2x,./assets/img/main/section-2-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-2-1200.webp 1x,./assets/img/main/section-2-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-2-600.webp 1x,./assets/img/main/section-2-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-2-320.webp 1x,./assets/img/main/section-2-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-2.webp" srcset="./assets/img/main/section-2.webp 1x,./assets/img/main/section-2-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-2__container">
-							<div class="section-2__shacks">
+							<div class="section-2__shacks snacks-block">
 								<picture>
 									<source srcset="./assets/img/snacks/smacks-2-pc.webp" media="(min-width: 51.311em)" type="image/webp">
 									<source srcset="./assets/img/snacks/smacks-2-mb.webp" media="(max-width: 51.311em)" type="image/webp">
-									<img class="ibg" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
+									<img class="ibg" loading="lazy" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
 								</picture>
 							</div>
 							<div class="section-2__pictures">
 								<picture>
-									<source media="(max-width: 320px)" srcset="./assets/img/people/women-320.webp 1x,./assets/img/people/women-320-2x.webp 2x,./assets/img/people/women-320-3x.webp 3x" type="image/webp">
-									<img class="section-2__women" loading="lazy" width="252" height="333" alt="казкова жінка в червоному плащі" src="./assets/img/people/women.webp" srcset="./assets/img/people/women.webp 1x,./assets/img/people/women-2x.webp 2x,./assets/img/people/women-3x.webp 3x">
+									<source media="(max-width: 320px)" srcset="./assets/img/people/women-320.webp 1x,./assets/img/people/women-320-2x.webp 2x" type="image/webp">
+									<img class="section-2__women" loading="lazy" width="252" height="333" alt="казкова жінка в червоному плащі" src="./assets/img/people/women.webp" srcset="./assets/img/people/women.webp 1x,./assets/img/people/women-2x.webp 2x">
 								</picture>
 								<picture>
-									<img class="section-2__men" loading="lazy" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо" src="./assets/img/people/men.webp" srcset="./assets/img/people/men.webp 1x,./assets/img/people/men-2x.webp 2x,./assets/img/people/men-3x.webp 3x">
+									<img class="section-2__men" loading="lazy" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо" src="./assets/img/people/men.webp" srcset="./assets/img/people/men.webp 1x,./assets/img/people/men-2x.webp 2x">
 								</picture>
 							</div>
 							<div data-speed="1.2" class="section-2__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
-										<p>Казкова смачність Gonzo у стародавніх закляттях хрусткості</p>
+										<h2>Казкова смачність Gonzo у стародавніх закляттях хрусткості</h2>
 									</div>
 									<div class="banner__picture">
 										<picture>
@@ -174,18 +175,18 @@
 					<section class="section-3">
 						<div class="section-3__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-3-1200.webp 1x,./assets/img/main/section-3-1200-2x.webp 2x,./assets/img/main/section-3-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-3-600.webp 1x,./assets/img/main/section-3-600-2x.webp 2x,./assets/img/main/section-3-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-3-320.webp 1x,./assets/img/main/section-3-320-2x.webp 2x,./assets/img/main/section-3-320-3x.webp 3x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-3.webp" srcset="./assets/img/main/section-3.webp 1x,./assets/img/main/section-3-2x.webp 2x,./assets/img/main/section-3-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-3-1200.webp 1x,./assets/img/main/section-3-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-3-600.webp 1x,./assets/img/main/section-3-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-3-320.webp 1x,./assets/img/main/section-3-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-3.webp" srcset="./assets/img/main/section-3.webp 1x,./assets/img/main/section-3-2x.webp 2x">
 							</picture>
 						</div>
 						<div data-speed="0.65" class="section-3__stars stars-section"></div>
 						<div class="section-3__container">
 							<div class="section-3__women">
 								<picture>
-									<source media="(max-width: 320px)" srcset="./assets/img/people/three-women-320.webp 1x,./assets/img/people/three-women-320-2x.webp 2x,./assets/img/people/three-women-320-3x.webp 3x" type="image/webp">
-									<img class="ibg" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo" src="./assets/img/people/three-women.webp" srcset="./assets/img/people/three-women.webp 1x,./assets/img/people/three-women-2x.webp 2x,./assets/img/people/three-women-3x.webp 3x">
+									<source media="(max-width: 320px)" srcset="./assets/img/people/three-women-320.webp 1x,./assets/img/people/three-women-320-2x.webp 2x" type="image/webp">
+									<img class="ibg" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo" src="./assets/img/people/three-women.webp" srcset="./assets/img/people/three-women.webp 1x,./assets/img/people/three-women-2x.webp 2x">
 								</picture>
 							</div>
 							<div data-speed="1.1" class="section-3__body body-sections">
@@ -204,7 +205,7 @@
 								</div>
 								<div class="body-sections__cta cta-sections">
 									<div data-speed="clamp(1.1)" class="cta-sections__txt">
-										<p>Герою, вирушай на особливе завдання – оцінка казкової смачності снеків Gonzo!</p>
+										<h2>Герою, вирушай на особливе завдання – оцінка казкової смачності снеків Gonzo!</h2>
 									</div>
 									<div class="cta-sections__btn-wr">
 										<a href="test.html" data-fls-btn="" class="cta-sections__btn btn btn--a" aria-label="на сторінку теста">
@@ -218,51 +219,51 @@
 					<section class="section-4">
 						<div class="section-4__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-4-1200.webp 1x,./assets/img/main/section-4-1200-2x.webp 2x,./assets/img/main/section-4-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-4-600.webp 1x,./assets/img/main/section-4-600-2x.webp 2x,./assets/img/main/section-4-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-4-320.webp 1x,./assets/img/main/section-4-320-2x.webp 2x,./assets/img/main/section-4-320-3x.webp 3x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-4.webp" srcset="./assets/img/main/section-4.webp 1x,./assets/img/main/section-4-2x.webp 2x,./assets/img/main/section-4-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-4-1200.webp 1x,./assets/img/main/section-4-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-4-600.webp 1x,./assets/img/main/section-4-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-4-320.webp 1x,./assets/img/main/section-4-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-4.webp" srcset="./assets/img/main/section-4.webp 1x,./assets/img/main/section-4-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-4__container">
 							<div class="section-4__images">
 								<picture>
-									<img data-speed="clamp(0.9)" class="section-4__fairy" loading="lazy" width="192" height="458" alt="фея стоїть біля котла та готує чипси Гонзо" src="./assets/img/people/fairy.webp" srcset="./assets/img/people/fairy.webp 1x,./assets/img/people/fairy-2x.webp 2x,./assets/img/people/fairy-3x.webp 3x">
+									<img data-speed="clamp(0.9)" class="section-4__fairy" loading="lazy" width="192" height="458" alt="фея стоїть біля котла та готує чипси Гонзо" src="./assets/img/people/fairy.webp" srcset="./assets/img/people/fairy.webp 1x,./assets/img/people/fairy-2x.webp 2x">
 								</picture>
 								<div class="section-4__cauldron cauldron">
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/cauldron/cauldron-600.webp 1x,./assets/img/cauldron/cauldron-600-2x.webp 2x,./assets/img/cauldron/cauldron-600-3x.webp 3x" type="image/webp">
-										<source media="(max-width: 320px)" srcset="./assets/img/cauldron/cauldron-320.webp 1x,./assets/img/cauldron/cauldron-320-2x.webp 2x,./assets/img/cauldron/cauldron-320-3x.webp 3x" type="image/webp">
-										<img class="cauldron__under" loading="lazy" width="490" height="613" alt="котел в якому обсмажуються чипси Гонзо" src="./assets/img/cauldron/cauldron.webp" srcset="./assets/img/cauldron/cauldron.webp 1x,./assets/img/cauldron/cauldron-2x.webp 2x,./assets/img/cauldron/cauldron-3x.webp 3x">
+										<source media="(max-width: 600px)" srcset="./assets/img/cauldron/cauldron-600.webp 1x,./assets/img/cauldron/cauldron-600-2x.webp 2x" type="image/webp">
+										<source media="(max-width: 320px)" srcset="./assets/img/cauldron/cauldron-320.webp 1x,./assets/img/cauldron/cauldron-320-2x.webp 2x" type="image/webp">
+										<img class="cauldron__under" loading="lazy" width="490" height="613" alt="котел в якому обсмажуються чипси Гонзо" src="./assets/img/cauldron/cauldron.webp" srcset="./assets/img/cauldron/cauldron.webp 1x,./assets/img/cauldron/cauldron-2x.webp 2x">
 									</picture>
 									<picture>
-										<source media="(max-width: 320px)" srcset="./assets/img/cauldron/snack-group-320.webp 1x,./assets/img/cauldron/snack-group-320-2x.webp 2x,./assets/img/cauldron/snack-group-320-3x.webp 3x" type="image/webp">
-										<img class="cauldron__snacks" loading="lazy" width="554" height="488" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-group.webp" srcset="./assets/img/cauldron/snack-group.webp 1x,./assets/img/cauldron/snack-group-2x.webp 2x,./assets/img/cauldron/snack-group-3x.webp 3x">
+										<source media="(max-width: 320px)" srcset="./assets/img/cauldron/snack-group-320.webp 1x,./assets/img/cauldron/snack-group-320-2x.webp 2x" type="image/webp">
+										<img class="cauldron__snacks" loading="lazy" width="554" height="488" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-group.webp" srcset="./assets/img/cauldron/snack-group.webp 1x,./assets/img/cauldron/snack-group-2x.webp 2x">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--1" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-1.webp" srcset="./assets/img/cauldron/snack-1.webp 1x,./assets/img/cauldron/snack-1-2x.webp 2x,./assets/img/cauldron/snack-1-3x.webp 3x">
+										<img class="cauldron__snack cauldron__snack--1" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-1.webp" srcset="./assets/img/cauldron/snack-1.webp 1x,./assets/img/cauldron/snack-1-2x.webp 2x">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--2" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-2.webp" srcset="./assets/img/cauldron/snack-2.webp 1x,./assets/img/cauldron/snack-2-2x.webp 2x,./assets/img/cauldron/snack-2-3x.webp 3x">
+										<img class="cauldron__snack cauldron__snack--2" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-2.webp" srcset="./assets/img/cauldron/snack-2.webp 1x,./assets/img/cauldron/snack-2-2x.webp 2x">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--3" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-3.webp" srcset="./assets/img/cauldron/snack-3.webp 1x,./assets/img/cauldron/snack-3-2x.webp 2x,./assets/img/cauldron/snack-3-3x.webp 3x">
+										<img class="cauldron__snack cauldron__snack--3" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-3.webp" srcset="./assets/img/cauldron/snack-3.webp 1x,./assets/img/cauldron/snack-3-2x.webp 2x">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--4" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-4.webp" srcset="./assets/img/cauldron/snack-4.webp 1x,./assets/img/cauldron/snack-4-2x.webp 2x,./assets/img/cauldron/snack-4-3x.webp 3x">
+										<img class="cauldron__snack cauldron__snack--4" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-4.webp" srcset="./assets/img/cauldron/snack-4.webp 1x,./assets/img/cauldron/snack-4-2x.webp 2x">
 									</picture>
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/cauldron/cauldron-over-600.webp 1x,./assets/img/cauldron/cauldron-over-600-2x.webp 2x,./assets/img/cauldron/cauldron-over-600-3x.webp 3x" type="image/webp">
-										<source media="(max-width: 320px)" srcset="./assets/img/cauldron/cauldron-over-320.webp 1x,./assets/img/cauldron/cauldron-over-320-2x.webp 2x,./assets/img/cauldron/cauldron-over-320-3x.webp 3x" type="image/webp">
-										<img class="cauldron__over" loading="lazy" aria-hidden="true" width="490" height="613" alt="котел" src="./assets/img/cauldron/cauldron-over.webp" srcset="./assets/img/cauldron/cauldron-over.webp 1x,./assets/img/cauldron/cauldron-over-2x.webp 2x,./assets/img/cauldron/cauldron-over-3x.webp 3x">
+										<source media="(max-width: 600px)" srcset="./assets/img/cauldron/cauldron-over-600.webp 1x,./assets/img/cauldron/cauldron-over-600-2x.webp 2x" type="image/webp">
+										<source media="(max-width: 320px)" srcset="./assets/img/cauldron/cauldron-over-320.webp 1x,./assets/img/cauldron/cauldron-over-320-2x.webp 2x" type="image/webp">
+										<img class="cauldron__over" loading="lazy" aria-hidden="true" width="490" height="613" alt="котел" src="./assets/img/cauldron/cauldron-over.webp" srcset="./assets/img/cauldron/cauldron-over.webp 1x,./assets/img/cauldron/cauldron-over-2x.webp 2x">
 									</picture>
 								</div>
 							</div>
 							<div data-speed="1.1" class="section-4__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
-										<p>Казкова смачність Gonzo
-								у магічній технології обсмажки без олії!</p>
+										<h2>Казкова смачність Gonzo
+								у магічній технології обсмажки без олії!</h2>
 									</div>
 									<div class="banner__picture">
 										<picture>
@@ -290,32 +291,75 @@
 					<section class="section-5">
 						<div class="section-5__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-5-1200.webp 1x,./assets/img/main/section-5-1200-2x.webp 2x,./assets/img/main/section-5-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-5-600.webp 1x,./assets/img/main/section-5-600-2x.webp 2x,./assets/img/main/section-5-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-5-320.webp 1x,./assets/img/main/section-5-320-2x.webp 2x,./assets/img/main/section-5-320-3x.webp 3x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-5.webp" srcset="./assets/img/main/section-5.webp 1x,./assets/img/main/section-5-2x.webp 2x,./assets/img/main/section-5-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-5-1200.webp 1x,./assets/img/main/section-5-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-5-600.webp 1x,./assets/img/main/section-5-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-5-320.webp 1x,./assets/img/main/section-5-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-5.webp" srcset="./assets/img/main/section-5.webp 1x,./assets/img/main/section-5-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-5__container">
+							<div class="section-5__box">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/box/box-600.webp 1x,./assets/img/box/box-600-2x.webp 2x" type="image/webp">
+									<source media="(max-width: 320px)" srcset="./assets/img/box/box-320.webp 1x,./assets/img/box/box-320-2x.webp 2x" type="image/webp">
+									<img width="562" height="557" alt="сундук з коштовностями серед яких лежать пачки чипсів Гонзо" src="./assets/img/box/box.webp" srcset="./assets/img/box/box.webp 1x,./assets/img/box/box-2x.webp 2x">
+								</picture>
+							</div>
+							<div class="section-5__shacks snacks-block">
+								<picture>
+									<source media="(max-width: 1200px)" srcset="./assets/img/snacks/smacks-2-pc-1200.webp 1x,./assets/img/snacks/smacks-2-pc-1200-2x.webp 2x" type="image/webp">
+									<source media="(max-width: 600px)" srcset="./assets/img/snacks/smacks-2-pc-600.webp 1x,./assets/img/snacks/smacks-2-pc-600-2x.webp 2x" type="image/webp">
+									<source media="(max-width: 320px)" srcset="./assets/img/snacks/smacks-2-pc-320.webp 1x,./assets/img/snacks/smacks-2-pc-320-2x.webp 2x" type="image/webp">
+									<img class="ibg" loading="lazy" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану" src="./assets/img/snacks/smacks-2-pc.webp" srcset="./assets/img/snacks/smacks-2-pc.webp 1x,./assets/img/snacks/smacks-2-pc-2x.webp 2x">
+								</picture>
+							</div>
+							<div class="section-5__wolf">
+								<picture>
+									<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp" srcset="./assets/img/main/wolf.webp 1x,./assets/img/main/wolf-2x.webp 2x">
+								</picture>
+							</div>
 							<div data-speed="1.2" class="section-5__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
-										<p>
-											Визначай свого казкового Gonzo-героя та вигравай
-											<span>БОКС ІЗ ПОДАРУНКАМИ</span>
-										</p>
+										<h2>
+											<span class="txt-shadow">Визначай свого казкового Gonzo-героя та вигравай</span>
+											<span class="txt-gradien">БОКС ІЗ ПОДАРУНКАМИ</span>
+										</h2>
 									</div>
 									<div class="banner__picture">
 										<picture>
-											<source srcset="./assets/img/banners/banner-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
+											<source srcset="./assets/img/banners/banner-b-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
 											<source srcset="./assets/img/banners/banner-mb.svg" media="(max-width: 43.811em)" type="image/svg+xml">
-											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
+											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-b-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
 										</picture>
 									</div>
 								</div>
 								<div class="body-sections__cta cta-sections">
 									<div data-speed="clamp(1.1)" class="cta-sections__txt">
-										<p></p>
+										<ul>
+											<li>
+												<span class="num">1</span>
+												<p>Проходь тест</p>
+											</li>
+											<li>
+												<span class="num">2</span>
+												<p>
+													Переходь на конкурсний допис в
+													<a href="#" aria-label="посилання на інстаграм">Instagram</a>
+												</p>
+											</li>
+											<li>
+												<span class="num">3</span>
+												<p>Ділися результатом у коментарях</p>
+											</li>
+											<li>
+												<span class="num">4</span>
+												<p>
+													Бери участь у розіграші
+													<span>казкового боксу від Gonzo</span>
+												</p>
+											</li>
+										</ul>
 									</div>
 									<div class="cta-sections__btn-wr">
 										<a href="test.html" data-fls-btn="" class="cta-sections__btn btn btn--a" aria-label="на сторінку теста">
@@ -329,13 +373,41 @@
 					<section class="section-6">
 						<div class="section-6__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-6-1200.webp 1x,./assets/img/main/section-6-1200-2x.webp 2x,./assets/img/main/section-6-1200-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-6-600.webp 1x,./assets/img/main/section-6-600-2x.webp 2x,./assets/img/main/section-6-600-3x.webp 3x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-6-320.webp 1x,./assets/img/main/section-6-320-2x.webp 2x,./assets/img/main/section-6-320-3x.webp 3x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-6.webp" srcset="./assets/img/main/section-6.webp 1x,./assets/img/main/section-6-2x.webp 2x,./assets/img/main/section-6-3x.webp 3x">
+								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-6-1200.webp 1x,./assets/img/main/section-6-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" srcset="./assets/img/main/section-6-600.webp 1x,./assets/img/main/section-6-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" srcset="./assets/img/main/section-6-320.webp 1x,./assets/img/main/section-6-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-6.webp" srcset="./assets/img/main/section-6.webp 1x,./assets/img/main/section-6-2x.webp 2x">
 							</picture>
 						</div>
-						<div class="section-6__container"></div>
+						<div class="section-6__container">
+							<div class="section-6__shacks snacks-block">
+								<picture>
+									<source srcset="./assets/img/snacks/smacks-2-pc.webp" media="(min-width: 51.311em)" type="image/webp">
+									<source srcset="./assets/img/snacks/smacks-6-mb.webp" media="(max-width: 51.311em)" type="image/webp">
+									<img class="ibg" loading="lazy" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
+								</picture>
+							</div>
+							<div data-speed="1.5" class="section-6__body">
+								<div class="section-6__bg">
+									<span></span>
+								</div>
+								<h2 class="section-6__title text-banner">Заціни нашу чарівну маску в TikTok і дізнайся назву своєї Gonzo-казки!</h2>
+								<div class="section-6__video">
+									<div data-fls-videobutton="" class="video-youtube__body">
+										<button class="video-youtube__button" type="button" data-youtube="yf5NOyy1SXU" aria-label="кнопка відкриття відео з youtube">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/poster/poster-600.webp 1x,./assets/img/poster/poster-600-2x.webp 2x" type="image/webp">
+												<source media="(max-width: 320px)" srcset="./assets/img/poster/poster-320.webp 1x,./assets/img/poster/poster-320-2x.webp 2x" type="image/webp">
+												<img class="ibg" width="784" height="400" alt="poster video" src="./assets/img/poster/poster.webp" srcset="./assets/img/poster/poster.webp 1x,./assets/img/poster/poster-2x.webp 2x">
+											</picture>
+										</button>
+									</div>
+								</div>
+								<a href="test.html" data-fls-btn="" class="section-6__btn btn btn--a" aria-label="на сторінку теста">
+									<span>Хочу маску</span>
+								</a>
+							</div>
+						</div>
 					</section>
 				</div>
 			</main>

@@ -1,0 +1,35 @@
+<svg width="806" height="628" viewBox="0 0 806 628" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="0" y="0" width="806" height="628"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(25px);clip-path:url(#bgblur_0_2024_7_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_dg_2024_7)" data-figma-bg-blur-radius="50">
+<path d="M60 60H746V568H60V60Z" fill="#413402" fill-opacity="0.4" shape-rendering="crispEdges"/>
+<path d="M751 55V573H55V55H751Z" stroke="#FFE941" stroke-width="10" shape-rendering="crispEdges"/>
+<path d="M751 55V573H55V55H751Z" stroke="url(#paint0_linear_2024_7)" stroke-width="10" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_dg_2024_7" x="0" y="0" width="806" height="628" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="10" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2024_7"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="20"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.466667 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2024_7"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2024_7" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.033333335071802139 0.033333335071802139" numOctaves="3" seed="3886" />
+<feDisplacementMap in="shape" scale="60" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect2_texture_2024_7">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<clipPath id="bgblur_0_2024_7_clip_path" transform="translate(0 0)"><path d="M60 60H746V568H60V60Z"/>
+</clipPath><linearGradient id="paint0_linear_2024_7" x1="759.083" y1="568" x2="-11.9161" y2="418.412" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FAAE1B"/>
+<stop offset="0.110577" stop-color="#FF8000"/>
+<stop offset="0.25" stop-color="#FAAE1B"/>
+<stop offset="0.557692" stop-color="#FF8000"/>
+<stop offset="0.759615" stop-color="#FAAE1B"/>
+<stop offset="0.879808" stop-color="#FF8000"/>
+<stop offset="1" stop-color="#FAAE1B"/>
+</linearGradient>
+</defs>
+</svg>

@@ -133,11 +133,6 @@ body {
   object-fit: cover;
 }
 
-
-.page {
-	// position: relative;
-	// z-index: 1;
-}
 .logo-main {
   position: fixed;
   z-index: 15;
@@ -149,21 +144,29 @@ body {
   // .logo-main__wrapper
 	&__wrapper {
     width: 100%;
-  margin-inline: auto;
-  padding-inline: 20px;
-  @include adaptiveValue("max-width", 1250, 1240,0,1920,1440);
+  	margin-inline: auto;
+  	padding-inline: 20px;
+  	@include adaptiveValue("max-width", 1250, 1240,0,1920,1440);
   }
   // .logo-main__picture
   &__picture {
     position: relative;
-    top: 60px;
     left: 0;
-    max-width: 406px;
-    pointer-events: all;
-    @media (max-width: toEm(1024.98)){
-      margin-inline: auto;
-      max-width: 190px;
-    }
+		.test-page & {
+			top: 55px;
+			max-width: 139px;
+			pointer-events: all;
+			margin-inline: auto;
+			display: block;
+		}
+		.home-page & {
+			top: 60px;
+			max-width: 406px;
+			@media (max-width: toEm(1024.98)){
+				margin-inline: auto;
+				max-width: 190px;
+			}
+		}
 
     img {
       @extend %ibg;
@@ -171,68 +174,13 @@ body {
 	}
 }
 
-.shadow {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  width: 100%;
-	@include adaptiveValue("height",400, 300,0,1920,320);
-  pointer-events: none;
-  svg {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%,0);
-    height: auto;
-  }
-	// .shadow__item
-	&::before {
-		content:'';
-		display: block;
-		position: relative;
-		left: 50%;
-		transform: translate(-50%,0);
-		width: 200%;
-		height: 100%;
-		// border-radius: 100%;
-		  background:
-      radial-gradient(ellipse 85% 50% at 50% 50%,
-        rgba(9,2,3,1) 0 30%,
-        rgba(9,2,3,0.3) 65%,
-        rgba(9,2,3,0.00) 80%
-      );
-		@media (min-width:toEm($mobile)){
-			 width: 135%; 
-		}
-	}
 
-  // .shadow--top 
-  &--top {
-    opacity: 0;
-    top: 0;
-    transform: translate(0,-50%);
-  }
-  // .shadow--botom 
-  &--bottom {
-		
-		position: absolute;
-		
-    transform: translate(0,50%);
-    bottom: 0;
-  }
-	&--topnext {
-		position: absolute;
-		transform: translate(0,-50%);
-		top: 0;
-	}
-}
 
 .text-banner {
   font-family: "SofiaSans",sans-serif;
   font-weight: 800;
   line-height: 1.2;
-  text-shadow: 
-  2px 2px 0 #231f20;
+  text-shadow: 2px 2px 0 #231f20;
   position: relative;
   &::before {
 		content:'';
@@ -241,6 +189,9 @@ body {
     z-index: -1;
     pointer-events: none;
     background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
+		@media (max-width:toEm($mobileSmall)){
+			inset: -30% -48%;  
+		}
   }
 
 }
@@ -248,7 +199,7 @@ body {
 .banner {
   position: relative;
   padding: 35px 0px;
-  @media (min-width:$mobileSmall){
+  @media (min-width:toEm($mobileSmall)){
     padding: 35px 27px;
   }
 		// .banner__text
@@ -268,9 +219,81 @@ body {
 			width: 100%;
 			transform: translate(-50%,-50%);
 		}
-    // .banner__img
-    &__img {
-      // opacity: 0.8;
-    }
 }
 
+
+.body-sections {
+  display: flex;
+  flex-direction: column;
+  @media (min-width:toEm(820.98)){
+    padding-top: 100px;
+  }
+  @media (min-width:toEm(700.98)){
+    align-items: center;
+  }
+		// .body-sections__banner
+		&__banner {
+			position: relative;
+      z-index: 0;
+      max-width: 690px;
+			.home-page & {
+				opacity: 0;
+			}
+      @include adaptiveValue("margin-bottom", 70, 30);
+      .banner__text {
+				.home-page & {
+					@include adaptiveValue("font-size", 36, 22);
+				}
+				.test-page & {
+					@include adaptiveValue("font-size", 36, 26);
+				}
+        max-width: 75%;
+        @media (min-width:$mobileSmall){
+          max-width: 450px;
+        }
+        @media (max-width: toEm(700.98)){
+          text-align: left;
+          margin-inline: unset;
+        }
+      }
+      .banner__picture {
+        width: 690px;
+        @media (max-width: toEm(700.98)){
+          transform: translate(-60%, -50%);
+        }
+      }
+      .banner__img {
+      }
+		}
+    
+		// .body-sections__cta
+		&__cta {
+    }
+  }
+  
+	
+.snacks-block {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 125%;
+  pointer-events: none;
+  @media (min-width:$mobileSmall){
+    top: 50%;
+    left: 50%;
+    width: 120%;
+  }
+  &._active {
+    img {
+        transform: scale(1);
+    }
+  }
+  img {
+    transition: transform .65s ease;
+		transform: scale(0);
+  }
+  img {
+
+  }
+}

@@ -3,31 +3,69 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="https://cdn.js?v=1755533593050delivr.net/npm/gsap@3.13.0/dist/gsap.min.js?v=1755533593050" defer></script>
-		<script src="https://cdn.js?v=1755533593050delivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js?v=1755533593050" defer></script>
-		<script src="https://cdn.js?v=1755533593050delivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js?v=1755533593050" defer></script>
 		<link rel="preload" href="./assets/fonts/SofiaSans-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="./assets/fonts/Manrope-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="./assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>GONZO Kazky | TEST</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1755533593050"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755533593050">
+		<script type="module" crossorigin="" src="./js/test.min.js?v=1755619132256"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/style.min.css?v=1755619132256">
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="logo-main">
 				<div class="logo-main__wrapper">
-					<div class="logo-main__picture">
+					<a href="index.html" class="logo-main__picture">
 						<picture>
-							<source media="(max-width: 600px)" srcset="./assets/img/main/logo-600.webp 1x,./assets/img/main/logo-600-2x.webp 2x,./assets/img/main/logo-600-3x.webp 3x" type="image/webp">
-							<source media="(max-width: 320px)" srcset="./assets/img/main/logo-320.webp 1x,./assets/img/main/logo-320-2x.webp 2x,./assets/img/main/logo-320-3x.webp 3x" type="image/webp">
-							<img width="406" height="152" alt="logo Gonzo" src="./assets/img/main/logo.webp" srcset="./assets/img/main/logo.webp 1x,./assets/img/main/logo-2x.webp 2x,./assets/img/main/logo-3x.webp 3x">
+							<source media="(max-width: 600px)" srcset="./assets/img/main/logo-600.webp 1x,./assets/img/main/logo-600-2x.webp 2x" type="image/webp">
+							<source media="(max-width: 320px)" srcset="./assets/img/main/logo-320.webp 1x,./assets/img/main/logo-320-2x.webp 2x" type="image/webp">
+							<img width="406" height="152" alt="logo Gonzo" src="./assets/img/main/logo.webp" srcset="./assets/img/main/logo.webp 1x,./assets/img/main/logo-2x.webp 2x">
 						</picture>
-					</div>
+					</a>
 				</div>
 			</div>
-			<main class="page page--test"></main>
+			<main class="page page--test">
+				<section class="test">
+					<div class="test__bg">
+						<picture>
+							<source media="(max-width: 1200px)" srcset="./assets/img/main/section-6-b-1200.webp 1x,./assets/img/main/section-6-b-1200-2x.webp 2x" type="image/webp">
+							<source media="(max-width: 600px)" srcset="./assets/img/main/section-6-b-600.webp 1x,./assets/img/main/section-6-b-600-2x.webp 2x" type="image/webp">
+							<source media="(max-width: 320px)" srcset="./assets/img/main/section-6-b-320.webp 1x,./assets/img/main/section-6-b-320-2x.webp 2x" type="image/webp">
+							<img class="ibg" decoding="async" fetchpriority="high" width="1440" height="800" alt="Image" src="./assets/img/main/section-6-b.webp" srcset="./assets/img/main/section-6-b.webp 1x,./assets/img/main/section-6-b-2x.webp 2x">
+						</picture>
+					</div>
+					<div class="test__hero hero-test _hide">
+						<div class="hero-test__container">
+							<div class="hero-test__shacks snacks-block">
+								<picture>
+									<source srcset="./assets/img/snacks/smacks-2-pc.webp" media="(min-width: 51.311em)" type="image/webp">
+									<source srcset="./assets/img/snacks/smacks-test-mb.webp" media="(max-width: 51.311em)" type="image/webp">
+									<img class="ibg" loading="lazy" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
+								</picture>
+							</div>
+							<div class="hero-test__body body-sections">
+								<div class="body-sections__banner banner">
+									<div class="banner__text text-banner">
+										<h2>Усього 5 питань, і твій Gonzo-персонаж згенерований!</h2>
+									</div>
+									<div class="banner__picture">
+										<picture>
+											<source srcset="./assets/img/banners/banner-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
+											<source srcset="./assets/img/banners/banner-c-mb.svg" media="(max-width: 43.811em)" type="image/svg+xml">
+											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
+										</picture>
+									</div>
+								</div>
+								<button data-fls-btn="" class="body-sections__btn btn btn--a" aria-label="почати тест">
+									<span>Починаємо</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="test__form form-test"></div>
+				</section>
+			</main>
 		</div>
 	</body>
 </html>
