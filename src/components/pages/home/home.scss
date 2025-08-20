@@ -90,11 +90,11 @@
 
   // .hero__container
   &__container {
-    opacity: 0;
-    [data-fls-loaded] & {
-      opacity: 1;
-      transition: opacity .15s ease;
-    }
+    // opacity: 0;
+    // [data-fls-loaded] & {
+    //   opacity: 1;
+    //   transition: opacity .15s ease;
+    // }
     @media (min-width:toEm(820.98)) {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
@@ -148,7 +148,9 @@
   // .hero__banner
   &__banner {
     font-size: 26px;
-
+     @media (max-width: toEm(1200.98)) and (min-width: toEm(820.98)) {
+        padding: 0;
+    }
     @media (min-width:toEm($mobileSmall)) {
       max-width: 550px;
 
@@ -175,8 +177,18 @@
 
     .banner__text {
       max-width: 366px;
+      &::before {
+        @media (max-width: toEm(1200.98)) and (min-width: toEm(820.98)) {
+            inset: -50% -50%;
+        }
+      }
     }
   }
+		// .hero__wolf-wr
+		&__wolf-wr {
+      position: relative;
+      z-index: 3;
+    }
 
   // .hero__wolf
   &__wolf {
@@ -200,12 +212,12 @@
       height: 315px;
       top: 50%;
       right: -50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, 0%);
     }
 
     @media (max-width:toEm($mobileSmall)) {
       right: 0%;
-      transform: translate(40%, 0);
+      transform: translate(40%, -40%);
     }
 
     img {

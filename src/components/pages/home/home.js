@@ -31,30 +31,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ScrollTrigger.refresh();
 
-
   const logoMain = document.querySelector(".logo-main__picture");
+  const wolfBody = document.querySelector('.wolf');
+  const section5 = document.querySelector('.section-5');
+  const wolfSec = document.querySelector('.section-5__wolf');
 
+  const cauldron = document.querySelector(".section-4__images");
+  const sec4 = document.querySelector(".section-4");
+  
   function createAnimation() {
-  //  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    //  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    const snackBlocks = document.querySelectorAll('.snacks-block');
-    if (snackBlocks.length > 0) {
-      snackBlocks.forEach((item) => {
-        const section = item.closest('section');
-        if (!section) return;
+    // const snackBlocks = document.querySelectorAll('.snacks-block');
+    // if (snackBlocks.length > 0) {
+    //   snackBlocks.forEach((item) => {
+    //     const section = item.closest('section');
+    //   if (!section) return;
+    //     ScrollTrigger.create({
+    //       trigger: section,
+    //       start: "top 5%",
+    //       scroller: smoother?.scrollContainer,
+    //       onEnter()     { item.classList.add("_active"); },
+    //     });
+    //   });
+    // }
 
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top 5%",
-          scroller: smoother?.scrollContainer,
-          onEnter()     { item.classList.add("_active"); },
-        });
-      });
-    }
-
-    const wolfBody = document.querySelector('.wolf');
-    const section5 = document.querySelector('.section-5');
-    const wolfSec = document.querySelector('.section-5__wolf');
 
     if (wolfBody) {
       ScrollTrigger.create({
@@ -72,12 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
           wolfSec.classList.remove("_active"); 
         },
       });
-      
-    
     }
 
-    const cauldron = document.querySelector(".section-4__images");
-    const sec4 = document.querySelector(".section-4");
+
     if (cauldron) {
       ScrollTrigger.create({
         trigger: sec4,
@@ -150,9 +148,28 @@ document.addEventListener("DOMContentLoaded", () => {
               end: "bottom top",
               scrub: 1,
               scroller: smoother.scrollContainer,
+              invalidateOnRefresh: true,
             }
           });
         }
+
+          const snackBlocks = document.querySelectorAll('.snacks-block');
+          const triggers = [];
+
+          if (snackBlocks.length) {
+            const startValue = pc ? "top 5%" : "top 20%";
+          
+            snackBlocks.forEach((item) => {
+              const section = item.closest('section') || item;
+              const st = ScrollTrigger.create({
+                trigger: section,
+                start: startValue,
+                scroller: smoother?.scrollContainer,
+                onEnter()     { item.classList.add("_active"); },
+              });
+              triggers.push(st);
+            });
+          }
         
         // == for PC ======================
         if (pc) {

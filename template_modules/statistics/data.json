@@ -86,6 +86,18 @@
         "start": 1755621376444,
         "end": 1755621431351,
         "type": "build"
+      },
+      {
+        "date": "20.08.2025",
+        "start": 1755678616227,
+        "end": 1755681302825,
+        "type": "build"
+      },
+      {
+        "date": "20.08.2025",
+        "start": 1755682783183,
+        "end": 1755682822328,
+        "type": "build"
       }
     ],
     "files": [
@@ -120,7 +132,9 @@
       "poster.jpg",
       "home.js",
       "test.js",
-      "test.scss"
+      "test.scss",
+      "lazy.html",
+      "lazy.js"
     ]
   }
 }

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"defer></script>
 		<!--
@@ -16,10 +16,10 @@ body { opacity: 0;}
 		<link rel="preload" href="./assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>GONZO Kazky | Home</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1755622047562"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1755683204095"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755622047562">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1755622047562">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755683204095">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1755683204095">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -109,10 +109,12 @@ body { opacity: 0;}
 										</picture>
 									</div>
 								</div>
-								<div data-speed="clamp(0.5)" class="hero__wolf">
-									<picture>
-										<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp" srcset="./assets/img/main/wolf.webp 1x,./assets/img/main/wolf-2x.webp 2x">
-									</picture>
+								<div data-speed="clamp(0.5)" class="hero__wolf-wr">
+									<div class="hero__wolf">
+										<picture>
+											<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp" srcset="./assets/img/main/wolf.webp 1x,./assets/img/main/wolf-2x.webp 2x">
+										</picture>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -121,10 +123,10 @@ body { opacity: 0;}
 					<section class="section-2">
 						<div class="section-2__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-2-1200.webp 1x,./assets/img/main/section-2-1200-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-2-600.webp 1x,./assets/img/main/section-2-600-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-2-320.webp 1x,./assets/img/main/section-2-320-2x.webp 2x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-2.webp" srcset="./assets/img/main/section-2.webp 1x,./assets/img/main/section-2-2x.webp 2x">
+								<source media="(max-width: 1200px)" data-srcset="./assets/img/main/section-2-1200.webp 1x,./assets/img/main/section-2-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" data-srcset="./assets/img/main/section-2-600.webp 1x,./assets/img/main/section-2-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" data-srcset="./assets/img/main/section-2-320.webp 1x,./assets/img/main/section-2-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" data-fls-lazy="" data-lazy="" width="1440" height="800" alt="Image" data-src="./assets/img/main/section-2.webp" data-srcset="./assets/img/main/section-2.webp 1x,./assets/img/main/section-2-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-2__container">
@@ -132,16 +134,16 @@ body { opacity: 0;}
 								<picture>
 									<source srcset="./assets/img/snacks/smacks-2-pc.webp" media="(min-width: 51.311em)" type="image/webp">
 									<source srcset="./assets/img/snacks/smacks-2-mb.webp" media="(max-width: 51.311em)" type="image/webp">
-									<img class="ibg" loading="lazy" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
+									<img class="ibg" loading="lazy" data-fls-image-ignore="" data-fls-lazy="" data-lazy="" data-src="assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
 								</picture>
 							</div>
 							<div class="section-2__pictures">
 								<picture>
-									<source media="(max-width: 320px)" srcset="./assets/img/people/women-320.webp 1x,./assets/img/people/women-320-2x.webp 2x" type="image/webp">
-									<img class="section-2__women" loading="lazy" width="252" height="333" alt="казкова жінка в червоному плащі" src="./assets/img/people/women.webp" srcset="./assets/img/people/women.webp 1x,./assets/img/people/women-2x.webp 2x">
+									<source media="(max-width: 320px)" data-srcset="./assets/img/people/women-320.webp 1x,./assets/img/people/women-320-2x.webp 2x" type="image/webp">
+									<img class="section-2__women" loading="lazy" data-fls-lazy="" data-lazy="" width="252" height="333" alt="казкова жінка в червоному плащі" data-src="./assets/img/people/women.webp" data-srcset="./assets/img/people/women.webp 1x,./assets/img/people/women-2x.webp 2x">
 								</picture>
 								<picture>
-									<img class="section-2__men" loading="lazy" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо" src="./assets/img/people/men.webp" srcset="./assets/img/people/men.webp 1x,./assets/img/people/men-2x.webp 2x">
+									<img class="section-2__men" loading="lazy" data-fls-lazy="" data-lazy="" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо" data-src="./assets/img/people/men.webp" data-srcset="./assets/img/people/men.webp 1x,./assets/img/people/men-2x.webp 2x">
 								</picture>
 							</div>
 							<div data-speed="1.2" class="section-2__body body-sections">
@@ -181,18 +183,18 @@ body { opacity: 0;}
 					<section class="section-3">
 						<div class="section-3__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-3-1200.webp 1x,./assets/img/main/section-3-1200-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-3-600.webp 1x,./assets/img/main/section-3-600-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-3-320.webp 1x,./assets/img/main/section-3-320-2x.webp 2x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-3.webp" srcset="./assets/img/main/section-3.webp 1x,./assets/img/main/section-3-2x.webp 2x">
+								<source media="(max-width: 1200px)" data-srcset="./assets/img/main/section-3-1200.webp 1x,./assets/img/main/section-3-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" data-srcset="./assets/img/main/section-3-600.webp 1x,./assets/img/main/section-3-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" data-srcset="./assets/img/main/section-3-320.webp 1x,./assets/img/main/section-3-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" loading="lazy" class="ibg" data-fls-lazy="" data-lazy="" width="1440" height="800" alt="Image" data-src="./assets/img/main/section-3.webp" data-srcset="./assets/img/main/section-3.webp 1x,./assets/img/main/section-3-2x.webp 2x">
 							</picture>
 						</div>
 						<div data-speed="0.65" class="section-3__stars stars-section"></div>
 						<div class="section-3__container">
 							<div class="section-3__women">
 								<picture>
-									<source media="(max-width: 320px)" srcset="./assets/img/people/three-women-320.webp 1x,./assets/img/people/three-women-320-2x.webp 2x" type="image/webp">
-									<img class="ibg" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo" src="./assets/img/people/three-women.webp" srcset="./assets/img/people/three-women.webp 1x,./assets/img/people/three-women-2x.webp 2x">
+									<source media="(max-width: 320px)" data-srcset="./assets/img/people/three-women-320.webp 1x,./assets/img/people/three-women-320-2x.webp 2x" type="image/webp">
+									<img class="ibg" data-fls-lazy="" data-lazy="" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo" data-src="./assets/img/people/three-women.webp" data-srcset="./assets/img/people/three-women.webp 1x,./assets/img/people/three-women-2x.webp 2x">
 								</picture>
 							</div>
 							<div data-speed="1.1" class="section-3__body body-sections">
@@ -225,10 +227,10 @@ body { opacity: 0;}
 					<section class="section-4">
 						<div class="section-4__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-4-1200.webp 1x,./assets/img/main/section-4-1200-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-4-600.webp 1x,./assets/img/main/section-4-600-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-4-320.webp 1x,./assets/img/main/section-4-320-2x.webp 2x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-4.webp" srcset="./assets/img/main/section-4.webp 1x,./assets/img/main/section-4-2x.webp 2x">
+								<source media="(max-width: 1200px)" data-srcset="./assets/img/main/section-4-1200.webp 1x,./assets/img/main/section-4-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" data-srcset="./assets/img/main/section-4-600.webp 1x,./assets/img/main/section-4-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" data-srcset="./assets/img/main/section-4-320.webp 1x,./assets/img/main/section-4-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" class="ibg" data-fls-lazy="" data-lazy="" width="1440" height="800" alt="Image" data-src="./assets/img/main/section-4.webp" data-srcset="./assets/img/main/section-4.webp 1x,./assets/img/main/section-4-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-4__container">
@@ -297,10 +299,10 @@ body { opacity: 0;}
 					<section class="section-5">
 						<div class="section-5__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-5-1200.webp 1x,./assets/img/main/section-5-1200-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-5-600.webp 1x,./assets/img/main/section-5-600-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-5-320.webp 1x,./assets/img/main/section-5-320-2x.webp 2x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-5.webp" srcset="./assets/img/main/section-5.webp 1x,./assets/img/main/section-5-2x.webp 2x">
+								<source media="(max-width: 1200px)" data-srcset="./assets/img/main/section-5-1200.webp 1x,./assets/img/main/section-5-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" data-srcset="./assets/img/main/section-5-600.webp 1x,./assets/img/main/section-5-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" data-srcset="./assets/img/main/section-5-320.webp 1x,./assets/img/main/section-5-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" class="ibg" data-fls-lazy="" data-lazy="" width="1440" height="800" alt="Image" data-src="./assets/img/main/section-5.webp" data-srcset="./assets/img/main/section-5.webp 1x,./assets/img/main/section-5-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-5__container">
@@ -379,10 +381,10 @@ body { opacity: 0;}
 					<section class="section-6">
 						<div class="section-6__picture">
 							<picture>
-								<source media="(max-width: 1200px)" srcset="./assets/img/main/section-6-1200.webp 1x,./assets/img/main/section-6-1200-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/section-6-600.webp 1x,./assets/img/main/section-6-600-2x.webp 2x" type="image/webp">
-								<source media="(max-width: 320px)" srcset="./assets/img/main/section-6-320.webp 1x,./assets/img/main/section-6-320-2x.webp 2x" type="image/webp">
-								<img data-speed="0.5" loading="lazy" class="ibg" width="1440" height="800" alt="Image" src="./assets/img/main/section-6.webp" srcset="./assets/img/main/section-6.webp 1x,./assets/img/main/section-6-2x.webp 2x">
+								<source media="(max-width: 1200px)" data-srcset="./assets/img/main/section-6-1200.webp 1x,./assets/img/main/section-6-1200-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 600px)" data-srcset="./assets/img/main/section-6-600.webp 1x,./assets/img/main/section-6-600-2x.webp 2x" type="image/webp">
+								<source media="(max-width: 320px)" data-srcset="./assets/img/main/section-6-320.webp 1x,./assets/img/main/section-6-320-2x.webp 2x" type="image/webp">
+								<img data-speed="0.5" class="ibg" data-fls-lazy="" data-lazy="" width="1440" height="800" alt="Image" data-src="./assets/img/main/section-6.webp" data-srcset="./assets/img/main/section-6.webp 1x,./assets/img/main/section-6-2x.webp 2x">
 							</picture>
 						</div>
 						<div class="section-6__container">
