@@ -76,100 +76,100 @@ export const imagePlugins = [
 								return returnUrl(data, url, uniqImages)
 							})
 							// Обробка зображень які вказані в src тегів IMG
-							// content = content.replace(new RegExp(`<img(?![^>]*\\s${attrIgnore})[^>]*>`, 'gi'), (data) => {
-							// 	const regex = /([\w-]+)\s*=\s*"([^"]*)"/g
-							// 	let match, imagePath, sizesAttr
-							// 	let attributes = ``
-							// 	while ((match = regex.exec(data)) !== null) {
-							// 		const [key, value] = [match[1], match[2]]
-							// 		if (key === 'data-fls-image-sizes') {
-							// 			sizesAttr = value
-							// 		} else if (key === 'src') {
-							// 			imagePath = value
-							// 		} else {
-							// 			attributes += `${key}="${value}" `
-							// 		}
-							// 	}
-							// 	if (!imagePath) return data;
-							// 	sizesAttr = sizesAttr ? sizesAttr.split(',') : templateConfig.images.optimize.sizes
-							// 	const dpi = templateConfig.images.optimize.dpi
+							content = content.replace(new RegExp(`<img(?![^>]*\\s${attrIgnore})[^>]*>`, 'gi'), (data) => {
+								const regex = /([\w-]+)\s*=\s*"([^"]*)"/g
+								let match, imagePath, sizesAttr
+								let attributes = ``
+								while ((match = regex.exec(data)) !== null) {
+									const [key, value] = [match[1], match[2]]
+									if (key === 'data-fls-image-sizes') {
+										sizesAttr = value
+									} else if (key === 'src') {
+										imagePath = value
+									} else {
+										attributes += `${key}="${value}" `
+									}
+								}
+								if (!imagePath) return data;
+								sizesAttr = sizesAttr ? sizesAttr.split(',') : templateConfig.images.optimize.sizes
+								const dpi = templateConfig.images.optimize.dpi
 
-							// 	imagePath = imagePath.startsWith('./') ? imagePath.replace('./', '/') : imagePath
-							// 	const fullImagePath = `src${imagePath}`;
+								imagePath = imagePath.startsWith('./') ? imagePath.replace('./', '/') : imagePath
+								const fullImagePath = `src${imagePath}`;
 
-							// 	if (fs.existsSync(fullImagePath)) {
-							// 		const extType = imagePath.split('.').pop().toLowerCase();
-							// 		if (/^(png|webp|avif|jpe?g|gif|tiff|bmp|ico)$/i.test(extType)) {
-							// 			uniqImages.add(imagePath)
-							// 			const newHtmlCode = imageResizeInit(fullImagePath, sizesAttr, dpi, extType, attributes, file.endsWith('.html') ? 'html' : 'js')
-							// 			return templateConfig.images.optimize.edithtml ? newHtmlCode : data;
-							// 		}
-							// 	}
-							// 	return data;
-							// })
+								if (fs.existsSync(fullImagePath)) {
+									const extType = imagePath.split('.').pop().toLowerCase();
+									if (/^(png|webp|avif|jpe?g|gif|tiff|bmp|ico)$/i.test(extType)) {
+										uniqImages.add(imagePath)
+										const newHtmlCode = imageResizeInit(fullImagePath, sizesAttr, dpi, extType, attributes, file.endsWith('.html') ? 'html' : 'js')
+										return templateConfig.images.optimize.edithtml ? newHtmlCode : data;
+									}
+								}
+								return data;
+							})
 							// Обробка зображень які вказані в src тегів IMG (добавлена поддержка data-src и lazy)
-content = content.replace(new RegExp(`<img(?![^>]*\\s${attrIgnore})[^>]*>`, 'gi'), (data) => {
-  const regex = /([\w-:]+)\s*=\s*"([^"]*)"/g  // позволяем data- и aria-атрибуты
-  let match, imagePath, sizesAttr
-  let attributes = ``
-  let isLazy = false // NEW
+// content = content.replace(new RegExp(`<img(?![^>]*\\s${attrIgnore})[^>]*>`, 'gi'), (data) => {
+//   const regex = /([\w-:]+)\s*=\s*"([^"]*)"/g  // позволяем data- и aria-атрибуты
+//   let match, imagePath, sizesAttr
+//   let attributes = ``
+//   let isLazy = false // NEW
 
-  while ((match = regex.exec(data)) !== null) {
-    const [key, value] = [match[1], match[2]]
+//   while ((match = regex.exec(data)) !== null) {
+//     const [key, value] = [match[1], match[2]]
 
-    if (key === 'data-fls-image-sizes') {
-      sizesAttr = value
-    } else if (key === 'src') {
-      imagePath = value
-    } else if (key === 'data-src') {         // NEW
-      imagePath = value
-      isLazy = true
-    } else if (key === 'data-lazy' || key === 'data-fls-lazy') { // NEW
-      isLazy = true
-      attributes += `${key}="${value}" `
-    } else {
-      if (key !== 'src' && key !== 'data-src') { // NEW
-        attributes += `${key}="${value}" `
-      }
-    }
-  }
+//     if (key === 'data-fls-image-sizes') {
+//       sizesAttr = value
+//     } else if (key === 'src') {
+//       imagePath = value
+//     } else if (key === 'data-src') {         // NEW
+//       imagePath = value
+//       isLazy = true
+//     } else if (key === 'data-lazy' || key === 'data-fls-lazy') { // NEW
+//       isLazy = true
+//       attributes += `${key}="${value}" `
+//     } else {
+//       if (key !== 'src' && key !== 'data-src') { // NEW
+//         attributes += `${key}="${value}" `
+//       }
+//     }
+//   }
 
-  if (!imagePath) return data;
+//   if (!imagePath) return data;
 
-  sizesAttr = sizesAttr ? sizesAttr.split(',') : templateConfig.images.optimize.sizes
-  const dpi = templateConfig.images.optimize.dpi
+//   sizesAttr = sizesAttr ? sizesAttr.split(',') : templateConfig.images.optimize.sizes
+//   const dpi = templateConfig.images.optimize.dpi
 
-  // imagePath = imagePath.startsWith('./') ? imagePath.replace('./', '/') : imagePath
-  // const fullImagePath = `src${imagePath}`;
+//   // imagePath = imagePath.startsWith('./') ? imagePath.replace('./', '/') : imagePath
+//   // const fullImagePath = `src${imagePath}`;
 
-	 if (imagePath.startsWith('@img/')) {
-    imagePath = '/assets/img/' + imagePath.slice(5);
-  } else if (imagePath.startsWith('./')) {
-    imagePath = imagePath.replace('./', '/');
-  }
-  if (!imagePath.startsWith('/')) {
-    imagePath = '/' + imagePath;
-  }
-  const fullImagePath = `src${imagePath}`;
+// 	 if (imagePath.startsWith('@img/')) {
+//     imagePath = '/assets/img/' + imagePath.slice(5);
+//   } else if (imagePath.startsWith('./')) {
+//     imagePath = imagePath.replace('./', '/');
+//   }
+//   if (!imagePath.startsWith('/')) {
+//     imagePath = '/' + imagePath;
+//   }
+//   const fullImagePath = `src${imagePath}`;
 
-  if (fs.existsSync(fullImagePath)) {
-    const extType = imagePath.split('.').pop().toLowerCase();
-    if (/^(png|webp|avif|jpe?g|gif|tiff|bmp|ico)$/i.test(extType)) {
-      uniqImages.add(imagePath)
-      const newHtmlCode = imageResizeInit(
-        fullImagePath,
-        sizesAttr,
-        dpi,
-        extType,
-        attributes.trim(),
-        file.endsWith('.html') ? 'html' : 'js',
-        { lazy: isLazy } // NEW
-      )
-      return templateConfig.images.optimize.edithtml ? newHtmlCode : data;
-    }
-  }
-  return data;
-})
+//   if (fs.existsSync(fullImagePath)) {
+//     const extType = imagePath.split('.').pop().toLowerCase();
+//     if (/^(png|webp|avif|jpe?g|gif|tiff|bmp|ico)$/i.test(extType)) {
+//       uniqImages.add(imagePath)
+//       const newHtmlCode = imageResizeInit(
+//         fullImagePath,
+//         sizesAttr,
+//         dpi,
+//         extType,
+//         attributes.trim(),
+//         file.endsWith('.html') ? 'html' : 'js',
+//         { lazy: isLazy } // NEW
+//       )
+//       return templateConfig.images.optimize.edithtml ? newHtmlCode : data;
+//     }
+//   }
+//   return data;
+// })
 
 							// Обробка зображень які вказані в href тегів A
 							content = content.replace(/<a\s[^>]*href=["']([^"']+\.(jpg|jpeg|avif|png|gif|webp))["'][^>]*>/gi, (data, url) => {
@@ -192,100 +192,100 @@ content = content.replace(new RegExp(`<img(?![^>]*\\s${attrIgnore})[^>]*>`, 'gi'
 	}] : []),
 ]
 // Побудова HTML-структури
-// function imageResizeInit(image, sizes, dpi, extType, attr, mode = 'html') {
-// 	const reg = new RegExp('\\.(png|webp|avif|jpeg|jpg|gif)(?=\\s|\\)|"|\'|$)', "gi")
-// 	const isWebpAvif = /avif|webp/i.test(extType)
-// 	const imageoutExt = isWebpAvif || !templateConfig.images.optimize.modernformat.enable ? extType : templateConfig.images.optimize.modernformat.type
-// 	const imageout = image.replace('src/', `dist/`)
-// 	const isNeedPicture = sizes.length || (!isWebpAvif && templateConfig.images.optimize.modernformat.enable && !templateConfig.images.optimize.modernformat.only)
-// 	const imageOutUrl = isWebpAvif || !templateConfig.images.optimize.modernformat.enable ? imageout : imageout.replace(reg, `.${templateConfig.images.optimize.modernformat.type}`)
-// 	const imageSize = getImgSize(image).width
-// 	let templete = ``
-// 	if (mode === 'html' || mode === 'js') {
-// 		isNeedPicture ? templete = `<picture>` : null
-// 		for (let size of sizes) {
-// 			if (imageSize > size) {
-// 				const imageoutSize = imageout.replace(reg, `-${size}.${imageoutExt}`)
-// 				const dpiSizesImages = dpi.length ? getDpi(+size, dpi, image, imageoutSize, extType, imageoutExt) : null
-// 				templete += `<source media="(max-width: ${size}px)" srcset="${dpiSizesImages ? dpiSizesImages : imageResize(+size, image, imageoutSize, extType)}" type="image/${imageoutExt}">`
-// 			}
-// 		}
+function imageResizeInit(image, sizes, dpi, extType, attr, mode = 'html') {
+	const reg = new RegExp('\\.(png|webp|avif|jpeg|jpg|gif)(?=\\s|\\)|"|\'|$)', "gi")
+	const isWebpAvif = /avif|webp/i.test(extType)
+	const imageoutExt = isWebpAvif || !templateConfig.images.optimize.modernformat.enable ? extType : templateConfig.images.optimize.modernformat.type
+	const imageout = image.replace('src/', `dist/`)
+	const isNeedPicture = sizes.length || (!isWebpAvif && templateConfig.images.optimize.modernformat.enable && !templateConfig.images.optimize.modernformat.only)
+	const imageOutUrl = isWebpAvif || !templateConfig.images.optimize.modernformat.enable ? imageout : imageout.replace(reg, `.${templateConfig.images.optimize.modernformat.type}`)
+	const imageSize = getImgSize(image).width
+	let templete = ``
+	if (mode === 'html' || mode === 'js') {
+		isNeedPicture ? templete = `<picture>` : null
+		for (let size of sizes) {
+			if (imageSize > size) {
+				const imageoutSize = imageout.replace(reg, `-${size}.${imageoutExt}`)
+				const dpiSizesImages = dpi.length ? getDpi(+size, dpi, image, imageoutSize, extType, imageoutExt) : null
+				templete += `<source media="(max-width: ${size}px)" srcset="${dpiSizesImages ? dpiSizesImages : imageResize(+size, image, imageoutSize, extType)}" type="image/${imageoutExt}">`
+			}
+		}
 
-// 		const dpiImages = dpi.length ? getDpi(null, dpi, image, imageOutUrl, extType, imageoutExt) : null
+		const dpiImages = dpi.length ? getDpi(null, dpi, image, imageOutUrl, extType, imageoutExt) : null
 
-// 		if (templateConfig.images.optimize.modernformat.only || isWebpAvif) {
-// 			templete += `<img ${attr} src="${imageResize(null, image, imageOutUrl, extType)}" ${dpiImages ? `srcset="${dpiImages}"` : ``}>`
-// 		} else {
-// 			!isWebpAvif ? templete += `<source srcset="${dpiImages ? dpiImages : imageResize(null, image, imageOutUrl, extType)}" type="image/${imageoutExt}">` : null
-// 			templete += `<img ${attr} src="${imageout.replace('dist/', templateConfig.server.path)}">`
-// 		}
-// 		isNeedPicture ? templete += `</picture>` : null
-// 	} else {
-// 		templete += `${imageResize([], image, imageOutUrl, extType)}`
-// 	}
-// 	imageDelete(image, isWebpAvif)
-// 	return templete
-// }
-// Побудова HTML-структури
-function imageResizeInit(image, sizes, dpi, extType, attr, mode = 'html', opts = {}) {
-  const { lazy = false } = opts // NEW
-  const reg = new RegExp('\\.(png|webp|avif|jpeg|jpg|gif)(?=\\s|\\)|"|\'|$)', "gi")
-  const isWebpAvif = /avif|webp/i.test(extType)
-  const imageoutExt = isWebpAvif || !templateConfig.images.optimize.modernformat.enable
-    ? extType
-    : templateConfig.images.optimize.modernformat.type
-  const imageout = image.replace('src/', `dist/`)
-  const isNeedPicture = sizes.length || (!isWebpAvif && templateConfig.images.optimize.modernformat.enable && !templateConfig.images.optimize.modernformat.only)
-  const imageOutUrl = isWebpAvif || !templateConfig.images.optimize.modernformat.enable
-    ? imageout
-    : imageout.replace(reg, `.${templateConfig.images.optimize.modernformat.type}`)
-  const imageSize = getImgSize(image).width
-
-  // имена атрибутов: обычные или data-* для lazy
-  const SRC_ATTR = lazy ? 'data-src' : 'src'            // NEW
-  const SRCSET_ATTR = lazy ? 'data-srcset' : 'srcset'   // NEW
-
-  let templete = ``
-
-  if (mode === 'html' || mode === 'js') {
-    if (isNeedPicture) templete += `<picture>`
-
-    for (let size of sizes) {
-      if (imageSize > size) {
-        const imageoutSize = imageout.replace(reg, `-${size}.${imageoutExt}`)
-        const dpiSizesImages = dpi.length ? getDpi(+size, dpi, image, imageoutSize, extType, imageoutExt) : null
-        const srcsetVal = dpiSizesImages ? dpiSizesImages : imageResize(+size, image, imageoutSize, extType)
-        // <source ...> c srcset или data-srcset
-        templete += `<source media="(max-width: ${size}px)" ${SRCSET_ATTR}="${srcsetVal}" type="image/${imageoutExt}">`
-      }
-    }
-
-    const dpiImages = dpi.length ? getDpi(null, dpi, image, imageOutUrl, extType, imageoutExt) : null
-    const mainSrcset = dpiImages ? dpiImages : imageResize(null, image, imageOutUrl, extType)
-
-    if (templateConfig.images.optimize.modernformat.only || isWebpAvif) {
-      // Только современный формат (webp/avif) ИЛИ исходник уже webp/avif
-      templete += `<img ${attr ? attr + ' ' : ''}${SRC_ATTR}="${imageResize(null, image, imageOutUrl, extType)}"${dpiImages ? ` ${SRCSET_ATTR}="${dpiImages}"` : ``}>`
-    } else {
-      // Добавляем modern <source>
-      if (!isWebpAvif) {
-        templete += `<source ${SRCSET_ATTR}="${mainSrcset}" type="image/${imageoutExt}">`
-      }
-      // Финальный <img> — оригинальный формат
-      // Для lazy кладём путь в data-src, для обычного — в src
-      const fallbackUrl = imageout.replace('dist/', templateConfig.server.path)
-      templete += `<img ${attr ? attr + ' ' : ''}${SRC_ATTR}="${fallbackUrl}">`
-    }
-
-    if (isNeedPicture) templete += `</picture>`
-  } else {
-    // режим 'url' для CSS url(...) — здесь ленивость неактуальна
-    templete += `${imageResize([], image, imageOutUrl, extType)}`
-  }
-
-  imageDelete(image, isWebpAvif)
-  return templete
+		if (templateConfig.images.optimize.modernformat.only || isWebpAvif) {
+			templete += `<img ${attr} src="${imageResize(null, image, imageOutUrl, extType)}" ${dpiImages ? `srcset="${dpiImages}"` : ``}>`
+		} else {
+			!isWebpAvif ? templete += `<source srcset="${dpiImages ? dpiImages : imageResize(null, image, imageOutUrl, extType)}" type="image/${imageoutExt}">` : null
+			templete += `<img ${attr} src="${imageout.replace('dist/', templateConfig.server.path)}">`
+		}
+		isNeedPicture ? templete += `</picture>` : null
+	} else {
+		templete += `${imageResize([], image, imageOutUrl, extType)}`
+	}
+	imageDelete(image, isWebpAvif)
+	return templete
 }
+// // Побудова HTML-структури
+// function imageResizeInit(image, sizes, dpi, extType, attr, mode = 'html', opts = {}) {
+//   const { lazy = false } = opts // NEW
+//   const reg = new RegExp('\\.(png|webp|avif|jpeg|jpg|gif)(?=\\s|\\)|"|\'|$)', "gi")
+//   const isWebpAvif = /avif|webp/i.test(extType)
+//   const imageoutExt = isWebpAvif || !templateConfig.images.optimize.modernformat.enable
+//     ? extType
+//     : templateConfig.images.optimize.modernformat.type
+//   const imageout = image.replace('src/', `dist/`)
+//   const isNeedPicture = sizes.length || (!isWebpAvif && templateConfig.images.optimize.modernformat.enable && !templateConfig.images.optimize.modernformat.only)
+//   const imageOutUrl = isWebpAvif || !templateConfig.images.optimize.modernformat.enable
+//     ? imageout
+//     : imageout.replace(reg, `.${templateConfig.images.optimize.modernformat.type}`)
+//   const imageSize = getImgSize(image).width
+
+//   // имена атрибутов: обычные или data-* для lazy
+//   const SRC_ATTR = lazy ? 'data-src' : 'src'            // NEW
+//   const SRCSET_ATTR = lazy ? 'data-srcset' : 'srcset'   // NEW
+
+//   let templete = ``
+
+//   if (mode === 'html' || mode === 'js') {
+//     if (isNeedPicture) templete += `<picture>`
+
+//     for (let size of sizes) {
+//       if (imageSize > size) {
+//         const imageoutSize = imageout.replace(reg, `-${size}.${imageoutExt}`)
+//         const dpiSizesImages = dpi.length ? getDpi(+size, dpi, image, imageoutSize, extType, imageoutExt) : null
+//         const srcsetVal = dpiSizesImages ? dpiSizesImages : imageResize(+size, image, imageoutSize, extType)
+//         // <source ...> c srcset или data-srcset
+//         templete += `<source media="(max-width: ${size}px)" ${SRCSET_ATTR}="${srcsetVal}" type="image/${imageoutExt}">`
+//       }
+//     }
+
+//     const dpiImages = dpi.length ? getDpi(null, dpi, image, imageOutUrl, extType, imageoutExt) : null
+//     const mainSrcset = dpiImages ? dpiImages : imageResize(null, image, imageOutUrl, extType)
+
+//     if (templateConfig.images.optimize.modernformat.only || isWebpAvif) {
+//       // Только современный формат (webp/avif) ИЛИ исходник уже webp/avif
+//       templete += `<img ${attr ? attr + ' ' : ''}${SRC_ATTR}="${imageResize(null, image, imageOutUrl, extType)}"${dpiImages ? ` ${SRCSET_ATTR}="${dpiImages}"` : ``}>`
+//     } else {
+//       // Добавляем modern <source>
+//       if (!isWebpAvif) {
+//         templete += `<source ${SRCSET_ATTR}="${mainSrcset}" type="image/${imageoutExt}">`
+//       }
+//       // Финальный <img> — оригинальный формат
+//       // Для lazy кладём путь в data-src, для обычного — в src
+//       const fallbackUrl = imageout.replace('dist/', templateConfig.server.path)
+//       templete += `<img ${attr ? attr + ' ' : ''}${SRC_ATTR}="${fallbackUrl}">`
+//     }
+
+//     if (isNeedPicture) templete += `</picture>`
+//   } else {
+//     // режим 'url' для CSS url(...) — здесь ленивость неактуальна
+//     templete += `${imageResize([], image, imageOutUrl, extType)}`
+//   }
+
+//   imageDelete(image, isWebpAvif)
+//   return templete
+// }
 
 // Конвертація та зміна розмірів зображень
 function imageResize(size, image, imageout, extType) {

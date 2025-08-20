@@ -5,6 +5,14 @@
   pointer-events: none;
 }
 
+%imgBg {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 
 .shadow {
   position: fixed;
@@ -452,7 +460,6 @@
 }
 
 
-
   .cta-sections {
     position: relative;
     z-index: 1;
@@ -568,6 +575,17 @@
     // opacity: 0;
     @extend %bgAbsolute;
 
+    div {
+      @extend %imgBg;
+      @media (min-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-2.webp');
+      }
+      @media (max-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-2-1200.webp');
+        background-position: 60%;
+      }
+    }
+
     img {
       @media (max-width:toEm($tablet)) {
         object-position: 60%;
@@ -588,6 +606,17 @@
   // .section-3__picture
   &__picture {
     @extend %bgAbsolute;
+
+     div {
+      @extend %imgBg;
+      @media (min-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-3.webp');
+      }
+      @media (max-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-3-1200.webp');
+        // background-position: 60%;
+      }
+    }
     img {
     }
   }
@@ -661,6 +690,19 @@
  // .section-4__picture
   &__picture {
     @extend %bgAbsolute;
+
+      div {
+      @extend %imgBg;
+      @media (min-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-4.webp');
+      }
+      @media (max-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-4-1200.webp');
+        background-position: 28%;
+      }
+    }
+
+
     img {
       @media (max-width:toEm($mobileSmall)){
          object-position: 28%; 
@@ -834,6 +876,18 @@
  // .section-5__picture
   &__picture {
     @extend %bgAbsolute;
+
+      div {
+      @extend %imgBg;
+      @media (min-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-5.webp');
+      }
+      @media (max-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-5-1200.webp');
+        background-position: 20%;
+      }
+    }
+
     img {
       @media (max-width:toEm($mobileSmall)){
          object-position: 20%; 
@@ -1003,6 +1057,17 @@
  // .section-6__picture
   &__picture {
     @extend %bgAbsolute;
+  div {
+      @extend %imgBg;
+      @media (min-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-6.webp');
+      }
+      @media (max-width:toEm(820.98)){
+        background-image: url('@img/main/optimize/section-6-1200.webp');
+        // background-position: 60%;
+      }
+    }
+
     img {
     }
   }
