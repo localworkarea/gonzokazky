@@ -107,17 +107,19 @@ body {
 // Загальні стилі для усього сайту
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 section {
-  min-height: 100svh;
-  overflow: hidden;
-  position: relative;
-	  padding-block: 50px;
-  display: flex;
-  align-items: center;
-  [class*="__container"]{
-    position: relative;
-    z-index: 3;
-		width: 100%;
-  }
+	.home-page & {
+		min-height: 100svh;
+		overflow: hidden;
+		position: relative;
+			padding-block: 50px;
+		display: flex;
+		align-items: center;
+		[class*="__container"]{
+			position: relative;
+			z-index: 3;
+			width: 100%;
+		}
+	}
 }
 
 body {
@@ -305,3 +307,17 @@ body {
 
   }
 }
+
+
+       .num {
+          flex: 0 0 auto;
+          display: grid;
+          place-items: center;
+          align-self: flex-start;
+          @include adaptiveValue("width", 30, 25);
+          border-radius: 50%;
+          aspect-ratio: 1;
+          background: linear-gradient(135deg, #fff600 0%, #30f4fe 100%);
+          box-shadow: 0 0 20px #7eeb56;
+          color: $mainColor;
+        }

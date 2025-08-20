@@ -1033,18 +1033,18 @@
             }
           }
         }
-        .num {
-          flex: 0 0 auto;
-          display: grid;
-          place-items: center;
-          align-self: flex-start;
-          @include adaptiveValue("width", 30, 26);
-          border-radius: 50%;
-          aspect-ratio: 1;
-          background: linear-gradient(135deg, #fff600 0%, #30f4fe 100%);
-          box-shadow: 0 0 20px #7eeb56;
-          color: $mainColor;
-        }
+        // .num {
+        //   flex: 0 0 auto;
+        //   display: grid;
+        //   place-items: center;
+        //   align-self: flex-start;
+        //   @include adaptiveValue("width", 30, 26);
+        //   border-radius: 50%;
+        //   aspect-ratio: 1;
+        //   background: linear-gradient(135deg, #fff600 0%, #30f4fe 100%);
+        //   box-shadow: 0 0 20px #7eeb56;
+        //   color: $mainColor;
+        // }
       }
     }
   }

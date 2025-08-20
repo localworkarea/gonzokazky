@@ -17,10 +17,6 @@ videoYoutubeButtons.forEach((button) => {
     body.classList.add("video-added");
   });
 });
-const pageHome = document.querySelector(".page--home");
-if (pageHome) {
-  document.documentElement.classList.add("home-page");
-}
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   const smoother = ScrollSmoother.create({

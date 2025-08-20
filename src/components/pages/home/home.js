@@ -6,10 +6,6 @@ import { addTouchAttr, addLoadedAttr, isMobile, FLS } from "@js/common/functions
 
 
 
-const pageHome = document.querySelector('.page--home');
-if (pageHome) {
-  document.documentElement.classList.add('home-page');
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
