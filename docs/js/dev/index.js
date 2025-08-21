@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.getAll().filter((t) => t.vars?.id === "wolfItemsScroll").forEach((t) => t.kill());
     gsap.set(wolfItems, { y: 0, opacity: 0 });
     {
-      const REST_VH = 0.15;
+      const REST_VH = 0.1;
       const END_VH = 0.3;
       const END_ZONE = 0.2;
       const SMOOTH = 0.06;

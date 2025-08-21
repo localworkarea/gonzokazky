@@ -381,6 +381,9 @@
   transition: opacity .45s ease;
   &._opacity {
     opacity: 0;
+    // @media (max-width:toEm($mobileSmall)){
+    //    opacity: 0; 
+    // }
   }
 		// .wolf__container
 		&__container {
