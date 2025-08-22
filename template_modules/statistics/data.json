@@ -157,6 +157,22 @@
         "start": 1755868395736,
         "end": 1755869320041,
         "type": "build"
+      },
+      {
+        "date": "22.08.2025",
+        "start": 1755875260717,
+        "end": 1755877704286
+      },
+      {
+        "date": "22.08.2025",
+        "start": 1755877743314,
+        "end": 1755878222567
+      },
+      {
+        "date": "22.08.2025",
+        "start": 1755878229238,
+        "end": 1755878757749,
+        "type": "build"
       }
     ],
     "files": [
@@ -202,7 +218,10 @@
       "banner-mb.svg",
       "extends.scss",
       "banner-c-mb.svg",
-      "banner-res-1-pc.svg"
+      "banner-res-1-pc.svg",
+      "result-4-pc.jpg",
+      "banner-footer-2-mb.svg",
+      "banner-footer-2-pc.svg"
     ]
   }
 }

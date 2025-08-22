@@ -717,6 +717,7 @@
         .result-test--d & {
           @media (min-width:toEm(820.98)){
             background-image: url("@img/result/result-4-pc.jpg");
+            background-position: top;
           }
         }
 		}

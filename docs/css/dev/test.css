@@ -1098,6 +1098,7 @@
   }
   .result-test--d .result-test__wrapper {
     background-image: url("../assets/img/result/result-4-pc.webp");
+    background-position: top;
   }
   .result-test--c .result-test__logo img:nth-child(1) {
     display: none;
