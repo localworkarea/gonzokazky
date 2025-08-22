@@ -237,13 +237,15 @@
 
     img {
       object-fit: contain;
-      // opacity: 0;
-      // transform: translate(0,50%);      
-      // [data-fls-loaded] & {
-      //   opacity: 1;
-      //   transform: translate(0,0%);      
-      //   transition: all .65s ease .2s;
-      // }
+      @media (min-width:toEm(820.98)){
+        opacity: 0;
+        transform: translate(0,50%);      
+        [data-fls-loaded] & {
+          opacity: 1;
+          transform: translate(0,0%);      
+          transition: all .65s ease .2s;
+        }
+      }
     }
   }
 }
@@ -288,12 +290,14 @@
     }
 
     img {
-      // scale: 0;
-      
-      // [data-fls-loaded] & {
-      //   scale: 1;
-      //   transition: scale .65s ease;
-      // }
+      @media (min-width:toEm(820.98)){
+        scale: 0;
+        
+        [data-fls-loaded] & {
+          scale: 1;
+          transition: scale .65s ease;
+        }
+      }
     }
 
   }

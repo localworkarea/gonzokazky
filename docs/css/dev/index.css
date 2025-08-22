@@ -149,6 +149,7 @@
   position: relative;
   z-index: 3;
 }
+
 .cta-hero::before {
   content: "";
   position: absolute;
@@ -881,6 +882,22 @@
   }
   .hero__wolf {
     position: relative;
+  }
+  .hero__wolf img {
+    opacity: 0;
+    transform: translate(0, 50%);
+  }
+  [data-fls-loaded] .hero__wolf img {
+    opacity: 1;
+    transform: translate(0, 0%);
+    transition: all 0.65s ease 0.2s;
+  }
+  .packs-hero__picture img {
+    scale: 0;
+  }
+  [data-fls-loaded] .packs-hero__picture img {
+    scale: 1;
+    transition: scale 0.65s ease;
   }
   .cta-hero {
     align-self: flex-end;

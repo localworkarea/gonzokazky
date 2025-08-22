@@ -926,8 +926,12 @@
     &__buttons {
       display: flex;
       gap: 15px;
+      @media (min-width:toEm(600.98)){
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+      }
       @media (max-width: toEm(600.98)){
-        flex-direction: column;
+        flex-direction: column-reverse;
       }
     }
 
