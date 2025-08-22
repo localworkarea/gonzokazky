@@ -87,6 +87,25 @@ summary {
   object-fit: cover;
 }
 
+.banner__picture::before, .snacks-block:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-page .body-sections__banner {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.--watcher-view .home-page .body-sections__banner, .home-page .--watcher-view .body-sections__banner {
+  opacity: 1;
+}
+
 body {
   min-width: 20rem;
   color: #000;
@@ -182,14 +201,6 @@ body::-webkit-scrollbar {
   text-shadow: 0.125rem 0.125rem 0 #231f20;
   position: relative;
 }
-.text-banner::before {
-  content: "";
-  position: absolute;
-  inset: -45% -12%;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
-}
 
 .banner {
   position: relative;
@@ -208,7 +219,13 @@ body::-webkit-scrollbar {
   top: 50%;
   left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-52%, -50%);
+  aspect-ratio: 700/256;
+}
+.banner__picture::before {
+  content: "";
+  aspect-ratio: 700/157;
+  background-image: url("../assets/img/banners/banner-mb.svg");
 }
 
 .body-sections {
@@ -220,14 +237,14 @@ body::-webkit-scrollbar {
   z-index: 0;
   max-width: 43.125rem;
 }
-.home-page .body-sections__banner {
-  opacity: 0;
+.--watcher-view .home-page .body-sections__banner {
+  transition-delay: 0.1s;
 }
 .body-sections__banner .banner__text {
   max-width: 75%;
 }
 .body-sections__banner .banner__picture {
-  width: 43.125rem;
+  width: 45.9375rem;
 }
 .snacks-block {
   position: absolute;
@@ -236,11 +253,17 @@ body::-webkit-scrollbar {
   transform: translate(-50%, -50%);
   width: 125%;
   pointer-events: none;
+  aspect-ratio: 390/1072;
 }
-.snacks-block._active img {
+.snacks-block:before {
+  content: "";
+  background-image: url("../assets/img/snacks/smacks-2-mb.webp");
+  aspect-ratio: 390/1072;
+}
+.snacks-block._active img, .snacks-block._active::before {
   transform: scale(1);
 }
-.snacks-block img {
+.snacks-block img, .snacks-block::before {
   transition: transform 0.65s ease;
   transform: scale(0);
 }
@@ -329,6 +352,10 @@ body::-webkit-scrollbar {
     margin-inline: auto;
     max-width: 11.875rem;
   }
+}@media (max-width: 51.31125em) {
+  .snacks-block {
+    width: 52%;
+  }
 }@media (max-width: 43.81125em) {
   .body-sections__banner .banner__text {
     text-align: left;
@@ -338,8 +365,8 @@ body::-webkit-scrollbar {
     transform: translate(-60%, -50%);
   }
 }@media (max-width: 30.06125em) {
-  .text-banner::before {
-    inset: -30% -48%;
+  .snacks-block {
+    width: 110%;
   }
 }@media (max-width: 20em) {
   .body-sections__banner {
@@ -361,11 +388,6 @@ body::-webkit-scrollbar {
   .body-sections__banner .banner__text {
     max-width: 28.125rem;
   }
-  .snacks-block {
-    top: 50%;
-    left: 50%;
-    width: 120%;
-  }
 }@media (min-width: 20em) and (max-width: 90em) {
   .body-sections__banner {
     margin-bottom: clamp( 1.875rem , 1.1607142857125rem  +  3.5714285714vw , 4.375rem );
@@ -386,6 +408,17 @@ body::-webkit-scrollbar {
   .banner {
     padding: 2.1875rem 1.6875rem;
   }
+  .banner__picture {
+    aspect-ratio: 540/256;
+  }
+  .banner__picture::before {
+    aspect-ratio: 540/200;
+    background-image: url("../assets/img/banners/banner-pc.svg");
+  }
+  .snacks-block {
+    top: 50%;
+    left: 50%;
+  }
   .btn--a {
     font-size: 1.25rem;
   }
@@ -396,6 +429,13 @@ body::-webkit-scrollbar {
 }@media (min-width: 51.31125em) {
   .body-sections {
     padding-top: 6.25rem;
+  }
+  .snacks-block {
+    aspect-ratio: 1656/725;
+  }
+  .snacks-block:before {
+    aspect-ratio: 1656/725;
+    background-image: url("../assets/img/snacks/smacks-2-pc.webp");
   }
 }@media (min-width: 90em) and (max-width: 120em) {
   .logo-main__wrapper {

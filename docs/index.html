@@ -11,10 +11,10 @@
 		<link rel="preload" href="./assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>GONZO Kazky | Home</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1755786309641"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1755862373179"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755786309641">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1755786309641">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1755862373179">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1755862373179">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -22,7 +22,7 @@
 				<div class="logo-main__wrapper">
 					<div class="logo-main__picture">
 						<picture>
-							<source media="(max-width: 600px)" srcset="./assets/img/main/logo-600.webp" type="image/webp">
+							<source media="(max-width: 430px)" srcset="./assets/img/main/logo-430.webp" type="image/webp">
 							<img width="406" height="152" alt="logo Gonzo" src="./assets/img/main/logo.webp">
 						</picture>
 					</div>
@@ -53,14 +53,14 @@
 						<div data-speed="0.2" class="hero__picture hero__picture--1">
 							<picture>
 								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-mounts-1200.webp" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-mounts-600.webp" type="image/webp">
+								<source media="(max-width: 430px)" srcset="./assets/img/main/hero-mounts-430.webp" type="image/webp">
 								<img class="ibg" width="1440" height="800" alt="головний фон багато зелених холмів та синє небо з поодинокими хмарами" src="./assets/img/main/hero-mounts.webp">
 							</picture>
 						</div>
 						<div data-speed="0.4" class="hero__picture hero__picture--2">
 							<picture>
 								<source media="(max-width: 1200px)" srcset="./assets/img/main/hero-castle-1200.webp" type="image/webp">
-								<source media="(max-width: 600px)" srcset="./assets/img/main/hero-castle-600.webp" type="image/webp">
+								<source media="(max-width: 430px)" srcset="./assets/img/main/hero-castle-430.webp" type="image/webp">
 								<img class="ibg" width="1440" height="800" alt="на фоні холмів по центру на високій горі розташований старовинний замок" src="./assets/img/main/hero-castle.webp">
 							</picture>
 						</div>
@@ -68,7 +68,7 @@
 							<div class="hero__packs packs-hero">
 								<div data-speed="clamp(0.8)" class="packs-hero__picture">
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/main/packs-hero-600.webp" type="image/webp">
+										<source media="(max-width: 430px)" srcset="./assets/img/main/packs-hero-430.webp" type="image/webp">
 										<img class="ibg" width="516" height="313" decoding="async" fetchpriority="high" alt="Три пачки Gonzo" src="./assets/img/main/packs-hero.webp">
 									</picture>
 								</div>
@@ -92,13 +92,7 @@
 											І навіть твоє!
 										</h1>
 									</div>
-									<div class="banner__picture">
-										<picture>
-											<source srcset="./assets/img/banners/banner-hero-pc.svg" media="(min-width: 30.061em)" type="image/svg+xml">
-											<source srcset="./assets/img/banners/banner-hero-mb.svg" media="(max-width: 30.061em)" type="image/svg+xml">
-											<img class="banner__img" data-fls-image-ignore="" src="./assets/img/banners/banner-hero-pc.svg" width="1440" height="800" decoding="async" fetchpriority="high" alt="палаючий золотистий баннер на фоні якого розміщений текст">
-										</picture>
-									</div>
+									<div class="banner__picture"></div>
 								</div>
 								<div data-speed="clamp(0.5)" class="hero__wolf-wr">
 									<div class="hero__wolf">
@@ -117,35 +111,31 @@
 						</div>
 						<div class="section-2__container">
 							<div class="section-2__shacks snacks-block">
-								<picture>
-									<source srcset="./assets/img/snacks/smacks-2-pc.webp" media="(min-width: 51.311em)" type="image/webp">
-									<source srcset="./assets/img/snacks/smacks-2-mb.webp" media="(max-width: 51.311em)" type="image/webp">
-									<img class="ibg" loading="lazy" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
-								</picture>
+								<!--
+<picture>
+<source srcset="@img/snacks/smacks-2-pc.png" media="(min-width: 51.311em)" type="image/webp">
+<source srcset="@img/snacks/smacks-2-mb.png" media="(max-width: 51.311em)" type="image/webp">
+<img class="ibg"  data-fls-image-ignore src="@img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
+</picture>
+-->
 							</div>
 							<div class="section-2__pictures">
 								<picture>
-									<img class="section-2__women" loading="lazy" width="252" height="333" alt="казкова жінка в червоному плащі" src="./assets/img/people/women.webp">
+									<img class="section-2__women" width="252" height="333" alt="казкова жінка в червоному плащі" src="./assets/img/people/women.webp">
 								</picture>
 								<picture>
-									<img class="section-2__men" loading="lazy" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо" src="./assets/img/people/men.webp">
+									<img class="section-2__men" width="151" height="355" alt="казковий принц тримає в руці пачку Гонзо" src="./assets/img/people/men.webp">
 								</picture>
 							</div>
-							<div data-speed="1.2" class="section-2__body body-sections">
+							<div data-speed="1.2" data-fls-watcher="" data-fls-watcher-threshold="0.3" class="section-2__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
 										<h2>Казкова смачність Gonzo у стародавніх закляттях хрусткості</h2>
 									</div>
-									<div class="banner__picture">
-										<picture>
-											<source srcset="./assets/img/banners/banner-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
-											<source srcset="./assets/img/banners/banner-mb.svg" media="(max-width: 43.811em)" type="image/svg+xml">
-											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
-										</picture>
-									</div>
+									<div class="banner__picture"></div>
 								</div>
 								<div class="body-sections__cta cta-sections">
-									<div data-speed="clamp(1.1)" class="cta-sections__txt">
+									<div class="cta-sections__txt">
 										<p>
 											Оціни казкову хрусткосмачність Gonzo і дізнайся свого
 											<br>
@@ -166,31 +156,25 @@
 					<section class="section-3">
 						<div class="section-3__picture">
 							<div data-speed="0.5"></div>
-							<!-- <img data-speed="0.5" loading="lazy" class="ibg"  loading="lazy" src="@img/main/section-3.jpg" width="1440" height="800" alt="Image"> -->
 						</div>
 						<div data-speed="0.65" class="section-3__stars stars-section"></div>
 						<div class="section-3__container">
 							<div class="section-3__women">
 								<picture>
-									<img class="ibg" loading="lazy" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo" src="./assets/img/people/three-women.webp">
+									<source media="(max-width: 430px)" srcset="./assets/img/people/three-women-430.webp" type="image/webp">
+									<img class="ibg" width="360" height="422" alt="три дівчини, попелюшка, рапунцель та фея стоять разом та смакують чипсами Gonzo" src="./assets/img/people/three-women.webp">
 								</picture>
 							</div>
-							<div data-speed="1.1" class="section-3__body body-sections">
+							<div data-speed="1.1" data-fls-watcher="" data-fls-watcher-threshold="0.3" class="section-3__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
 										<p>Казкова смачність Gonzo
 								у алхімічній рецептурі наповнення спеціями!</p>
 									</div>
-									<div class="banner__picture">
-										<picture>
-											<source srcset="./assets/img/banners/banner-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
-											<source srcset="./assets/img/banners/banner-mb.svg" media="(max-width: 43.811em)" type="image/svg+xml">
-											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
-										</picture>
-									</div>
+									<div class="banner__picture"></div>
 								</div>
 								<div class="body-sections__cta cta-sections">
-									<div data-speed="clamp(1.1)" class="cta-sections__txt">
+									<div class="cta-sections__txt">
 										<h2>Герою, вирушай на особливе завдання – оцінка казкової смачності снеків Gonzo!</h2>
 									</div>
 									<div class="cta-sections__btn-wr">
@@ -207,7 +191,6 @@
 					<section class="section-4">
 						<div class="section-4__picture">
 							<div data-speed="0.5"></div>
-							<!-- <img data-speed="0.5"  class="ibg"  loading="lazy" src="@img/main/section-4.jpg" width="1440" height="800" alt="Image"> -->
 						</div>
 						<div class="section-4__container">
 							<div class="section-4__images">
@@ -216,46 +199,41 @@
 								</picture>
 								<div class="section-4__cauldron cauldron">
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/cauldron/cauldron-600.webp" type="image/webp">
-										<img class="cauldron__under" loading="lazy" width="490" height="613" alt="котел в якому обсмажуються чипси Гонзо" src="./assets/img/cauldron/cauldron.webp">
+										<source media="(max-width: 430px)" srcset="./assets/img/cauldron/cauldron-430.webp" type="image/webp">
+										<img class="cauldron__under" width="490" height="613" alt="котел в якому обсмажуються чипси Гонзо" src="./assets/img/cauldron/cauldron.webp">
 									</picture>
 									<picture>
-										<img class="cauldron__snacks" loading="lazy" width="554" height="488" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-group.webp">
+										<source media="(max-width: 430px)" srcset="./assets/img/cauldron/snack-group-430.webp" type="image/webp">
+										<img class="cauldron__snacks" width="554" height="488" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-group.webp">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--1" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-1.webp">
+										<img class="cauldron__snack cauldron__snack--1" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-1.webp">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--2" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-2.webp">
+										<img class="cauldron__snack cauldron__snack--2" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-2.webp">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--3" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-3.webp">
+										<img class="cauldron__snack cauldron__snack--3" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-3.webp">
 									</picture>
 									<picture>
-										<img class="cauldron__snack cauldron__snack--4" loading="lazy" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-4.webp">
+										<img class="cauldron__snack cauldron__snack--4" width="240" height="240" alt="обсмажені чипси Гонзо анімовано випригують із котла" src="./assets/img/cauldron/snack-4.webp">
 									</picture>
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/cauldron/cauldron-over-600.webp" type="image/webp">
-										<img class="cauldron__over" loading="lazy" aria-hidden="true" width="490" height="613" alt="котел" src="./assets/img/cauldron/cauldron-over.webp">
+										<source media="(max-width: 430px)" srcset="./assets/img/cauldron/cauldron-over-430.webp" type="image/webp">
+										<img class="cauldron__over" aria-hidden="true" width="490" height="613" alt="котел" src="./assets/img/cauldron/cauldron-over.webp">
 									</picture>
 								</div>
 							</div>
-							<div data-speed="1.1" class="section-4__body body-sections">
+							<div data-speed="1.1" data-fls-watcher="" data-fls-watcher-threshold="0.3" class="section-4__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
 										<h2>Казкова смачність Gonzo
 								у магічній технології обсмажки без олії!</h2>
 									</div>
-									<div class="banner__picture">
-										<picture>
-											<source srcset="./assets/img/banners/banner-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
-											<source srcset="./assets/img/banners/banner-mb.svg" media="(max-width: 43.811em)" type="image/svg+xml">
-											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
-										</picture>
-									</div>
+									<div class="banner__picture"></div>
 								</div>
 								<div class="body-sections__cta cta-sections">
-									<div data-speed="clamp(1.1)" class="cta-sections__txt">
+									<div class="cta-sections__txt">
 										<p>
 											Але без твоєї оцінки ми не дізнаємося таємницю казкової смачності Gonzo, рятуй, герою!
 										</p>
@@ -274,28 +252,21 @@
 					<section class="section-5">
 						<div class="section-5__picture">
 							<div data-speed="0.5"></div>
-							<!-- <img data-speed="0.5"  class="ibg"  loading="lazy" src="@img/main/section-5.jpg" width="1440" height="800" alt="Image"> -->
 						</div>
 						<div class="section-5__container">
 							<div class="section-5__box">
 								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/box/box-600.webp" type="image/webp">
+									<source media="(max-width: 430px)" srcset="./assets/img/box/box-430.webp" type="image/webp">
 									<img width="562" height="557" alt="сундук з коштовностями серед яких лежать пачки чипсів Гонзо" src="./assets/img/box/box.webp">
 								</picture>
 							</div>
-							<div class="section-5__shacks snacks-block">
-								<picture>
-									<source media="(max-width: 1200px)" srcset="./assets/img/snacks/smacks-2-pc-1200.webp" type="image/webp">
-									<source media="(max-width: 600px)" srcset="./assets/img/snacks/smacks-2-pc-600.webp" type="image/webp">
-									<img class="ibg" loading="lazy" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану" src="./assets/img/snacks/smacks-2-pc.webp">
-								</picture>
-							</div>
+							<div class="section-5__shacks snacks-block"></div>
 							<div class="section-5__wolf">
 								<picture>
 									<img class="ibg" width="201" height="449" alt="Image" src="./assets/img/main/wolf.webp">
 								</picture>
 							</div>
-							<div data-speed="1.2" class="section-5__body body-sections">
+							<div data-speed="1.2" data-fls-watcher="" data-fls-watcher-threshold="0.3" class="section-5__body body-sections">
 								<div class="body-sections__banner banner">
 									<div class="banner__text text-banner">
 										<h2>
@@ -303,16 +274,10 @@
 											<span class="txt-gradien">БОКС ІЗ ПОДАРУНКАМИ</span>
 										</h2>
 									</div>
-									<div class="banner__picture">
-										<picture>
-											<source srcset="./assets/img/banners/banner-b-pc.svg" media="(min-width: 43.811em)" type="image/svg+xml">
-											<source srcset="./assets/img/banners/banner-mb.svg" media="(max-width: 43.811em)" type="image/svg+xml">
-											<img class="banner__img" loading="lazy" data-fls-image-ignore="" src="./assets/img/banners/banner-b-pc.svg" width="1440" height="800" alt="палаючий золотистий баннер на фоні якого розміщений текст">
-										</picture>
-									</div>
+									<div class="banner__picture"></div>
 								</div>
 								<div class="body-sections__cta cta-sections">
-									<div data-speed="clamp(1.1)" class="cta-sections__txt">
+									<div class="cta-sections__txt">
 										<ul>
 											<li>
 												<span class="num">1</span>
@@ -352,16 +317,9 @@
 					<section class="section-6">
 						<div class="section-6__picture">
 							<div data-speed="0.5"></div>
-							<!-- <img data-speed="0.5"  class="ibg" loading="lazy" src="@img/main/section-6.jpg" width="1440" height="800" alt="Image"> -->
 						</div>
 						<div class="section-6__container">
-							<div class="section-6__shacks snacks-block">
-								<picture>
-									<source srcset="./assets/img/snacks/smacks-2-pc.webp" media="(min-width: 51.311em)" type="image/webp">
-									<source srcset="./assets/img/snacks/smacks-6-mb.webp" media="(max-width: 51.311em)" type="image/webp">
-									<img class="ibg" loading="lazy" data-fls-image-ignore="" src="./assets/img/snacks/smacks-2-pc.png" width="1440" height="800" alt="золотисті снеки що розлітаються по екрану">
-								</picture>
-							</div>
+							<div class="section-6__shacks snacks-block"></div>
 							<div data-speed="1.5" class="section-6__body">
 								<div class="section-6__bg">
 									<span></span>
@@ -371,7 +329,7 @@
 									<div data-fls-videobutton="" class="video-youtube__body">
 										<button class="video-youtube__button" type="button" data-youtube="yf5NOyy1SXU" aria-label="кнопка відкриття відео з youtube">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/poster/poster-600.webp" type="image/webp">
+												<source media="(max-width: 430px)" srcset="./assets/img/poster/poster-430.webp" type="image/webp">
 												<img class="ibg" width="784" height="400" alt="poster video" src="./assets/img/poster/poster.webp">
 											</picture>
 										</button>

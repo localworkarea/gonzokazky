@@ -192,17 +192,17 @@ body {
   line-height: 1.2;
   text-shadow: 2px 2px 0 #231f20;
   position: relative;
-  &::before {
-		content:'';
-    position: absolute;
-    inset: -45% -12%;  
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
-		@media (max-width:toEm($mobileSmall)){
-			inset: -30% -48%;  
-		}
-  }
+  // &::before {
+	// 	content:'';
+  //   position: absolute;
+  //   inset: -45% -12%;  
+  //   z-index: -1;
+  //   pointer-events: none;
+  //   background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
+	// 	@media (max-width:toEm($mobileSmall)){
+	// 		inset: -30% -48%;  
+	// 	}
+  // }
 
 }
 
@@ -227,7 +227,23 @@ body {
 			top: 50%;
 			left: 50%;
 			width: 100%;
-			transform: translate(-50%,-50%);
+			transform: translate(-52%,-50%);
+			aspect-ratio: 700/256;
+			@media (min-width:toEm($mobileSmall)){
+				aspect-ratio: 540/256;
+			}
+			&::before {
+				content:'';
+
+				@extend %absoluteBg;
+				
+				aspect-ratio: 700/157;
+				background-image: url("@img/banners/banner-mb.svg");
+				@media (min-width:toEm($mobileSmall)){
+					aspect-ratio: 540/200;
+					background-image: url("@img/banners/banner-pc.svg");
+				}
+			}
 		}
 }
 
@@ -247,7 +263,10 @@ body {
       z-index: 0;
       max-width: 690px;
 			.home-page & {
-				opacity: 0;
+				 @extend %animOpacity;
+      	.--watcher-view & {
+					transition-delay: 0.1s;
+				}
 			}
       @include adaptiveValue("margin-bottom", 70, 30);
       .banner__text {
@@ -267,7 +286,7 @@ body {
         }
       }
       .banner__picture {
-        width: 690px;
+        width: 735px;
         @media (max-width: toEm(700.98)){
           transform: translate(-60%, -50%);
         }
@@ -289,17 +308,37 @@ body {
   transform: translate(-50%,-50%);
   width: 125%;
   pointer-events: none;
-  @media (min-width:$mobileSmall){
+		aspect-ratio: 390/1072;
+		@media (min-width:toEm(820.98)){
+			aspect-ratio: 1656/725;
+		}
+	@media (max-width:toEm(820.98)){
+		width: 52%;
+	}
+  @media (min-width:toEm($mobileSmall)){
     top: 50%;
     left: 50%;
-    width: 120%;
+    // width: 120%;
   }
+	@media (max-width:toEm($mobileSmall)){
+		 width: 110%; 
+	}
+	&:before {
+		content:'';
+		@extend %absoluteBg;
+		background-image: url("@img/snacks/smacks-2-mb.png");
+		aspect-ratio: 390/1072;
+		@media (min-width:toEm(820.98)){
+			aspect-ratio: 1656/725;
+			background-image: url("@img/snacks/smacks-2-pc.png");
+		}
+	}
   &._active {
-    img {
+    img, &::before  {
         transform: scale(1);
     }
   }
-  img {
+  img, &::before {
     transition: transform .65s ease;
 		transform: scale(0);
   }

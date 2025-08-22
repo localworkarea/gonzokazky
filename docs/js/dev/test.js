@@ -1996,14 +1996,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = `Я ${resultTextEl.textContent.trim()}`;
       copyToClipboard(text);
       copiedResults.add(resultId);
-      showMessage("результат скопійовано");
+      showMessage("Результат скопійовано");
       messageEl.classList.remove("_error");
       messageEl.classList.add("_ok");
     });
     linkBtn.addEventListener("click", (e) => {
       if (!copiedResults.has(resultId)) {
         e.preventDefault();
-        showMessage("спочатку скопіюй результат");
+        showMessage("Спочатку скопіюй результат");
         messageEl.classList.add("_error");
       }
     });

@@ -90,23 +90,30 @@
 
 		// .hero-test__shacks
 		&__shacks {
-      img {
+      img, &::before {
         [data-fls-loaded] & {
           transform: scale(1);
           transition-delay: 0.3s;
+        }
+      }
+      @media (max-width: toEm(820.98)){
+        width: 125%;
+        aspect-ratio: 517/845;
+        top: 65%;
+        &::before {
+          background-image: url("@img/snacks/smacks-test-mb.png");
         }
       }
 		}
 
 		// .hero-test__body
 		&__body {
-      .body-sections__banner {}
+      .body-sections__banner {
+      }
       .body-sections__btn {
         min-width: 290px;
         margin-top: 30px;
-        @media (max-width: toEm(700.98)){
-          margin-inline: auto;
-        }
+        margin-inline: auto;
       }
       .banner__text {
          @media (max-width: toEm(700.98)){
@@ -115,14 +122,25 @@
         }
       }
       .banner__picture {
-        //  width: 690px;
-         @media (max-width: toEm(700.98)){
-          width: 100%;
-          transform: translate(-50%, -50%);
-        }
+        //  @media (max-width: toEm(700.98)){
+        //   width: 100%;
+        //   transform: translate(-50%, -50%);
+        // }
+        // @media (max-width:toEm($mobileSmall)){
+        //    width: 125%; 
+        // }
+
         @media (max-width:toEm($mobileSmall)){
-           width: 125%; 
-        }
+          transform: translate(-52%,-50%);
+          aspect-ratio: 540/356;
+          width: 158%;
+          }
+			    &::before {
+			    	background-image: url("@img/banners/banner-c-mb.svg");
+			    	@media (min-width:toEm($mobileSmall)){
+			    		background-image: url("@img/banners/banner-pc.svg");
+			    	}
+			    }
       }
       @media (max-width:toEm($mobileSmall)){
          padding-top: 70px; 
@@ -135,6 +153,7 @@
 }
 
 .form-test {
+  // transform: translateY(0%);
   &._dwn {
    transform: translateY(100%);
   }
@@ -713,6 +732,7 @@
     // .result-test__top
     &__top {
       position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -735,11 +755,12 @@
       background-position: center;
       background-size: contain;
       @media (min-width:toEm(820.98)){
-        transform: translate(-50%,45%);
+        transform: translate(-50%,41%);
         bottom: 0;
         width: 135%;
         aspect-ratio: 626/200;
         background-image: url("@img/banners/banner-res-1-pc.svg");
+        opacity: 0.95;
       }
       @media (max-width:toEm(820.98)) {
         top: 50%;
@@ -816,9 +837,7 @@
       font-size: 16px;
       line-height: 1.25;
       position: relative;
-      &::before {
-        content:'';
-      }
+      z-index: 0;
     }
     
 		// .result-test__banner-info
@@ -833,7 +852,7 @@
           z-index: -1;
           bottom: 0;
           left: 50%;
-          transform: translate(-50%,8%);
+          transform: translate(-50%,11%);
           width: 129%;
           aspect-ratio: 626/500;
           background-repeat: no-repeat;
@@ -841,20 +860,18 @@
           background-size: contain;
           background-image: url("@img/banners/banner-res-2.svg");
         }
-        &::before {
+      }
+      &::before {
+        @media (min-width:toEm(820.98)){
           content:'';
           position: absolute;
           bottom: 0;
           left: 50%;
-          transform: translate(-50%,-8%);
+          transform: translate(-50%,-6%);
           backdrop-filter: blur(15px);
           z-index: -1;
-          width: 100%;
-          aspect-ratio: 626/500;
-          @media (min-width:toEm(600.98)){
-            width: 113%;
-            aspect-ratio: 723/475;
-          }
+          aspect-ratio: 723/475;
+          width: 113%;
         }
       }
       @media (max-width: toEm(820.98)){

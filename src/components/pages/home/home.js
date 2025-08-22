@@ -83,41 +83,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    const sections = Array.from(document.querySelectorAll('section')).filter((sec) => {
-      const root = sec.querySelector('.body-sections');
-      if (!root) return false;
-      const banner = root.querySelector('.body-sections__banner');
-      const txt    = root.querySelector('.cta-sections__txt');
-      const btnWr  = root.querySelector('.cta-sections__btn-wr');
-      return banner && txt && btnWr;
-    });
+    // const sections = Array.from(document.querySelectorAll('section')).filter((sec) => {
+    //   const root = sec.querySelector('.body-sections');
+    //   if (!root) return false;
+    //   const banner = root.querySelector('.body-sections__banner');
+    //   const txt    = root.querySelector('.cta-sections__txt');
+    //   const btnWr  = root.querySelector('.cta-sections__btn-wr');
+    //   return banner && txt && btnWr;
+    // });
 
 
-    function buildSectionsTimelines({ start, end }) {
-      sections.forEach((sec, i) => {
-        const root   = sec.querySelector('.body-sections');
-        const banner = root.querySelector('.body-sections__banner');
-        const txt    = root.querySelector('.cta-sections__txt');
-        const btnWr  = root.querySelector('.cta-sections__btn-wr');
+    // function buildSectionsTimelines({ start, end }) {
+    //   sections.forEach((sec, i) => {
+    //     const root   = sec.querySelector('.body-sections');
+    //     const banner = root.querySelector('.body-sections__banner');
+    //     const txt    = root.querySelector('.cta-sections__txt');
+    //     const btnWr  = root.querySelector('.cta-sections__btn-wr');
       
-        const tl = gsap.timeline({
-          defaults: { duration: 1, stagger: 0.01, ease: 'none' },
-          scrollTrigger: {
-            id: `secReveal_${i}`,  
-            trigger: root,
-            start,
-            end,
-            scrub: 1,
-            scroller: smoother.scrollContainer, 
-            // markers: true,
-          }
-        });
+    //     const tl = gsap.timeline({
+    //       defaults: { duration: 1, stagger: 0.01, ease: 'none' },
+    //       scrollTrigger: {
+    //         id: `secReveal_${i}`,  
+    //         trigger: root,
+    //         start,
+    //         end,
+    //         scrub: 1,
+    //         scroller: smoother.scrollContainer, 
+    //         // markers: true,
+    //       }
+    //     });
       
-        tl.to(banner, { opacity: 1 })
-          .to(txt,    { opacity: 1 }, "-=0.1")
-          .to(btnWr,  { opacity: 1 }, "-=0.1");
-      });
-    }
+    //     tl.to(banner, { opacity: 1 })
+    //       .to(txt,    { opacity: 1 }, "-=0.1")
+    //       .to(btnWr,  { opacity: 1 }, "-=0.1");
+    //   });
+    // }
 
     // Чистим предыдущие matchMedia-анимации корректно
     if (mm) mm.revert();
@@ -213,16 +213,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (tbMin) {
-          buildSectionsTimelines({
-            start: "top 80%",
-            end:   "center center",
-          });
+          // buildSectionsTimelines({
+          //   start: "top 80%",
+          //   end:   "center center",
+          // });
         }
         if (tbMax) {
-          buildSectionsTimelines({
-            start: "top 80%",
-            end:   "bottom bottom",
-          });
+          // buildSectionsTimelines({
+          //   start: "top 80%",
+          //   end:   "bottom bottom",
+          // });
         }
 
         // функция очистки, если нужно что-то вручную снять
