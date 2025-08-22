@@ -54,6 +54,15 @@
   opacity: 1;
 }
 
+.section-6__title::before {
+  content: "";
+  position: absolute;
+  inset: -55% -12%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
+}
+
 .section-6__picture, .section-5__picture, .section-4__picture, .section-3__picture, .section-2__picture, .hero__picture {
   position: absolute;
   inset: 0;
@@ -441,14 +450,6 @@
 }
 .section-6__title {
   text-align: center;
-}
-.section-6__title::before {
-  content: "";
-  position: absolute;
-  inset: -55% -12%;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 77% 56% at 50% 55%, rgba(255, 255, 0, 0.1) 0%, rgba(255, 255, 0, 0.2) 18%, rgba(255, 255, 0, 0) 80%);
 }
 .section-6__video {
   max-width: 29rem;

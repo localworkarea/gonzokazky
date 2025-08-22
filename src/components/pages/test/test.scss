@@ -652,39 +652,74 @@
 
 .result-test {
   transform: translateY(-100%);
-  padding-block: 60px; 
-  z-index: 10;
   background-color: #1D0B00;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  z-index: 10;
+
   &._result-active {
     transform: translateY(0%);
   }
-  @media (min-width:toEm($mobileSmall)){
-     padding-block: 55px 60px; 
-  }
-  &.result-test--a {
-    @media (min-width:toEm(820.98)){
-      background-image: url("@img/result/result-1-pc.jpg");
-    }
-  }
-  &.result-test--b {
-    @media (min-width:toEm(820.98)){
-      background-image: url("@img/result/result-2-pc.jpg");
-    }
-  }
-  &.result-test--c {
-    @media (min-width:toEm(820.98)){
-      background-image: url("@img/result/result-3-pc.jpg");
-    }
-  }
-  &.result-test--d {
-    @media (min-width:toEm(820.98)){
-      background-image: url("@img/result/result-4-pc.jpg");
-    }
-  }
+ 
+  
+  // padding-block: 60px; 
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  // @media (min-width:toEm($mobileSmall)){
+  //    padding-block: 55px 60px; 
+  // }
+  // &.result-test--a {
+  //   @media (min-width:toEm(820.98)){
+  //     background-image: url("@img/result/result-1-pc.jpg");
+  //   }
+  // }
+  // &.result-test--b {
+  //   @media (min-width:toEm(820.98)){
+  //     background-image: url("@img/result/result-2-pc.jpg");
+  //   }
+  // }
+  // &.result-test--c {
+  //   @media (min-width:toEm(820.98)){
+  //     background-image: url("@img/result/result-3-pc.jpg");
+  //   }
+  // }
+  // &.result-test--d {
+  //   @media (min-width:toEm(820.98)){
+  //     background-image: url("@img/result/result-4-pc.jpg");
+  //   }
+  // }
 
+		// .result-test__wrapper
+		&__wrapper {
+        
+        padding-block: 60px; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 100%;
+        @media (min-width:toEm($mobileSmall)){
+           padding-block: 55px 60px; 
+        }
+        .result-test--a & {
+          @media (min-width:toEm(820.98)){
+            background-image: url("@img/result/result-1-pc.jpg");
+          }
+        }
+        .result-test--b & {
+          @media (min-width:toEm(820.98)){
+            background-image: url("@img/result/result-2-pc.jpg");
+          }
+        }
+        .result-test--c & {
+          @media (min-width:toEm(820.98)){
+            background-image: url("@img/result/result-3-pc.jpg");
+          }
+        }
+        .result-test--d & {
+          @media (min-width:toEm(820.98)){
+            background-image: url("@img/result/result-4-pc.jpg");
+          }
+        }
+		}
 	
 
     // .result-test__container
@@ -819,6 +854,7 @@
     &__result {
       @include adaptiveValue("font-size", 36, 30);
       text-align: center;
+      @extend %shadowBefore;
       &.text-banner {
         &::before {
             inset: -100% -25%;  

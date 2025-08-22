@@ -151,6 +151,12 @@
         "start": 1755865504895,
         "end": 1755867650912,
         "type": "build"
+      },
+      {
+        "date": "22.08.2025",
+        "start": 1755868395736,
+        "end": 1755869320041,
+        "type": "build"
       }
     ],
     "files": [
@@ -195,7 +201,8 @@
       "banner-pc.svg",
       "banner-mb.svg",
       "extends.scss",
-      "banner-c-mb.svg"
+      "banner-c-mb.svg",
+      "banner-res-1-pc.svg"
     ]
   }
 }
