@@ -554,6 +554,7 @@
 }
 .item-test--4 .item-test__picture {
   width: 65%;
+  transform: translate(-50%, 5%);
 }
 .item-test--5 .item-test__picture {
   width: 70%;
@@ -1057,7 +1058,7 @@
   }
   .result-test__buttons {
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 }
 @media (min-width: 51.31125em) {

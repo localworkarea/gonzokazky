@@ -10,16 +10,57 @@ import { addTouchAttr, addLoadedAttr, isMobile, FLS } from "@js/common/functions
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  const smoother =
-    ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1,
-      effects: true,
-      smoothTouch: 0.1,
-      ignoreMobileResize: true,
-      normalizeScroll: true,
-    });
+// const isTelegram = /Telegram/i.test(navigator.userAgent);
+
+// if (isTelegram) {
+//   const heroContainer = document.querySelector('.hero__container');
+//   if (heroContainer) {
+//     heroContainer.style.background = "#FF0000";
+//   }
+// }
+function isTelegramWebView() {
+  const ua = navigator.userAgent || "";
+  return /Telegram/i.test(ua) || typeof TelegramWebviewProxy !== 'undefined';
+}
+let smoother;
+if (isTelegramWebView()) {
+    smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 0,
+    effects: false,
+    smoothTouch: 0,
+    ignoreMobileResize: true,
+    normalizeScroll: false,
+  });
+} else {
+
+  smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1,
+    effects: true,
+    smoothTouch: 0.1,
+    ignoreMobileResize: true,
+    normalizeScroll: true,
+  });
+
+}
+
+
+
+  // const smoother =
+  //   ScrollSmoother.create({
+  //     wrapper: "#smooth-wrapper",
+  //     content: "#smooth-content",
+  //     smooth: 1,
+  //     effects: true,
+  //     // smoothTouch: 0.1,
+  //     smoothTouch: 0,
+  //     ignoreMobileResize: true,
+  //     normalizeScroll: true,
+  //   });
+
 
   let mm; 
   let mm2; 
@@ -36,22 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sec4 = document.querySelector(".section-4");
   
   function createAnimation() {
-    //  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-    // const snackBlocks = document.querySelectorAll('.snacks-block');
-    // if (snackBlocks.length > 0) {
-    //   snackBlocks.forEach((item) => {
-    //     const section = item.closest('section');
-    //   if (!section) return;
-    //     ScrollTrigger.create({
-    //       trigger: section,
-    //       start: "top 5%",
-    //       scroller: smoother?.scrollContainer,
-    //       onEnter()     { item.classList.add("_active"); },
-    //     });
-    //   });
-    // }
-
 
     if (wolfBody) {
       ScrollTrigger.create({
@@ -82,42 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-
-    // const sections = Array.from(document.querySelectorAll('section')).filter((sec) => {
-    //   const root = sec.querySelector('.body-sections');
-    //   if (!root) return false;
-    //   const banner = root.querySelector('.body-sections__banner');
-    //   const txt    = root.querySelector('.cta-sections__txt');
-    //   const btnWr  = root.querySelector('.cta-sections__btn-wr');
-    //   return banner && txt && btnWr;
-    // });
-
-
-    // function buildSectionsTimelines({ start, end }) {
-    //   sections.forEach((sec, i) => {
-    //     const root   = sec.querySelector('.body-sections');
-    //     const banner = root.querySelector('.body-sections__banner');
-    //     const txt    = root.querySelector('.cta-sections__txt');
-    //     const btnWr  = root.querySelector('.cta-sections__btn-wr');
-      
-    //     const tl = gsap.timeline({
-    //       defaults: { duration: 1, stagger: 0.01, ease: 'none' },
-    //       scrollTrigger: {
-    //         id: `secReveal_${i}`,  
-    //         trigger: root,
-    //         start,
-    //         end,
-    //         scrub: 1,
-    //         scroller: smoother.scrollContainer, 
-    //         // markers: true,
-    //       }
-    //     });
-      
-    //     tl.to(banner, { opacity: 1 })
-    //       .to(txt,    { opacity: 1 }, "-=0.1")
-    //       .to(btnWr,  { opacity: 1 }, "-=0.1");
-    //   });
-    // }
 
     // Чистим предыдущие matchMedia-анимации корректно
     if (mm) mm.revert();
@@ -541,6 +530,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("resize", () => {
+
+      //   const currentWidth = window.innerWidth;
+      // if (currentWidth !== lastWidth) {
+      //   lastWidth = currentWidth;
+      //   setTimeout(() => {
+      //     createAnimation();   
+      //     setupWolf();        
+      //     ScrollTrigger.refresh();
+      //     smoother?.refresh();
+      //   }, 50);
+      // }
+
     if (isMobile.any()) {
       const currentWidth = window.innerWidth;
       if (currentWidth !== lastWidth) {

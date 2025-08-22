@@ -384,6 +384,10 @@ body::-webkit-scrollbar {
   .btn--a {
     min-height: 4.375rem;
   }
+}@media (min-width: 64.06125em) and (max-height: 46.93625em) {
+  .test-page .logo-main__picture {
+    top: 2.1875rem !important;
+  }
 }@media (min-width: 480.98) {
   .body-sections__banner .banner__text {
     max-width: 28.125rem;

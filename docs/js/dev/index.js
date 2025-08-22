@@ -137,15 +137,32 @@ class ScrollWatcher {
 document.querySelector("[data-fls-watcher]") ? window.addEventListener("load", () => new ScrollWatcher({})) : null;
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  const smoother = ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1,
-    effects: true,
-    smoothTouch: 0.1,
-    ignoreMobileResize: true,
-    normalizeScroll: true
-  });
+  function isTelegramWebView() {
+    const ua = navigator.userAgent || "";
+    return /Telegram/i.test(ua) || typeof TelegramWebviewProxy !== "undefined";
+  }
+  let smoother;
+  if (isTelegramWebView()) {
+    smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 0,
+      effects: false,
+      smoothTouch: 0,
+      ignoreMobileResize: true,
+      normalizeScroll: false
+    });
+  } else {
+    smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1,
+      effects: true,
+      smoothTouch: 0.1,
+      ignoreMobileResize: true,
+      normalizeScroll: true
+    });
+  }
   let mm;
   let mm2;
   let lastWidth = window.innerWidth;

@@ -464,6 +464,7 @@
       }
       .item-test--4 & {
         width: 65%;
+        transform: translate(-50%,5%);
         @media (max-width: toEm(600.98)){
           width: 90%;
           transform: translate(-50%,-15%);
@@ -928,7 +929,7 @@
       gap: 15px;
       @media (min-width:toEm(600.98)){
         flex-direction: row-reverse;
-        justify-content: flex-start;
+        justify-content: flex-end;
       }
       @media (max-width: toEm(600.98)){
         flex-direction: column-reverse;
