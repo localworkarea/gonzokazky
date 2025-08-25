@@ -444,8 +444,7 @@
 .section-6__video {
   max-width: 50rem;
   width: 100%;
-  display: flex;
-  align-items: center;
+  display: grid;
   gap: 1.25rem;
 }
 .section-6__btn {
@@ -643,7 +642,6 @@
     transform: translate(-52%, -47%);
   }
   .section-6__video {
-    flex-direction: column;
     max-width: 25rem;
   }
 }
@@ -949,6 +947,10 @@
     z-index: -1;
     aspect-ratio: 963/485;
     width: 76%;
+  }
+  .section-6__video {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 }
 @media (min-width: 62.06125em) {

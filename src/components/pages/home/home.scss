@@ -1188,11 +1188,15 @@
   &__video {
     max-width: 800px;
     width: 100%;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    display: grid;
     gap: 20px;
+    @media (min-width:toEm(820.98)){
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
      @media (max-width: toEm(820.98)){
-        flex-direction: column;
+        // flex-direction: column;
         max-width: 400px;
       }
     .video-youtube {
